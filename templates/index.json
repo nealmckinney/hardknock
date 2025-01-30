@@ -29,9 +29,27 @@
         "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
         "background_image": "shopify://shop_images/fpo-header.jpg"
       }
+    },
+    "hardknock_mission_section_mmj4HX": {
+      "type": "hardknock-mission-section",
+      "settings": {
+        "upper_pre_title": "Our Mission",
+        "upper_title": "We Reduce Head Injuries in the Workplace",
+        "upper_body": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "upper_button_link": "shopify://pages/data-sale-opt-out",
+        "upper_button_text": "Learn More",
+        "upper_image": "shopify://shop_images/fpo-mission-transparent2.png",
+        "lower_pre_title": "Our Promise",
+        "lower_title": "Deliver Superior Technology Backed by Science",
+        "lower_body": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "lower_button_link": "shopify://pages/data-sale-opt-out",
+        "lower_button_text": "Learn More",
+        "lower_image": "shopify://shop_images/fpo-mission-helmet.jpg"
+      }
     }
   },
   "order": [
-    "hardknock_page_header_G6RTbm"
+    "hardknock_page_header_G6RTbm",
+    "hardknock_mission_section_mmj4HX"
   ]
 }
