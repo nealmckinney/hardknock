@@ -51,15 +51,15 @@
           "label": "Button Style",
           "options": [
             {
-              "value": "primary",
-              "label": "Primary"
+              "value": "green",
+              "label": "Green"
             },
             {
-              "value": "secondary",
-              "label": "Secondary"
+              "value": "black",
+              "label": "Black"
             }
           ],
-          "default": "primary"
+          "default": "green"
         }
       ]
     }
@@ -113,39 +113,40 @@
     {% endif %}
   </picture>
 
-  <div class="hardknock-page-header__content">
-    <h1 class="hardknock-page-header__title color-white">
-      {{ section.settings.title }}
-    </h1>
+  <div class="hardknock-page-header__container page-width page-width-desktop-x">
+    <div class="hardknock-page-header__content">
+      <h1 class="hardknock-page-header__title color-white">
+        {{ section.settings.title }}
+      </h1>
 
-    {% if section.settings.content != blank %}
-      <div class="hardknock-page-header__text color-white">
-        {{ section.settings.content }}
-      </div>
-    {% endif %}
+      {% if section.settings.content != blank %}
+        <div class="hardknock-page-header__text color-white">
+          {{ section.settings.content }}
+        </div>
+      {% endif %}
 
-    {% if section.blocks.size > 0 %}
-      <div class="hardknock-page-header__buttons">
-        {% for block in section.blocks %}
-          {% if block.type == 'button' %}
-            <a
-              href="{{ block.settings.button_link }}"
-              class="button button--{{ block.settings.button_style }}"
-              {{ block.shopify_attributes }}
-            >
-              {{ block.settings.button_text }}
-            </a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    {% endif %}
+      {% if section.blocks.size > 0 %}
+        <div class="hardknock-page-header__buttons">
+          {% for block in section.blocks %}
+            {% if block.type == 'button' %}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="button button--{{ block.settings.button_style }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.button_text }}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>
 
 <style>
   .hardknock-page-header {
     position: relative;
-    padding: 60px 0;
     overflow: hidden;
     height: 100vh;
     background-color: #000;
@@ -178,18 +179,23 @@
     object-position: center;
   }
 
+  .hardknock-page-header__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .hardknock-page-header__content {
     position: relative;
     max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
+    max-width: 565px;
   }
 
   .hardknock-page-header__buttons {
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 30px;
   }
 </style>
