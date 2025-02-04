@@ -1,0 +1,217 @@
+{% schema %}
+{
+  "name": "HK Product Features",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "presets": [
+    {
+      "name": "HK Product Features"
+    }
+  ]
+}
+{% endschema %}
+
+{% if product.metafields.custom.advantages != blank %}
+  <section class="product-features-section side-margin-auto relative z-index-0 pb-1">
+    {% if settings.product_features_bg != blank %}
+      <div class="background">
+        <img
+          src="{{ settings.product_features_bg | image_url: width: 1500 }}"
+          srcset="
+            {{ settings.product_features_bg | image_url: width: 1500 }} 1500w,
+            {{ settings.product_features_bg | image_url: width: 2000 }} 2000w,
+            {{ settings.product_features_bg | image_url: width: 3000 }} 3000w
+          "
+          sizes="100vw"
+          alt=""
+          class="object-fit-cover"
+          loading="lazy"
+          width="1500"
+          height="800"
+        >
+      </div>
+    {% endif %}
+    <div class="container page-width">
+      <h2 class="h1 product-features__title center color-white mb-6 lg-mb-8">
+        The {{ product.title | remove: 'Safety Helmet' }} Features
+      </h2>
+
+      <product-features-slider>
+        <div class="product-features swiper">
+          <div class="swiper-wrapper">
+            {% for feature in product.metafields.custom.features.value %}
+              <div class="product-features__item swiper-slide radius-15 overflow-hidden">
+                {% if feature.image != blank %}
+                  <div class="feature-image relative">
+                    <img
+                      src="{{ feature.image | image_url: width: 380 }}"
+                      srcset="
+                        {{ feature.image | image_url: width: 380 }} 380w,
+                        {{ feature.image | image_url: width: 760 }} 760w
+                      "
+                      sizes="380px"
+                      alt="{{ feature.title }}"
+                      class="feature-image__image object-fit-cover"
+                      loading="lazy"
+                      width="380"
+                      height="236"
+                    >
+                  </div>
+                {% endif %}
+
+                <div class="text">
+                  {% if feature.title != blank %}
+                    <h2 class="h3 product-features__item-title mt-0 mb-2">{{ feature.title }}</h2>
+                  {% endif %}
+
+                  {% if feature.text != blank %}
+                    <div class="product-features__item-text mb-4">{{ feature.text | metafield_tag }}</div>
+                  {% endif %}
+
+                  {% if feature.link != blank %}
+                    <a href="{{ feature.link }}" class="button product-features__item-link width-auto">Learn More</a>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </product-features-slider>
+    </div>
+  </section>
+{% endif %}
+
+<style>
+  .product-features-section {
+    margin-top: -315px;
+    padding-top: 315px;
+    overflow: hidden;
+  }
+
+  .product-features {
+    position: relative;
+    padding-bottom: 60px;
+  }
+
+  .product-features__item {
+    width: 100%;
+    flex-basis: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-features__item .text {
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .product-features__item .text .button {
+    width: fit-content;
+    align-self: flex-start;
+  }
+
+  .product-features__item-link {
+    margin-top: auto;
+  }
+
+  .feature-image {
+    aspect-ratio: 1 / 0.62;
+    background-color: #000;
+  }
+
+  .product-features-section .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .product-features-section .background:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff;
+  }
+
+  .swiper-pagination-bullet {
+    background: #fff;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+
+  .product-features.swiper {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+  }
+
+  .product-features__item.swiper-slide {
+    height: auto;
+  }
+
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+  }
+</style>
+
+<script>
+  class ProductFeaturesSlider extends HTMLElement {
+    constructor() {
+      super();
+      window.addEventListener('load', () => {
+        this.slider = new Swiper(this.querySelector('.swiper'), {
+          slidesPerView: 1.2,
+          centeredSlides: false,
+          spaceBetween: 20,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3.5,
+              spaceBetween: 40,
+            },
+          },
+        });
+      });
+    }
+  }
+  customElements.define('product-features-slider', ProductFeaturesSlider);
+</script>

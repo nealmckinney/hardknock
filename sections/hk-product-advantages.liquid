@@ -13,44 +13,46 @@
 {% endschema %}
 
 {% if product.metafields.custom.advantages != blank %}
-  <section class="product-advantages-section side-margin-auto relative z-index-2">
-    <div class="container">
-      <h2 class="h2 product-advantages__title center color-black-light mb-6 lg-mb-8">
-        The {{ product.title | remove: 'Safety Helmet' }} Advantages
-      </h2>
+  <section class="product-advantages-section page-width">
+    <div class="product-advantages side-margin-auto relative z-index-2">
+      <div class="container">
+        <h2 class="h2 product-advantages__title center color-black-light mb-6 lg-mb-8">
+          The {{ product.title | remove: 'Safety Helmet' }} Advantages
+        </h2>
 
-      <div class="product-advantages flex-container">
-        {% for advantage in product.metafields.custom.advantages.value %}
-          <div class="product-advantages__item center">
-            {% if advantage.icon != blank %}
-              <div class="advantage-icon relative side-margin-auto">
-                <img
-                  src="{{ advantage.icon | image_url: width: 200 }}"
-                  alt="{{ advantage.title }}"
-                  class="advantage-icon__image object-fit-contain"
-                  loading="lazy"
-                  width="200"
-                  height="200"
-                >
-              </div>
-            {% endif %}
+        <div class="product-advantages-items flex-container">
+          {% for advantage in product.metafields.custom.advantages.value %}
+            <div class="product-advantages__item center">
+              {% if advantage.icon != blank %}
+                <div class="advantage-icon relative side-margin-auto">
+                  <img
+                    src="{{ advantage.icon | image_url: width: 200 }}"
+                    alt="{{ advantage.title }}"
+                    class="advantage-icon__image object-fit-contain"
+                    loading="lazy"
+                    width="200"
+                    height="200"
+                  >
+                </div>
+              {% endif %}
 
-            {% if advantage.title != blank %}
-              <h3 class="product-advantages__item-title">{{ advantage.title }}</h3>
-            {% endif %}
+              {% if advantage.title != blank %}
+                <h2 class="h3product-advantages__item-title">{{ advantage.title }}</h2>
+              {% endif %}
 
-            {% if advantage.text != blank %}
-              <p class="product-advantages__item-text">{{ advantage.text }}</p>
-            {% endif %}
-          </div>
-        {% endfor %}
+              {% if advantage.text != blank %}
+                <p class="product-advantages__item-text">{{ advantage.text }}</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </section>
 {% endif %}
 
 <style>
-  .product-advantages-section {
+  .product-advantages {
     border-radius: 15px;
     background: #fffcfc;
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
@@ -58,7 +60,7 @@
     padding: 23px;
   }
 
-  .product-advantages {
+  .product-advantages-items {
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;

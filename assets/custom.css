@@ -121,6 +121,7 @@ header-drawer {
 .footer {
     padding-top: 100px !important;
     padding-bottom: 100px !important;
+	margin-top: 0 !important;
 }
 
 .footer-block:only-child:last-child {

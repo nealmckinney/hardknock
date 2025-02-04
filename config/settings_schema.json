@@ -1465,5 +1465,16 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Product Detail",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "product_features_bg",
+        "label": "Product Features Background Image",
+        "info": "Background image for the Product Features section"
+      }
+    ]
   }
 ]
