@@ -153,10 +153,15 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "hk_product_advantages_qGedkR": {
+      "type": "hk-product-advantages",
+      "settings": {}
     }
   },
   "order": [
     "main",
+    "hk_product_advantages_qGedkR",
     "related-products"
   ]
 }
