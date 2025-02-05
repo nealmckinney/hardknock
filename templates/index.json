@@ -9,10 +9,10 @@
  */
 {
   "sections": {
-    "hardknock_page_header_G6RTbm": {
-      "type": "hardknock-page-header",
+    "hk_page_header_RdXHaQ": {
+      "type": "hk-page-header",
       "blocks": {
-        "button_6bTcFr": {
+        "button_UGaBew": {
           "type": "button",
           "settings": {
             "button_text": "Learn More",
@@ -22,7 +22,7 @@
         }
       },
       "block_order": [
-        "button_6bTcFr"
+        "button_UGaBew"
       ],
       "settings": {
         "title": "How hard is your <span style=\"color: #CFD821;\">Helmet</span> thinking about your brain?",
@@ -49,7 +49,7 @@
     }
   },
   "order": [
-    "hardknock_page_header_G6RTbm",
+    "hk_page_header_RdXHaQ",
     "hardknock_mission_section_mmj4HX"
   ]
 }
