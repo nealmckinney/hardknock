@@ -1471,6 +1471,12 @@
     "settings": [
       {
         "type": "image_picker",
+        "id": "product_header_bg",
+        "label": "Product Header Background Image",
+        "info": "Default background image for the Product Header section"
+      },
+      {
+        "type": "image_picker",
         "id": "product_features_bg",
         "label": "Product Features Background Image",
         "info": "Background image for the Product Features section"
