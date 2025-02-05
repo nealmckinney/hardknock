@@ -1476,5 +1476,22 @@
         "info": "Background image for the Product Features section"
       }
     ]
+  },
+  {
+    "name": "Pre Footer Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "pre_footer_bg",
+        "label": "Pre Footer Background Image",
+        "info": "Background image for the Pre Footer section"
+      },
+      {
+        "type": "textarea",
+        "id": "pre_footer_title",
+        "label": "Pre Footer Title",
+        "info": "Title for the Pre Footer section"
+      }
+    ]
   }
 ]

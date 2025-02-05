@@ -202,6 +202,35 @@ header-drawer {
     }
 }
 
+.footer-block__image-wrapper.svg-wrapper {
+	max-width: min(100%, 120px);
+	width: 120px !important;
+	height: 84px !important;
+}
+
+.footer-block__image-wrapper.svg-wrapper svg {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: contain;
+}
+
+body:not(.template-index) .footer {
+	background-color: #2B363B !important;
+	color: #D1D84D !important;
+}
+
+body:not(.template-index) .footer * {
+	color: #D1D84D !important;
+}
+
+body:not(.template-index) .footer-block .footer-block__brand-info {
+    border-bottom: 1px solid #D1D84D !important;
+}
+
+body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path {
+	fill: #D1D84D !important;
+}
+
 /* ------------------
     PRODUCT
 ------------------ */
