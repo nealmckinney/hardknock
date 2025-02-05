@@ -30,8 +30,8 @@
         "background_image": "shopify://shop_images/fpo-header.jpg"
       }
     },
-    "hardknock_mission_section_mmj4HX": {
-      "type": "hardknock-mission-section",
+    "hk_mission_section_mKpbEQ": {
+      "type": "hk-mission-section",
       "settings": {
         "upper_pre_title": "Our Mission",
         "upper_title": "We Reduce Head Injuries in the Workplace",
@@ -50,6 +50,6 @@
   },
   "order": [
     "hk_page_header_RdXHaQ",
-    "hardknock_mission_section_mmj4HX"
+    "hk_mission_section_mKpbEQ"
   ]
 }
