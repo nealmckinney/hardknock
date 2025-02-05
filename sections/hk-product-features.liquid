@@ -16,20 +16,11 @@
   <section class="product-features-section side-margin-auto relative z-index-0 pb-1">
     {% if settings.product_features_bg != blank %}
       <div class="background">
-        <img
-          src="{{ settings.product_features_bg | image_url: width: 1500 }}"
-          srcset="
-            {{ settings.product_features_bg | image_url: width: 1500 }} 1500w,
-            {{ settings.product_features_bg | image_url: width: 2000 }} 2000w,
-            {{ settings.product_features_bg | image_url: width: 3000 }} 3000w
-          "
-          sizes="100vw"
-          alt=""
-          class="object-fit-cover"
-          loading="lazy"
-          width="1500"
-          height="800"
-        >
+        {{
+          settings.product_features_bg
+          | image_url: width: 3000
+          | image_tag: widths: '1500, 2000, 3000', class: 'object-fit-cover', loading: 'lazy', sizes: '100vw'
+        }}
       </div>
     {% endif %}
     <div class="container page-width">
@@ -44,19 +35,16 @@
               <div class="product-features__item swiper-slide radius-15 overflow-hidden">
                 {% if feature.image != blank %}
                   <div class="feature-image relative">
-                    <img
-                      src="{{ feature.image | image_url: width: 380 }}"
-                      srcset="
-                        {{ feature.image | image_url: width: 380 }} 380w,
-                        {{ feature.image | image_url: width: 760 }} 760w
-                      "
-                      sizes="380px"
-                      alt="{{ feature.title }}"
-                      class="feature-image__image object-fit-cover"
-                      loading="lazy"
-                      width="380"
-                      height="236"
-                    >
+                    {{
+                      feature.image
+                      | image_url: width: 760
+                      | image_tag:
+                        widths: '380, 760',
+                        class: 'feature-image__image object-fit-cover',
+                        loading: 'lazy',
+                        sizes: '380px',
+                        alt: feature.title
+                    }}
                   </div>
                 {% endif %}
 

@@ -27,6 +27,25 @@
   }
 {%- endstyle -%}
 
+<section class="pre-footer relative">
+  <div class="container page-width">
+    {% if settings.pre_footer_title != blank %}
+      <h2 class="h1 color-brand-green">{{ settings.pre_footer_title | newline_to_br }}</h2>
+    {% endif %}
+    <div class="icon-logo">
+      {% render 'hk-logo-icon' %}
+    </div>
+  </div>
+  {% if settings.pre_footer_bg != blank %}
+    <div class="background absolute">
+      {{
+        settings.pre_footer_bg
+        | image_url: width: 1500
+        | image_tag: widths: '1500, 2000, 3000', class: 'object-fit-cover', loading: 'lazy', sizes: '100vw'
+      }}
+    </div>
+  {% endif %}
+</section>
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
     assign has_social_icons = true

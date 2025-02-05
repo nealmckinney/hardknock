@@ -9,20 +9,15 @@ h1,h2,h3,h4,h5,h6 {
 	letter-spacing: -0.02em;
 }
 
-h1, .h1 { font-size:64px; }
-h2, .h2 { font-size:24px; }
-h3, .h3 { font-size:20px; }
-h4, .h4 { font-size:18px; }
-h5, .h5 { font-size:16px; }
-h6, .h6 { font-size:18px; }
+h1, .h1, .md-h1 { font-size:42px; }
+h2, .h2, .md-h2 { font-size:36px; }
+h3, .h3, .md-h3 { font-size:28px; }
+h4, .h4, .md-h4 { font-size:24px; }
+h5, .h5, .md-h5 { font-size:20px; }
+h6, .h6, .md-h6 { font-size:18px; }
 
 @media(min-width:768px) {
-	h1, .h1, .md-h1 { font-size:42px; }
-	h2, .h2, .md-h2 { font-size:36px; }
-	h3, .h3, .md-h3 { font-size:28px; }
-	h4, .h4, .md-h4 { font-size:24px; }
-	h5, .h5, .md-h5 { font-size:20px; }
-	h6, .h6, .md-h6 { font-size:18px; }
+	h1, .h1, .md-h1 { font-size:54px; }
 }
 
 @media(min-width:1025px) {
@@ -33,6 +28,29 @@ h6, .h6 { font-size:18px; }
 	h5, .h5, .lg-h5 { font-size:20px; }
 	h6, .h6, .lg-h6 { font-size:18px; }
 }
+
+/* ------------------
+    COLORS
+------------------ */
+
+/* Colors & Global Vars */
+:root {
+	--color-body: #282F33;;
+	--color-black: #000;
+	--color-brand-green: #D1D84D;
+	--color-white: #fff;
+
+}
+
+.color-brand-green { color: var(--color-brand-green); }
+.bg-brand-green { background-color: var(--color-brand-green); }
+.color-body { color: var(--color-body); }
+.bg-body { background-color: var(--color-body); }
+.color-white { color: var(--color-white); }
+.bg-white { background-color: var(--color-white); }
+.color-black { color: var(--color-black); }
+.bg-black { background-color: var(--color-black); }
+
 
 
 /* ------------------
@@ -117,6 +135,66 @@ header-drawer {
 /* ------------------
     FOOTER
 ------------------ */
+
+.pre-footer {
+	aspect-ratio: 1 / 1;
+	padding: 20px 0;
+}
+
+.pre-footer .background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.pre-footer .background:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40%;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+	z-index: 1;
+}
+
+.pre-footer .icon-logo {
+	width:80px;
+}
+
+.pre-footer .icon-logo svg {
+	display: block;
+	width: 100%;
+}
+
+.pre-footer .icon-logo svg path {
+	fill: var(--color-brand-green);
+}
+
+.pre-footer .h1 {
+	line-height: 0.9;
+	margin-bottom: 40px;
+}
+
+@media(min-width:1025px) {
+
+	.pre-footer {
+		aspect-ratio: 1 / 0.58;
+		padding: 20px 0;
+	}
+
+	.pre-footer .h1 {
+		font-size: 152px;
+		margin-bottom: 80px;
+	}
+
+	.pre-footer .icon-logo {
+		width:110px;
+	}
+}
 
 .footer {
     padding-top: 100px !important;
