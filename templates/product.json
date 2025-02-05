@@ -139,6 +139,10 @@
       "type": "hk-product-advantages",
       "settings": {}
     },
+    "hk_product_features_JEqBQE": {
+      "type": "hk-product-features",
+      "settings": {}
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -158,8 +162,8 @@
         "padding_bottom": 28
       }
     },
-    "hk_product_features_JEqBQE": {
-      "type": "hk-product-features",
+    "hk_product_accessories_KiQqmf": {
+      "type": "hk-product-accessories",
       "settings": {}
     }
   },
@@ -167,6 +171,7 @@
     "main",
     "hk_product_advantages_qGedkR",
     "hk_product_features_JEqBQE",
+    "hk_product_accessories_KiQqmf",
     "related-products"
   ]
 }
