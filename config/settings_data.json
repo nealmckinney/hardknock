@@ -123,6 +123,7 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
+    "product_header_bg": "shopify://shop_images/fpo-header.jpg",
     "product_features_bg": "shopify://shop_images/product-features-bg.jpg",
     "pre_footer_bg": "shopify://shop_images/pre-footer-bg.jpg",
     "pre_footer_title": "HARD THINGS \nARE WORTH \nDOING",
