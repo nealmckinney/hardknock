@@ -135,6 +135,10 @@
         "padding_bottom": 12
       }
     },
+    "hk_product_advantages_qGedkR": {
+      "type": "hk-product-advantages",
+      "settings": {}
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -154,14 +158,15 @@
         "padding_bottom": 28
       }
     },
-    "hk_product_advantages_qGedkR": {
-      "type": "hk-product-advantages",
+    "hk_product_features_JEqBQE": {
+      "type": "hk-product-features",
       "settings": {}
     }
   },
   "order": [
     "main",
     "hk_product_advantages_qGedkR",
+    "hk_product_features_JEqBQE",
     "related-products"
   ]
 }

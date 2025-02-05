@@ -105,7 +105,7 @@
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "Here to change minds about brain injury.",
-    "brand_image": "shopify://shop_images/footer-logo.png",
+    "brand_image_width": 110,
     "social_facebook_link": "",
     "social_instagram_link": "",
     "social_youtube_link": "",
@@ -123,6 +123,9 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
+    "product_features_bg": "shopify://shop_images/product-features-bg.jpg",
+    "pre_footer_bg": "shopify://shop_images/pre-footer-bg.jpg",
+    "pre_footer_title": "HARD THINGS \nARE WORTH \nDOING",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
