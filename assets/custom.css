@@ -335,6 +335,7 @@ body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path {
 	--color-body: #282F33;;
 	--color-black: #000;
 	--color-brand-green: #D1D84D;
+	--color-green: #D1D84D;
 	--color-white: #fff;
 	--color-blue: #3A64FF;
 
@@ -357,6 +358,8 @@ body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path {
 
 .color-brand-green { color: var(--color-brand-green); }
 .bg-brand-green { background-color: var(--color-brand-green); }
+.color-green { color: var(--color-green); }
+.bg-green { background-color: var(--color-green); }
 .color-body { color: var(--color-body); }
 .bg-body { background-color: var(--color-body); }
 .color-white { color: var(--color-white); }
