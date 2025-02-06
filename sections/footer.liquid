@@ -30,7 +30,9 @@
 <section class="pre-footer relative">
   <div class="container page-width">
     {% if settings.pre_footer_title != blank %}
-      <h2 class="h1 color-brand-green">{{ settings.pre_footer_title | newline_to_br }}</h2>
+      <h2 class="h1 color-brand-green scroll-trigger animate--slide-in">
+        {{ settings.pre_footer_title | newline_to_br }}
+      </h2>
     {% endif %}
     <div class="icon-logo">
       {% render 'hk-logo-icon' %}

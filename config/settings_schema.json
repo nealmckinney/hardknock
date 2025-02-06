@@ -1499,5 +1499,46 @@
         "info": "Title for the Pre Footer section"
       }
     ]
+  },
+  {
+    "name": "How It Works Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "how_it_works_bg",
+        "label": "How it Works Background Image",
+        "info": "Background image for the How it Works section"
+      },
+      {
+        "type": "image_picker",
+        "id": "how_it_works_nuro_badge",
+        "label": "How it Works Nuro Badge",
+        "info": "Badge for the How it Works section"
+      },
+      {
+        "type": "richtext",
+        "id": "how_it_works_text",
+        "label": "How it Works Text",
+        "info": "Text for the How it Works section"
+      },
+      {
+        "type": "textarea",
+        "id": "how_it_works_flex_text",
+        "label": "How it Works Flex Text",
+        "info": "Text for the How it Works flex section"
+      },
+      {
+        "type": "textarea",
+        "id": "how_it_works_crumple_text",
+        "label": "How it Works Crumple Text",
+        "info": "Text for the How it Works crumple section"
+      },
+      {
+        "type": "textarea",
+        "id": "how_it_works_glide_text",
+        "label": "How it Works Glide Text",
+        "info": "Text for the How it Works glide section"
+      }
+    ]
   }
 ]
