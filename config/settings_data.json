@@ -127,6 +127,12 @@
     "product_features_bg": "shopify://shop_images/product-features-bg.jpg",
     "pre_footer_bg": "shopify://shop_images/pre-footer-bg.jpg",
     "pre_footer_title": "HARD THINGS \nARE WORTH \nDOING",
+    "how_it_works_bg": "shopify://shop_images/helmet-explode-white-bg.jpg",
+    "how_it_works_nuro_badge": "shopify://shop_images/badge-brain-protection.png",
+    "how_it_works_text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. <br/><br/>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur.</p>",
+    "how_it_works_flex_text": "Flexing helps to distribute the impact energy over a broader area of the helmet, reducing the localized force.",
+    "how_it_works_crumple_text": "Similar to the crumple zones in cars, NURO cells are designed to absorb impact energy.",
+    "how_it_works_glide_text": "Gliding movement helps to distribute rotational forces",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
