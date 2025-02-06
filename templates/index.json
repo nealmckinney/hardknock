@@ -46,10 +46,15 @@
         "lower_button_text": "Learn More",
         "lower_image": "shopify://shop_images/fpo-mission-helmet.jpg"
       }
+    },
+    "hk_how_it_works_UiTPJG": {
+      "type": "hk-how-it-works",
+      "settings": {}
     }
   },
   "order": [
     "hk_page_header_RdXHaQ",
-    "hk_mission_section_mKpbEQ"
+    "hk_mission_section_mKpbEQ",
+    "hk_how_it_works_UiTPJG"
   ]
 }
