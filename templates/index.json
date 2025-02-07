@@ -50,11 +50,25 @@
     "hk_how_it_works_UiTPJG": {
       "type": "hk-how-it-works",
       "settings": {}
+    },
+    "hk_banner_ktHfpb": {
+      "type": "hk-banner",
+      "settings": {
+        "background_image": "shopify://shop_images/fpo-banner.jpg",
+        "pre_title": "Our achievements:",
+        "title": "Consumer Buzz, Industry Accolades, Don’t Take Our Word for it...",
+        "body": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "button_label": "Learn More",
+        "button_link": "shopify://pages/data-sale-opt-out",
+        "text_alignment": "right",
+        "full_width": true
+      }
     }
   },
   "order": [
     "hk_page_header_RdXHaQ",
     "hk_mission_section_mKpbEQ",
+    "hk_banner_ktHfpb",
     "hk_how_it_works_UiTPJG"
   ]
 }
