@@ -47,10 +47,6 @@
         "lower_image": "shopify://shop_images/fpo-mission-helmet.jpg"
       }
     },
-    "hk_how_it_works_UiTPJG": {
-      "type": "hk-how-it-works",
-      "settings": {}
-    },
     "hk_banner_ktHfpb": {
       "type": "hk-banner",
       "settings": {
@@ -63,12 +59,30 @@
         "text_alignment": "right",
         "full_width": true
       }
+    },
+    "hk_how_it_works_UiTPJG": {
+      "type": "hk-how-it-works",
+      "settings": {}
+    },
+    "hk_banner_6ej8MM": {
+      "type": "hk-banner",
+      "settings": {
+        "background_image": "shopify://shop_images/fpo-banner2.jpg",
+        "pre_title": "Video Feature:",
+        "title": "TBI in the Workplace",
+        "body": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "button_label": "Watch the Video",
+        "button_link": "shopify://pages/data-sale-opt-out",
+        "text_alignment": "left",
+        "full_width": false
+      }
     }
   },
   "order": [
     "hk_page_header_RdXHaQ",
     "hk_mission_section_mKpbEQ",
     "hk_banner_ktHfpb",
-    "hk_how_it_works_UiTPJG"
+    "hk_how_it_works_UiTPJG",
+    "hk_banner_6ej8MM"
   ]
 }
