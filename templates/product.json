@@ -169,6 +169,10 @@
     "hk_how_it_works_qeHht4": {
       "type": "hk-how-it-works",
       "settings": {}
+    },
+    "hk_product_testimonials_TrpVee": {
+      "type": "hk-product-testimonials",
+      "settings": {}
     }
   },
   "order": [
@@ -177,6 +181,7 @@
     "hk_product_features_JEqBQE",
     "hk_product_accessories_KiQqmf",
     "related-products",
-    "hk_how_it_works_qeHht4"
+    "hk_how_it_works_qeHht4",
+    "hk_product_testimonials_TrpVee"
   ]
 }
