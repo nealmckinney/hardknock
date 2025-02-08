@@ -39,18 +39,22 @@
                 {% endif %}
 
                 <div class="text">
-                  {% if testimonial.name != blank %}
-                    <h2 class="h3 product-testimonials__item-title mt-0 mb-2">{{ testimonial.name }}</h2>
-                  {% endif %}
-
                   {% if testimonial.text != blank %}
-                    <div class="product-testimonials__item-text mb-4">
-                      <p>{{ testimonial.text | metafield_tag | strip_html | truncate: 100 }}</p>
+                    <div class="product-testimonials__item-text mb-2">
+                      <p>{{ testimonial.text | metafield_tag | strip_html | truncate: 200 }}</p>
                     </div>
                   {% endif %}
 
+                  {% if testimonial.name != blank %}
+                    <h2 class="h6 color-black product-testimonials__item-title mt-0 mb-2">{{ testimonial.name }}</h2>
+                  {% endif %}
+
+                  {% if testimonial.location != blank %}
+                    <p class="color-black product-testimonials__item-location mt-0 mb-4">{{ testimonial.location }}</p>
+                  {% endif %}
+
                   <a
-                    href="/pages/testimonials/{{ testimonial.handle }}"
+                    href="{{ testimonial.system.url }}"
                     class="button product-testimonials__item-link width-auto"
                     >Learn More</a
                   >
@@ -86,11 +90,10 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    border: 10px solid #e1e1e1;
   }
 
   .product-testimonials__item .text {
-    padding: 40px 24px;
+    padding: 0px 24px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -107,7 +110,8 @@
 
   .testimonial-image {
     aspect-ratio: 1 / 1;
-    padding: 40px;
+    padding: 32px;
+    max-width: 260px;
     /* background-color: #000; */
   }
 

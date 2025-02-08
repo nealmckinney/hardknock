@@ -1,0 +1,85 @@
+{% schema %}
+{
+  "name": "HK Testimonial Detail",
+  "tag": "section",
+  "disabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name"
+    },
+    {
+      "type": "text",
+      "id": "location",
+      "label": "Location"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Testimonial Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HK Testimonial Detail"
+    }
+  ]
+}
+{% endschema %}
+
+{%- style -%}
+  .testimonial-detail__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .testimonial-detail__text-content {
+    padding: 2rem 0;
+  }
+  .testimonial-detail__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .testimonial-detail__content {
+      grid-template-columns: 1fr;
+    }
+  }
+{%- endstyle -%}
+
+<div class="testimonial-detail v-pad-8 lg-v-pad-10">
+  <div class="testimonial-detail__containe page-width">
+    <div class="testimonial-detail__content">
+      <div class="testimonial-detail__text-content">
+        <h1 class="testimonial-detail__name mb-2">{{ section.settings.name }}</h1>
+        <h2 class="h5 testimonial-detail__location mb-4">{{ section.settings.location }}</h2>
+        <div class="testimonial-detail__testimonial">
+          {{ section.settings.text }}
+        </div>
+      </div>
+      {%- if section.settings.image != blank -%}
+        <div class="testimonial-detail__image-wrapper">
+          <img
+            src="{{ section.settings.image | image_url: width: 800 }}"
+            alt="Photo of {{ section.settings.name }}"
+            loading="lazy"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
+            class="testimonial-detail__image"
+          >
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
