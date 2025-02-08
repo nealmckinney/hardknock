@@ -58,6 +58,26 @@
       "id": "full_width",
       "label": "Full Width",
       "default": true
+    },
+    {
+      "type": "range",
+      "id": "gradient_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Desktop Gradient Opacity",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "mobile_gradient_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Mobile Gradient Opacity",
+      "default": 50
     }
   ],
   "presets": [
@@ -153,6 +173,7 @@
     height: 100%;
     z-index: 1;
     background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    opacity: {{ section.settings.gradient_opacity }}%;
   }
 
   .banner-section .hk-banner.text-right-right .background-image:before {
@@ -178,7 +199,8 @@
       width: 100%;
       height: 100%;
       z-index: 1;
-      background: rgba(0, 0, 0, 0.5) !important;
+      opacity: {{ section.settings.mobile_gradient_opacity }}%;
+      background: rgba(0, 0, 0, 1) !important;
     }
   }
 

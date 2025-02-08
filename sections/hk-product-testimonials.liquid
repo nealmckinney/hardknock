@@ -1,0 +1,205 @@
+{% schema %}
+{
+  "name": "HK Product Testimonials",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "presets": [
+    {
+      "name": "HK Product Testimonials"
+    }
+  ]
+}
+{% endschema %}
+
+{% if product.metafields.custom.testimonials != blank %}
+  <section class="product-testimonials-section side-margin-auto relative z-index-0 pb-1">
+    <div class="container page-width">
+      <h2 class="h1 product-features__title center mb-6 lg-mb-8">Testimonials</h2>
+      <product-testimonials-slider>
+        <div class="product-testimonials swiper">
+          <div class="swiper-wrapper">
+            {% for testimonial in product.metafields.custom.testimonials.value %}
+              <div class="product-testimonials__item swiper-slide radius-20 overflow-hidden">
+                {% if testimonial.image != blank %}
+                  <div class="testimonial-image relative">
+                    <div class="inner relative circle overflow-hidden">
+                      {{
+                        testimonial.image
+                        | image_url: width: 760
+                        | image_tag:
+                          widths: '380, 760',
+                          class: 'testimonial-image__image object-fit-cover circle',
+                          loading: 'lazy',
+                          sizes: '380px',
+                          alt: testimonial.name
+                      }}
+                    </div>
+                  </div>
+                {% endif %}
+
+                <div class="text">
+                  {% if testimonial.name != blank %}
+                    <h2 class="h3 product-testimonials__item-title mt-0 mb-2">{{ testimonial.name }}</h2>
+                  {% endif %}
+
+                  {% if testimonial.text != blank %}
+                    <div class="product-testimonials__item-text mb-4">
+                      <p>{{ testimonial.text | metafield_tag | strip_html | truncate: 100 }}</p>
+                    </div>
+                  {% endif %}
+
+                  <a
+                    href="/pages/testimonials/{{ testimonial.handle }}"
+                    class="button product-testimonials__item-link width-auto"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </product-testimonials-slider>
+    </div>
+  </section>
+{% endif %}
+
+<style>
+  .product-testimonials-section {
+    margin-top: -315px;
+    padding-top: 315px;
+    overflow: hidden;
+  }
+
+  .product-testimonials {
+    position: relative;
+    padding-bottom: 60px;
+  }
+
+  .product-testimonials__item {
+    width: 100%;
+    flex-basis: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #e1e1e1;
+  }
+
+  .product-testimonials__item .text {
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .product-testimonials__item .text .button {
+    width: fit-content;
+    align-self: flex-start;
+  }
+
+  .product-testimonials__item-link {
+    margin-top: auto;
+  }
+
+  .testimonial-image {
+    aspect-ratio: 1 / 1;
+    padding: 40px;
+    /* background-color: #000; */
+  }
+
+  .testimonial-image .inner {
+    height: 100%;
+  }
+
+  .product-testimonials-section .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .product-testimonials-section .background:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff;
+  }
+
+  .swiper-pagination-bullet {
+    background: #fff;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+
+  .product-testimonials.swiper {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+  }
+
+  .product-testimonials__item.swiper-slide {
+    height: auto;
+  }
+
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+  }
+</style>
+
+<script>
+  class ProductTestimonialsSlider extends HTMLElement {
+    constructor() {
+      super();
+      window.addEventListener('load', () => {
+        this.slider = new Swiper(this.querySelector('.swiper'), {
+          slidesPerView: 1.2,
+          centeredSlides: false,
+          spaceBetween: 20,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3.5,
+              spaceBetween: 40,
+            },
+          },
+        });
+      });
+    }
+  }
+  customElements.define('product-testimonials-slider', ProductTestimonialsSlider);
+</script>
