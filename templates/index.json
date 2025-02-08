@@ -57,7 +57,21 @@
         "button_label": "Learn More",
         "button_link": "shopify://pages/data-sale-opt-out",
         "text_alignment": "right",
-        "full_width": true
+        "full_width": true,
+        "gradient_opacity": 100,
+        "mobile_gradient_opacity": 50
+      }
+    },
+    "hk_products_carousel_wMJtYE": {
+      "type": "hk-products-carousel",
+      "settings": {
+        "title": "Featured Products",
+        "products": [
+          "t2-max-safety-helmet",
+          "t2-pro-safety-helmet",
+          "reflective-sticker",
+          "rear-suspension-pad"
+        ]
       }
     },
     "hk_how_it_works_UiTPJG": {
@@ -74,7 +88,9 @@
         "button_label": "Watch the Video",
         "button_link": "shopify://pages/data-sale-opt-out",
         "text_alignment": "left",
-        "full_width": false
+        "full_width": false,
+        "gradient_opacity": 100,
+        "mobile_gradient_opacity": 50
       }
     }
   },
@@ -82,6 +98,7 @@
     "hk_page_header_RdXHaQ",
     "hk_mission_section_mKpbEQ",
     "hk_banner_ktHfpb",
+    "hk_products_carousel_wMJtYE",
     "hk_how_it_works_UiTPJG",
     "hk_banner_6ej8MM"
   ]
