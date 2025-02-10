@@ -82,18 +82,15 @@
         </div>
       {% endif %}
 
-      {% if section.blocks.size > 0 %}
+      {% if collection.products.size > 0 and collection.metafields.custom.header_explore_buttons %}
         <div class="hardknock-page-header__buttons">
-          {% for block in section.blocks %}
-            {% if block.type == 'button' %}
-              <a
-                href="{{ block.settings.button_link }}"
-                class="button button--{{ block.settings.button_style }}"
-                {{ block.shopify_attributes }}
-              >
-                {{ block.settings.button_text }}
-              </a>
-            {% endif %}
+          {% for product in collection.products limit: 2 %}
+            <a
+              href="{{ product.url }}"
+              class="button{% if forloop.index0 == 0 %} button--green{% endif %}"
+            >
+              Explore {{ product.title | remove: ' Safety Helmet' }}
+            </a>
           {% endfor %}
         </div>
       {% endif %}
