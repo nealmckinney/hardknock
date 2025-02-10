@@ -12,53 +12,65 @@
 }
 {% endschema %}
 
-<div class="hk-products-list">
+<section class="hk-products-list-section pb-6 lg-pb-8 relative z-index-1">
   {% if collection.products.size > 0 %}
-    <div class="hk-products-grid">
+    <div class="hk-products-list page-width">
       {% for product in collection.products %}
         <div class="hk-product-card">
           {% assign bg_image = product.metafields.custom.collection_background_image %}
 
-          <div
-            class="hk-product-card__background"
+          <div class="hk-product-card__background relative radius-15 overflow-hidden">
             {% if bg_image %}
-              style="background-image: url({{ bg_image | image_url }})"
+              {{
+                bg_image
+                | image_url: width: 1400
+                | image_tag:
+                  widths: '700, 1100, 1400',
+                  class: 'hk-product-card__background-image object-fit-cover',
+                  loading: 'lazy',
+                  sizes: '100vw',
+                  alt: product.title
+              }}
             {% endif %}
-          >
-            <div class="hk-product-card__content">
-              <div class="hk-product-card__text">
-                <p class="hk-product-card__pretitle">Hardknock</p>
-                <h3 class="hk-product-card__title">{{ product.title }}</h3>
-                <div class="hk-product-card__description">
-                  {{ product.description | strip_html | truncate: 100 }}
+            <div class="hk-product-card__content flex-container page-width relative z-index-1">
+              <div class="hk-product-card__text mt-6 lg-mt-8">
+                <h2 class="h5 uppercase hk-product-card__pretitle color-white mb-2">Hardknock</h2>
+                <h2 class="h2 hk-product-card__title color-white mt-0 mb-2">{{ product.title }}</h2>
+                <div class="hk-product-card__description color-white">
+                  {{ product.description | strip_html | truncate: 150 }}
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="hk-product-card__content lower page-width flex-container flex-clear-1024 column-gap-60">
+            <div class="hk-product-card__image relative z-index-2">
+              {% if product.featured_image %}
+                {{
+                  product.featured_image
+                  | image_url: width: 760
+                  | image_tag:
+                    widths: '380, 760, 1400',
+                    class: 'product__image block',
+                    loading: 'lazy',
+                    sizes: '380px',
+                    alt: product.title
+                }}
+              {% endif %}
+            </div>
 
+            <div class="hk-product-card__content-lower pt-4 lg-pt-6">
+              {% if product.metafields.custom.features != blank %}
                 <div class="hk-product-card__bullets">
-                  <!-- Placeholder for bullet points -->
+                  <h2 class="h5">Pro Features</h2>
                   <ul>
-                    <li>Bullet point 1</li>
-                    <li>Bullet point 2</li>
-                    <li>Bullet point 3</li>
+                    {% for feature in product.metafields.custom.features.value %}
+                      <li>{{ feature.title }}</li>
+                    {% endfor %}
                   </ul>
                 </div>
+              {% endif %}
 
-                <a href="{{ product.url }}" class="hk-product-card__button"> Learn More </a>
-              </div>
-
-              <div class="hk-product-card__image">
-                {% if product.featured_image %}
-                  {{
-                    product.featured_image
-                    | image_url: width: 760
-                    | image_tag:
-                      widths: '380, 760, 1400',
-                      class: 'product__image block',
-                      loading: 'lazy',
-                      sizes: '380px',
-                      alt: product.title
-                  }}
-                {% endif %}
-              </div>
+              <a href="{{ product.url }}" class="button">Learn More</a>
             </div>
           </div>
         </div>
@@ -69,76 +81,54 @@
       <p>No products found in this collection</p>
     </div>
   {% endif %}
-</div>
+</section>
 
-{% stylesheet %}
-  .hk-products-list {
-    padding: 2rem 0;
+<style>
+  .hk-product-card:not(:last-child) {
+    margin-bottom: 60px;
   }
 
-  .hk-products-grid {
-    display: grid;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-
-  .hk-product-card {
-    position: relative;
+  .hk-product-card__text {
+    max-width: 400px;
+    flex-basis: 400px;
   }
 
   .hk-product-card__background {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 2rem;
+    border: 3px solid var(--color-green);
+    aspect-ratio: 1/0.9;
   }
 
-  .hk-product-card__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
+  .hk-product-card:nth-child(even) .hk-product-card__content {
+    flex-direction: row-reverse;
   }
 
-  .hk-product-card__pretitle {
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+  .hk-product-card__image {
+    max-width: 515px;
+    width: 70%;
+    margin-top: -100px;
   }
 
-  .hk-product-card__title {
-    margin-bottom: 1rem;
+  .hk-products-list-section {
+    margin-top: -100px;
   }
 
-  .hk-product-card__description {
-    margin-bottom: 1.5rem;
-  }
-
-  .hk-product-card__bullets {
-    margin-bottom: 1.5rem;
-  }
-
-  .hk-product-card__button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    background-color: #000;
-    color: #fff;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-
-  .hk-product-card__button:hover {
-    background-color: #333;
-  }
-
-  .hk-product-card__image img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  @media (max-width: 768px) {
-    .hk-product-card__content {
-      grid-template-columns: 1fr;
+  @media (min-width: 1025px) {
+    .hk-products-list-section {
+      margin-top: -225px;
+    }
+    .hk-product-card:nth-child(even) .hk-product-card__text,
+    .hk-product-card:nth-child(even) .hk-product-card__image {
+      margin-right: 60px;
+    }
+    .hk-product-card:not(:last-child) {
+      margin-bottom: 80px;
+    }
+    .hk-product-card__image {
+      width: 50%;
+      margin-top: -150px;
+    }
+    .hk-product-card__background {
+      aspect-ratio: 1/0.4;
     }
   }
-{% endstylesheet %}
+</style>
