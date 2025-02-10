@@ -26,8 +26,13 @@
         "background_image": "{{ collection.image }}"
       }
     },
+    "hk_products_list_kxQwRe": {
+      "type": "hk-products-list",
+      "settings": {}
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -50,6 +55,7 @@
   "order": [
     "banner",
     "hk_collection_header_MWmjLc",
+    "hk_products_list_kxQwRe",
     "product-grid"
   ]
 }
