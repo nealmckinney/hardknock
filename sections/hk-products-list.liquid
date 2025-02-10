@@ -1,0 +1,144 @@
+{% schema %}
+{
+  "name": "HK Products List",
+  "enabled_on": {
+    "templates": ["collection"]
+  },
+  "presets": [
+    {
+      "name": "HK Products List"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="hk-products-list">
+  {% if collection.products.size > 0 %}
+    <div class="hk-products-grid">
+      {% for product in collection.products %}
+        <div class="hk-product-card">
+          {% assign bg_image = product.metafields.custom.collection_background_image %}
+
+          <div
+            class="hk-product-card__background"
+            {% if bg_image %}
+              style="background-image: url({{ bg_image | image_url }})"
+            {% endif %}
+          >
+            <div class="hk-product-card__content">
+              <div class="hk-product-card__text">
+                <p class="hk-product-card__pretitle">Hardknock</p>
+                <h3 class="hk-product-card__title">{{ product.title }}</h3>
+                <div class="hk-product-card__description">
+                  {{ product.description | strip_html | truncate: 100 }}
+                </div>
+
+                <div class="hk-product-card__bullets">
+                  <!-- Placeholder for bullet points -->
+                  <ul>
+                    <li>Bullet point 1</li>
+                    <li>Bullet point 2</li>
+                    <li>Bullet point 3</li>
+                  </ul>
+                </div>
+
+                <a href="{{ product.url }}" class="hk-product-card__button"> Learn More </a>
+              </div>
+
+              <div class="hk-product-card__image">
+                {% if product.featured_image %}
+                  {{
+                    product.featured_image
+                    | image_url: width: 760
+                    | image_tag:
+                      widths: '380, 760, 1400',
+                      class: 'product__image block',
+                      loading: 'lazy',
+                      sizes: '380px',
+                      alt: product.title
+                  }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="hk-products-empty">
+      <p>No products found in this collection</p>
+    </div>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .hk-products-list {
+    padding: 2rem 0;
+  }
+
+  .hk-products-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .hk-product-card {
+    position: relative;
+  }
+
+  .hk-product-card__background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+  }
+
+  .hk-product-card__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hk-product-card__pretitle {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .hk-product-card__title {
+    margin-bottom: 1rem;
+  }
+
+  .hk-product-card__description {
+    margin-bottom: 1.5rem;
+  }
+
+  .hk-product-card__bullets {
+    margin-bottom: 1.5rem;
+  }
+
+  .hk-product-card__button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .hk-product-card__button:hover {
+    background-color: #333;
+  }
+
+  .hk-product-card__image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .hk-product-card__content {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstylesheet %}

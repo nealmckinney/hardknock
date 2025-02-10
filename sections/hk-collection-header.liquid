@@ -1,0 +1,158 @@
+{% schema %}
+{
+  "name": "HK Collection Header",
+  "enabled_on": {
+    "templates": ["collection"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "Mobile Background Image (optional)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HK Collection Header"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="hardknock-page-header">
+  {% assign bg_image = section.settings.background_image %}
+  {% assign mobile_bg_image = section.settings.mobile_background_image %}
+
+  <picture class="hardknock-page-header__background">
+    {% if mobile_bg_image != blank %}
+      <source
+        media="(max-width: 768px)"
+        srcset="
+          {{ mobile_bg_image | image_url: width: 375 }} 375w,
+          {{ mobile_bg_image | image_url: width: 550 }} 550w,
+          {{ mobile_bg_image | image_url: width: 750 }} 750w
+        "
+        sizes="100vw"
+      >
+    {% endif %}
+    {% if bg_image != blank %}
+      <source
+        srcset="
+          {{ bg_image | image_url: width: 750 }} 750w,
+          {{ bg_image | image_url: width: 1100 }} 1100w,
+          {{ bg_image | image_url: width: 1500 }} 1500w,
+          {{ bg_image | image_url: width: 2000 }} 2000w
+        "
+        sizes="100vw"
+      >
+      <img
+        src="{{ bg_image | image_url: width: 1500 }}"
+        alt=""
+        loading="eager"
+        width="{{ bg_image.width }}"
+        height="{{ bg_image.height }}"
+      >
+    {% endif %}
+  </picture>
+
+  <div class="hardknock-page-header__container page-width page-width-desktop-x">
+    <div class="hardknock-page-header__content">
+      <h1 class="hardknock-page-header__title color-white">
+        {{ section.settings.title }}
+      </h1>
+
+      {% if section.settings.content != blank %}
+        <div class="hardknock-page-header__text color-white">
+          {{ section.settings.content }}
+        </div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="hardknock-page-header__buttons">
+          {% for block in section.blocks %}
+            {% if block.type == 'button' %}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="button button--{{ block.settings.button_style }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.button_text }}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .hardknock-page-header {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #000;
+  }
+
+  .hardknock-page-header__background {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hardknock-page-header__background:after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .hardknock-page-header__background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hardknock-page-header__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hardknock-page-header__content {
+    position: relative;
+    max-width: var(--container-width);
+    max-width: 565px;
+  }
+
+  .hardknock-page-header__buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+</style>
