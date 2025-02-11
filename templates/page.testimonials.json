@@ -15,9 +15,19 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hk_testimonials_section_g4dz46": {
+      "type": "hk-testimonials-section",
+      "settings": {
+        "testimonials": [
+          "ray-bonito",
+          "j-t-hennigan"
+        ]
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hk_testimonials_section_g4dz46"
   ]
 }
