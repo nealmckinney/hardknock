@@ -1,0 +1,49 @@
+{% schema %}
+{
+  "name": "HK Testimonials Section",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "settings": [
+    {
+      "type": "metaobject_list",
+      "id": "testimonials",
+      "label": "Testimonials",
+      "metaobject_type": "testimonial",
+      "limit": 2
+    }
+  ],
+  "presets": [
+    {
+      "name": "HK Testimonials Section"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="hk-testimonials-section">
+  <div class="container page-width">
+    <h2 class="h1 testimonials-section__title center mb-6 lg-mb-8">Testimonials</h2>
+    {% if section.settings.testimonials != blank %}
+      <div class="testimonials-section__testimonials featured-testimonials">
+        {% for testimonial in section.settings.testimonials %}
+          <div class="testimonial">
+            <h3 class="testimonial__title">{{ testimonial.name }}</h3>
+          </div>
+        {% endfor %}
+      </div>
+
+      <h2 class="h2 testimonials-section__title center mb-6 lg-mb-8">Other Testimonials</h2>
+      <div class="testimonials-section__testimonials">
+        {% assign featured_names = section.settings.testimonials | map: 'name' %}
+        {% for testimonial in metaobjects.testimonial.values %}
+          {% unless featured_names contains testimonial.name %}
+            <div class="testimonial">
+              <h3 class="testimonial__title">{{ testimonial.name }}</h3>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
