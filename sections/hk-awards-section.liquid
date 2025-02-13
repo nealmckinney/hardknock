@@ -1,0 +1,108 @@
+{% schema %}
+{
+  "name": "HK Awards Section",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "blocks": [
+    {
+      "type": "award",
+      "name": "Award",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "article_link",
+          "label": "Article Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HK Awards Section",
+      "blocks": [
+        {
+          "type": "award"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="hk-awards-section">
+  <div class="page-width">
+    <div class="awards mt-6 lg-mt-8 max-width-1200 side-margin-auto">
+      {% for block in section.blocks %}
+        <div class="award mb-6 lg-mb-8">
+          <div class="flex-container space-between flex-clear-960">
+            <div class="image relative radius-15 overflow-hidden">
+              {% if block.settings.image %}
+                {{
+                  block.settings.image
+                  | image_url: width: 760
+                  | image_tag:
+                    widths: '380, 760',
+                    class: 'object-fit-cover',
+                    loading: 'lazy',
+                    sizes: '380px',
+                    alt: block.settings.image.alt
+                }}
+              {% endif %}
+            </div>
+            <div class="text mt-4 md-mt-0">
+              <h2 class="h4 title relative mt-2 mb-0">{{ block.settings.title }}</h2>
+              <div class="copy mt-4">
+                <p>{{ block.settings.text }}</p>
+              </div>
+              {% if block.settings.article_link %}
+                <a href="{{ block.settings.article_link }}" target="_blank" class="button mt-3">
+                  <span>Read the Article</span>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .awards .award .image {
+    height: 100%;
+    aspect-ratio: 1/0.68;
+  }
+
+  .awards .award .flex-container {
+    column-gap: 40px;
+  }
+
+  .awards .award .image {
+    flex: 0 0 calc(50% - 20px);
+    max-width: 500px;
+  }
+
+  .awards .award .text {
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .awards .award:nth-child(even) .flex-container {
+    flex-direction: row-reverse;
+  }
+</style>
