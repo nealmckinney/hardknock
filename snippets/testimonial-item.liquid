@@ -1,0 +1,40 @@
+<div class="product-testimonials__item swiper-slide radius-20 overflow-hidden">
+  {% if testimonial.image != blank %}
+    <div class="testimonial-image relative">
+      <div class="inner relative circle overflow-hidden">
+        {{
+          testimonial.image
+          | image_url: width: 760
+          | image_tag:
+            widths: '380, 760',
+            class: 'testimonial-image__image object-fit-cover circle',
+            loading: 'lazy',
+            sizes: '380px',
+            alt: testimonial.name
+        }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="text">
+    {% if testimonial.text != blank %}
+      <div class="product-testimonials__item-text mb-2">
+        <p>{{ testimonial.text | metafield_tag | strip_html | truncate: 200 }}</p>
+      </div>
+    {% endif %}
+
+    {% if testimonial.name != blank %}
+      <h2 class="h6 color-black product-testimonials__item-title mt-0 mb-2">{{ testimonial.name }}</h2>
+    {% endif %}
+
+    {% if testimonial.location != blank %}
+      <p class="color-black product-testimonials__item-location mt-0 mb-4">{{ testimonial.location }}</p>
+    {% endif %}
+
+    <a
+      href="{{ testimonial.system.url }}"
+      class="button product-testimonials__item-link"
+      >Learn More</a
+    >
+  </div>
+</div>

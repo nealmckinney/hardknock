@@ -20,46 +20,7 @@
         <div class="product-testimonials swiper">
           <div class="swiper-wrapper">
             {% for testimonial in product.metafields.custom.testimonials.value %}
-              <div class="product-testimonials__item swiper-slide radius-20 overflow-hidden">
-                {% if testimonial.image != blank %}
-                  <div class="testimonial-image relative">
-                    <div class="inner relative circle overflow-hidden">
-                      {{
-                        testimonial.image
-                        | image_url: width: 760
-                        | image_tag:
-                          widths: '380, 760',
-                          class: 'testimonial-image__image object-fit-cover circle',
-                          loading: 'lazy',
-                          sizes: '380px',
-                          alt: testimonial.name
-                      }}
-                    </div>
-                  </div>
-                {% endif %}
-
-                <div class="text">
-                  {% if testimonial.text != blank %}
-                    <div class="product-testimonials__item-text mb-2">
-                      <p>{{ testimonial.text | metafield_tag | strip_html | truncate: 200 }}</p>
-                    </div>
-                  {% endif %}
-
-                  {% if testimonial.name != blank %}
-                    <h2 class="h6 color-black product-testimonials__item-title mt-0 mb-2">{{ testimonial.name }}</h2>
-                  {% endif %}
-
-                  {% if testimonial.location != blank %}
-                    <p class="color-black product-testimonials__item-location mt-0 mb-4">{{ testimonial.location }}</p>
-                  {% endif %}
-
-                  <a
-                    href="{{ testimonial.system.url }}"
-                    class="button product-testimonials__item-link width-auto"
-                    >Learn More</a
-                  >
-                </div>
-              </div>
+              {% render 'testimonial-item', testimonial: testimonial %}
             {% endfor %}
           </div>
 
@@ -97,26 +58,19 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-  }
-
-  .product-testimonials__item .text .button {
-    width: fit-content;
-    align-self: flex-start;
-  }
-
-  .product-testimonials__item-link {
-    margin-top: auto;
+    align-items: flex-start;
   }
 
   .testimonial-image {
-    aspect-ratio: 1 / 1;
-    padding: 32px;
+    padding: 0px;
     max-width: 260px;
-    /* background-color: #000; */
+    margin-bottom: 20px;
+    align-self: center;
   }
 
-  .testimonial-image .inner {
-    height: 100%;
+  .testimonial-image img {
+    aspect-ratio: 1 / 1;
+    position: relative;
   }
 
   .product-testimonials-section .background {
