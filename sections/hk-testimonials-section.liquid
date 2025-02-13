@@ -8,9 +8,40 @@
     {
       "type": "metaobject_list",
       "id": "testimonials",
-      "label": "Testimonials",
+      "label": "FeaTestimonials",
       "metaobject_type": "testimonial",
       "limit": 2
+    },
+    {
+      "type": "image_picker",
+      "id": "header_bg_image",
+      "label": "Header Background Image",
+      "info": "1920x1080 for standard resolution. 3840x2160 for 2x."
+    },
+    {
+      "type": "image_picker",
+      "id": "header_mobile_bg_image",
+      "label": "Header Mobile Background Image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header Title"
+    },
+    {
+      "type": "richtext",
+      "id": "header_text",
+      "label": "Header Text"
+    },
+    {
+      "type": "text",
+      "id": "header_button_label",
+      "label": "Header Button Label"
+    },
+    {
+      "type": "url",
+      "id": "header_button_link",
+      "label": "Header Button Link"
     },
     {
       "type": "image_picker",
@@ -26,8 +57,60 @@
 }
 {% endschema %}
 
-<section class="hk-testimonials-section testimonials-landing-page overflow-hidden">
-  <div class="container page-width relative z-index-2">
+<section class="hk-testimonials-section testimonials-landing-page overflow-hidden relative">
+  {% assign bg_image = section.settings.header_bg_image %}
+  {% assign mobile_bg_image = section.settings.header_mobile_bg_image %}
+
+  <picture class="hardknock-page-header__background">
+    {% if mobile_bg_image != blank %}
+      <source
+        media="(max-width: 768px)"
+        srcset="
+          {{ mobile_bg_image | image_url: width: 375 }} 375w,
+          {{ mobile_bg_image | image_url: width: 550 }} 550w,
+          {{ mobile_bg_image | image_url: width: 750 }} 750w
+        "
+        sizes="100vw"
+      >
+    {% endif %}
+    {% if bg_image != blank %}
+      <source
+        srcset="
+          {{ bg_image | image_url: width: 750 }} 750w,
+          {{ bg_image | image_url: width: 1100 }} 1100w,
+          {{ bg_image | image_url: width: 1500 }} 1500w,
+          {{ bg_image | image_url: width: 2000 }} 2000w
+        "
+        sizes="100vw"
+      >
+      <img
+        src="{{ bg_image | image_url: width: 1500 }}"
+        alt=""
+        loading="eager"
+        width="{{ bg_image.width }}"
+        height="{{ bg_image.height }}"
+      >
+    {% endif %}
+  </picture>
+  <div class="container top-container page-width relative z-index-2">
+    <div class="sub-featured-container side-margin-auto">
+      <div class="header-text max-width-640">
+        <h1 class="hardknock-page-header__title color-white mb-4">
+          {{ section.settings.header_title }}
+        </h1>
+
+        {% if section.settings.header_text != blank %}
+          <div class="hardknock-page-header__text color-white mb-5">
+            {{ section.settings.header_text }}
+          </div>
+        {% endif %}
+        {% if section.settings.header_button_label != blank %}
+          <a href="{{ section.settings.header_button_link }}" class="button button--primary">
+            {{ section.settings.header_button_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
     <div class="bg-white sub-featured-container side-margin-auto radius-15 v-pad-6 v-margin-8 lg-v-margin-10">
       <div class="container page-width">
         {% if section.settings.testimonials != blank %}
@@ -102,19 +185,37 @@
 </section>
 
 <style>
-  .testimonials-landing-page {
-    margin-top: -45vh;
+  .hardknock-page-header__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+
+  .top-container {
+    margin-top: 200px;
+  }
+
+  @media (min-width: 1025px) {
+    .top-container {
+      margin-top: 400px;
+    }
   }
 
   .sub-featured-container {
     max-width: 1190px;
+  }
+
+  .sub-featured-container.bg-white {
     border-radius: 15px;
     background: #fffcfc;
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
     position: relative;
   }
 
-  .sub-featured-container::after {
+  .sub-featured-container.bg-white::after {
     content: '';
     position: absolute;
     left: 0;
@@ -126,7 +227,7 @@
     z-index: 0;
   }
 
-  .sub-featured-container::before {
+  .sub-featured-container.bg-white::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -186,9 +287,9 @@
   }
 
   @media (min-width: 1300px) {
-    .sub-featured-container {
+    /* .sub-featured-container {
       margin-top: 200px !important;
-    }
+    } */
 
     .sub-featured-testimonial:first-child .image {
       margin-right: -180px;

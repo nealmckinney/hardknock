@@ -31,13 +31,6 @@
     },
     {
       "type": "checkbox",
-      "id": "taller_header",
-      "label": "Taller Header",
-      "default": false,
-      "info": "If enabled, the header will be taller than screen height. Use for layouts like Testimonials."
-    },
-    {
-      "type": "checkbox",
       "id": "inner_content_style",
       "label": "Inner Content Style",
       "default": false,
@@ -117,7 +110,7 @@
 }
 {% endschema %}
 
-<div class="hardknock-page-header taller-header-{{ section.settings.taller_header }} inner-content-style-{{ section.settings.inner_content_style }} inner-content-text-position-{{ section.settings.inner_content_text_position }}">
+<div class="hardknock-page-header inner-content-style-{{ section.settings.inner_content_style }} inner-content-text-position-{{ section.settings.inner_content_text_position }}">
   {% assign bg_image = section.settings.background_image %}
   {% assign mobile_bg_image = section.settings.mobile_background_image %}
 
@@ -206,10 +199,6 @@
     overflow: hidden;
     height: 100vh;
     background-color: #000;
-  }
-
-  .hardknock-page-header.taller-header-true {
-    height: 120vh;
   }
 
   .hardknock-page-header__background {
