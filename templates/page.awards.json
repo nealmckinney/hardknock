@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hk_page_header_GCbhLj": {
+      "type": "hk-page-header",
+      "blocks": {
+        "button_MynzMM": {
+          "type": "button",
+          "settings": {
+            "button_text": "Click Here",
+            "button_link": "",
+            "button_style": "green"
+          }
+        }
+      },
+      "block_order": [
+        "button_MynzMM"
+      ],
+      "settings": {
+        "title": "Awards &amp; Media",
+        "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hk_page_header_GCbhLj"
+  ]
+}
