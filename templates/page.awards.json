@@ -34,7 +34,12 @@
       ],
       "settings": {
         "title": "Awards &amp; Media",
-        "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>"
+        "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "background_image": "shopify://shop_images/fpo-header.jpg",
+        "taller_header": false,
+        "inner_content_style": true,
+        "inner_content_background_image": "shopify://shop_images/awards-header-inner-bg.jpg",
+        "inner_content_text_position": "top-left"
       }
     }
   },
