@@ -21,12 +21,52 @@
     {
       "type": "image_picker",
       "id": "background_image",
-      "label": "Background Image"
+      "label": "Background Image",
+      "info": "1920x1080 for standard resolution. 3840x2160 for 2x."
     },
     {
       "type": "image_picker",
       "id": "mobile_background_image",
       "label": "Mobile Background Image (optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "taller_header",
+      "label": "Taller Header",
+      "default": false,
+      "info": "If enabled, the header will be taller than screen height. Use for layouts like Testimonials."
+    },
+    {
+      "type": "checkbox",
+      "id": "inner_content_style",
+      "label": "Inner Content Style",
+      "default": false,
+      "info": "If enabled, the content will be inside the header container with an additional background image. Use for layouts like Awards and Careers."
+    },
+    {
+      "type": "image_picker",
+      "id": "inner_content_background_image",
+      "label": "Inner Content Background Image",
+      "info": "1440x690 for standard resolution. 2880x1380 for 2x."
+    },
+    {
+      "type": "select",
+      "id": "inner_content_text_position",
+      "label": "Inner Content Text Position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top Left"
+        },
+        {
+          "value": "top-right",
+          "label": "Top Right"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        }
+      ]
     }
   ],
   "blocks": [
@@ -77,7 +117,7 @@
 }
 {% endschema %}
 
-<div class="hardknock-page-header">
+<div class="hardknock-page-header taller-header-{{ section.settings.taller_header }}">
   {% assign bg_image = section.settings.background_image %}
   {% assign mobile_bg_image = section.settings.mobile_background_image %}
 
@@ -150,6 +190,10 @@
     overflow: hidden;
     height: 100vh;
     background-color: #000;
+  }
+
+  .hardknock-page-header.taller-header-true {
+    height: 120vh;
   }
 
   .hardknock-page-header__background {
