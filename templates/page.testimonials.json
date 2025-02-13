@@ -11,9 +11,31 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "hk_page_header_KDfXJV": {
+      "type": "hk-page-header",
+      "blocks": {
+        "button_wL4iLk": {
+          "type": "button",
+          "settings": {
+            "button_text": "Tell us your story",
+            "button_link": "",
+            "button_style": "green"
+          }
+        }
+      },
+      "block_order": [
+        "button_wL4iLk"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "content": "<p>Below are testimonials from individuals who have benefited from using HardKnock helmets on the job. Alongside glowing customer reviews, our helmets are backed by medical endorsements and peer-reviewed research, proving they are based on solid scientific evidence, not conjecture. We have seen the devastating effects of traumatic brain injuries firsthand. If our helmets can reduce or eliminate the risk of TBIs, then every effort has been worthwhile.</p>",
+        "background_image": "shopify://shop_images/fpo-header.jpg"
       }
     },
     "hk_testimonials_section_g4dz46": {
@@ -22,12 +44,14 @@
         "testimonials": [
           "ray-bonito",
           "j-t-hennigan"
-        ]
+        ],
+        "quote_background_image": "shopify://shop_images/quote-bg.jpg"
       }
     }
   },
   "order": [
     "main",
+    "hk_page_header_KDfXJV",
     "hk_testimonials_section_g4dz46"
   ]
 }
