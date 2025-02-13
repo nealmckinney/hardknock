@@ -41,10 +41,39 @@
         "inner_content_background_image": "shopify://shop_images/awards-header-inner-bg.jpg",
         "inner_content_text_position": "top-left"
       }
+    },
+    "hk_awards_section_Yn4yP7": {
+      "type": "hk-awards-section",
+      "blocks": {
+        "award_ptG8dR": {
+          "type": "award",
+          "settings": {
+            "title": "Time Magazine",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+            "article_link": "https://www.google.com/",
+            "image": "shopify://shop_images/fpo-award.jpg"
+          }
+        },
+        "award_6VRB8M": {
+          "type": "award",
+          "settings": {
+            "title": "Fast Company",
+            "text": "<p>DiscoverFast CompanyLorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Read the Article</p>",
+            "article_link": "https://www.google.com/",
+            "image": "shopify://shop_images/fpo-award.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "award_ptG8dR",
+        "award_6VRB8M"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "hk_page_header_GCbhLj"
+    "hk_page_header_GCbhLj",
+    "hk_awards_section_Yn4yP7"
   ]
 }
