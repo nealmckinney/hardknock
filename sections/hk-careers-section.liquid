@@ -1,0 +1,114 @@
+{% schema %}
+{
+  "name": "HK Careers Section",
+  "enabled_on": {
+    "templates": ["index", "page"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "benefits_title",
+      "label": "Benefits Title",
+      "default": "Hardknock Employee Benefits"
+    },
+    {
+      "type": "richtext",
+      "id": "benefits_text",
+      "label": "Benefits Text"
+    },
+    {
+      "type": "text",
+      "id": "positions_title",
+      "label": "Positions Title",
+      "default": "Available Positions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "position",
+      "name": "Position",
+      "settings": [
+        {
+          "type": "text",
+          "id": "position_title",
+          "label": "Position Title",
+          "default": "Position Title"
+        },
+        {
+          "type": "richtext",
+          "id": "position_description",
+          "label": "Position Description"
+        },
+        {
+          "type": "url",
+          "id": "position_link",
+          "label": "Position Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HK Careers Section",
+      "blocks": [
+        {
+          "type": "position"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="careers-section v-pad-6 lg-v-pad-8">
+  <div class="container page-width">
+    <h2 class="h2 center mb-5 lg-mb-7">{{ section.settings.benefits_title }}</h2>
+    <div class="benefits-text two-column-text mb-5 lg-mb-7">
+      {{ section.settings.benefits_text }}
+    </div>
+
+    {% if section.settings.positions_title != blank %}
+      <h2 class="h2 center mb-5 lg-mb-7">{{ section.settings.positions_title }}</h2>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="positions-grid mb-5 lg-mb-7">
+        {% for block in section.blocks %}
+          <div class="position-item">
+            <h2 class="h4 mb-5">{{ block.settings.position_title }}</h2>
+            {% if block.settings.position_description != blank %}
+              <div class="position-description">
+                {{ block.settings.position_description }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.position_link != blank %}
+              <a href="{{ block.settings.position_link }}" class="button mt-4"> Apply Now </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .positions-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 40px;
+    row-gap: 90px;
+  }
+
+  @media (min-width: 768px) {
+    .positions-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .positions-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

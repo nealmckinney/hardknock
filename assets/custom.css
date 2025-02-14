@@ -33,6 +33,17 @@ h6, .h6, .md-h6 { font-size:18px; }
 	font-weight: 300 !important;
 }
 
+@media(min-width:1025px) {
+	.two-column-text {
+		column-count: 2;
+		column-gap: 40px;
+	}
+	
+	.two-column-text p {
+		break-inside: avoid-column;
+	}
+}
+
 
 /* ------------------
     PAGE WIDTH
