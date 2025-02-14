@@ -31,6 +31,27 @@
     "hk_careers_section_yxefih": {
       "type": "hk-careers-section",
       "blocks": {
+        "benefit_tbzJhE": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Insurance:",
+            "benefit_description": "<p>We offer comprehensive medical, dental, and vision insurance plans to ensure you and your family have access to quality healthcare. Life and disability coverage is also available for added peace of mind</p>"
+          }
+        },
+        "benefit_mt3cGP": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "401K:",
+            "benefit_description": "<p>Our 401K plan comes with competitive employer matching, helping you invest in your retirement while you build your career with us. We’re committed to supporting your financial well-being.</p>"
+          }
+        },
+        "benefit_eeqniC": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Holidays:",
+            "benefit_description": "<p>We recognize the importance of time to recharge and spend with loved ones. At NURO, employees enjoy &lcub;xx&rcub; paid holidays throughout the year, including major national holidays, plus additional time off to celebrate personal or cultural traditions. We believe in creating a balance between work and rest, ensuring you're refreshed and ready to innovate.</p>"
+          }
+        },
         "position_48mXHr": {
           "type": "position",
           "settings": {
@@ -65,6 +86,9 @@
         }
       },
       "block_order": [
+        "benefit_tbzJhE",
+        "benefit_mt3cGP",
+        "benefit_eeqniC",
         "position_48mXHr",
         "position_yQxAb4",
         "position_wJ6rrm",
@@ -72,7 +96,6 @@
       ],
       "settings": {
         "benefits_title": "Hardknock Employee Benefits",
-        "benefits_text": "<h4>Insurance:</h4><p>We offer comprehensive medical, dental, and vision insurance plans to ensure you and your family have access to quality healthcare. Life and disability coverage is also available for added peace of mind<br/></p><h4>401K:</h4><p>Our 401K plan comes with competitive employer matching, helping you invest in your retirement while you build your career with us. We’re committed to supporting your financial well-being.</p><h4>Holidays:</h4><p>We recognize the importance of time to recharge and spend with loved ones. At NURO, employees enjoy &lcub;xx&rcub; paid holidays throughout the year, including major national holidays, plus additional time off to celebrate personal or cultural traditions. We believe in creating a balance between work and rest, ensuring you're refreshed and ready to innovate.</p><h4>Health & Wellness:</h4><p>At NURO we prioritize your health and wellness. We offer wellness programs, fitness incentives, and access to mental health resources to help you stay healthy and energized both in and outside of work.</p><h4>Family:</h4><p>Family comes first. We offer flexible schedules, generous parental leave, and family support resources to ensure you can maintain a healthy work-life balance while taking care of what matters most.</p><h4>Company Culture:</h4><p>We foster a collaborative, innovation-driven environment where every team member is valued. With a focus on inclusion and creativity, we encourage new ideas and continuous improvement in everything we do.</p><h4>Employee Development:</h4><p>We believe in helping our employees grow. From mentorship programs to ongoing training and development, we invest in your professional journey to ensure you have the tools to succeed and advance in your career.</p>",
         "positions_title": "Available Positions"
       }
     }
