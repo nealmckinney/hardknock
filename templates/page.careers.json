@@ -52,6 +52,34 @@
             "benefit_description": "<p>We recognize the importance of time to recharge and spend with loved ones. At NURO, employees enjoy &lcub;xx&rcub; paid holidays throughout the year, including major national holidays, plus additional time off to celebrate personal or cultural traditions. We believe in creating a balance between work and rest, ensuring you're refreshed and ready to innovate.</p>"
           }
         },
+        "benefit_FgeUdz": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Health & Wellness:",
+            "benefit_description": "<p>At NURO we prioritize your health and wellness. We offer wellness programs, fitness incentives, and access to mental health resources to help you stay healthy and energized both in and outside of work.</p>"
+          }
+        },
+        "benefit_mY8cEe": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Family:",
+            "benefit_description": "<p>Family comes first. We offer flexible schedules, generous parental leave, and family support resources to ensure you can maintain a healthy work-life balance while taking care of what matters most.</p>"
+          }
+        },
+        "benefit_49Rzkp": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Company Culture:",
+            "benefit_description": "<p>We foster a collaborative, innovation-driven environment where every team member is valued. With a focus on inclusion and creativity, we encourage new ideas and continuous improvement in everything we do.</p>"
+          }
+        },
+        "benefit_D7MmHd": {
+          "type": "benefit",
+          "settings": {
+            "benefit_title": "Employee Development:",
+            "benefit_description": "<p>We believe in helping our employees grow. From mentorship programs to ongoing training and development, we invest in your professional journey to ensure you have the tools to succeed and advance in your career.</p>"
+          }
+        },
         "position_48mXHr": {
           "type": "position",
           "settings": {
@@ -89,6 +117,10 @@
         "benefit_tbzJhE",
         "benefit_mt3cGP",
         "benefit_eeqniC",
+        "benefit_FgeUdz",
+        "benefit_mY8cEe",
+        "benefit_49Rzkp",
+        "benefit_D7MmHd",
         "position_48mXHr",
         "position_yQxAb4",
         "position_wJ6rrm",
