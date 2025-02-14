@@ -72,14 +72,14 @@
 }
 {% endschema %}
 
-<section class="careers-section v-pad-6 lg-v-pad-8">
+<section class="careers-section mt-6 lg-mt-7 mb-8 lg-mb-9">
   <div class="container page-width">
     <h2 class="h2 center mb-5 lg-mb-7">{{ section.settings.benefits_title }}</h2>
     <div class="benefits-text two-column-text mb-5 lg-mb-7">
       {% for block in section.blocks %}
         {% if block.type == 'benefit' %}
           <div class="benefit-item">
-            <h2 class="h4 mb-3">{{ block.settings.benefit_title }}</h2>
+            <h2 class="h4 mb-2 mt-0">{{ block.settings.benefit_title }}</h2>
             <div class="benefit-description">
               {{ block.settings.benefit_description }}
             </div>
@@ -97,7 +97,7 @@
         {% for block in section.blocks %}
           {% if block.type == 'position' %}
             <div class="position-item">
-              <h2 class="h4 mb-5">{{ block.settings.position_title }}</h2>
+              <h2 class="h4 mb-3">{{ block.settings.position_title }}</h2>
               {% if block.settings.position_description != blank %}
                 <div class="position-description">
                   {{ block.settings.position_description }}
@@ -105,7 +105,7 @@
               {% endif %}
 
               {% if block.settings.position_link != blank %}
-                <a href="{{ block.settings.position_link }}" class="button mt-4"> Apply Now </a>
+                <a href="{{ block.settings.position_link }}" class="button mt-2"> Apply Now </a>
               {% endif %}
             </div>
           {% endif %}
@@ -116,6 +116,13 @@
 </section>
 
 <style>
+  .benefits-text.two-column-text {
+    column-gap: 75px;
+  }
+  .benefit-description p,
+  .position-description p {
+    margin-top: 0;
+  }
   .positions-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

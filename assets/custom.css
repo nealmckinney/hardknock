@@ -1,4 +1,3 @@
-
 /* ------------------
     TYPOGRAPHY
 ------------------ */
@@ -34,6 +33,7 @@ h6, .h6, .md-h6 { font-size:18px; }
 }
 
 @media(min-width:1025px) {
+	/* Original column-count version */
 	.two-column-text {
 		column-count: 2;
 		column-gap: 40px;
@@ -41,6 +41,23 @@ h6, .h6, .md-h6 { font-size:18px; }
 	
 	.two-column-text > * {
 		break-inside: avoid-column;
+	}
+
+	/* Grid version with auto-flow */
+	.two-column-flow {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 40px;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		grid-auto-rows: min-content;
+		align-items: start;
+	}
+
+	/* When flowing down, items should fill rows first, then columns */
+	.two-column-flow.flow-down {
+		grid-auto-flow: row;
+		row-gap: 40px;
 	}
 }
 
