@@ -11,13 +11,48 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hk_page_header_W9g9tD": {
+      "type": "hk-page-header",
+      "settings": {
+        "title": "Careers",
+        "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "background_image": "shopify://shop_images/fpo-header.jpg",
+        "inner_content_style": true,
+        "inner_content_background_image": "shopify://shop_images/awards-header-inner-bg.jpg",
+        "inner_content_text_position": "bottom-center"
+      }
+    },
+    "hk_careers_section_yxefih": {
+      "type": "hk-careers-section",
+      "blocks": {
+        "position_48mXHr": {
+          "type": "position",
+          "settings": {
+            "position_title": "Position Title",
+            "position_description": "",
+            "position_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "position_48mXHr"
+      ],
+      "settings": {
+        "benefits_title": "Hardknock Employee Benefits",
+        "benefits_text": "<p>Insurance:<br/>We offer comprehensive medical, dental, and vision insurance plans to ensure you and your family have access to quality healthcare. Life and disability coverage is also available for added peace of mind<br/><br/>401K:<br/>Our 401K plan comes with competitive employer matching, helping you invest in your retirement while you build your career with us. We’re committed to supporting your financial well-being.<br/><br/>Holidays:<br/>We recognize the importance of time to recharge and spend with loved ones. At NURO, employees enjoy &lcub;xx&rcub; paid holidays throughout the year, including major national holidays, plus additional time off to celebrate personal or cultural traditions. We believe in creating a balance between work and rest, ensuring you're refreshed and ready to innovate.<br/><br/>Health & Wellness:<br/>At NURO we prioritize your health and wellness. We offer wellness programs, fitness incentives, and access to mental health resources to help you stay healthy and energized both in and outside of work.<br/><br/>Family:<br/>Family comes first. We offer flexible schedules, generous parental leave, and family support resources to ensure you can maintain a healthy work-life balance while taking care of what matters most.<br/><br/>Company Culture:<br/>We foster a collaborative, innovation-driven environment where every team member is valued. With a focus on inclusion and creativity, we encourage new ideas and continuous improvement in everything we do.<br/><br/>Employee Development:<br/>We believe in helping our employees grow. From mentorship programs to ongoing training and development, we invest in your professional journey to ensure you have the tools to succeed and advance in your career.</p>",
+        "positions_title": "Available Positions"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hk_page_header_W9g9tD",
+    "hk_careers_section_yxefih"
   ]
 }
