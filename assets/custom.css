@@ -39,7 +39,7 @@ h6, .h6, .md-h6 { font-size:18px; }
 		column-gap: 40px;
 	}
 	
-	.two-column-text p {
+	.two-column-text > * {
 		break-inside: avoid-column;
 	}
 }
