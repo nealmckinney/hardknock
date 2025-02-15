@@ -1,0 +1,104 @@
+{% schema %}
+{
+  "name": "Blog Content",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Enter your content here</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image Caption"
+    },
+    {
+      "type": "select",
+      "id": "image_alignment",
+      "label": "Image Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Content"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="blog-content">
+  {% if section.settings.image %}
+    <div class="blog-content-wrapper page-width {% if section.settings.image_alignment == 'right' %}image-right{% else %}image-left{% endif %}">
+      <div class="image-container">
+        {{
+          section.settings.image
+          | image_url: width: 800
+          | image_tag: widths: '700, 1100, 1400', loading: 'lazy', sizes: '100vw'
+        }}
+        {% if section.settings.image_caption != blank %}
+          <div class="image-caption">{{ section.settings.image_caption }}</div>
+        {% endif %}
+      </div>
+      <div class="content">
+        {{ section.settings.content }}
+      </div>
+    </div>
+  {% else %}
+    <div class="content-only">
+      {{ section.settings.content }}
+    </div>
+  {% endif %}
+</section>
+
+<style>
+  .blog-content-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .blog-content-wrapper.image-right {
+    flex-direction: row-reverse;
+  }
+
+  .blog-content-wrapper .image-container {
+    flex: 0 0 40%;
+  }
+
+  .blog-content-wrapper .image-caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .blog-content-wrapper .content {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .blog-content-wrapper {
+      flex-direction: column;
+    }
+
+    .image-container {
+      width: 100%;
+    }
+  }
+</style>

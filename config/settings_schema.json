@@ -1484,6 +1484,17 @@
     ]
   },
   {
+    "name": "News & Events Settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "news_events_page_header_bg",
+        "label": "News & Events Page Header Background Image",
+        "info": "Default background image for the Page Header section, used on News & Events pages."
+      }
+    ]
+  },
+  {
     "name": "Pre Footer Section",
     "settings": [
       {
