@@ -19,6 +19,60 @@
     },
     "hk_company_section_RVDdWD": {
       "type": "hk-company-section",
+      "blocks": {
+        "team_member_7GFFdb": {
+          "type": "team_member",
+          "settings": {
+            "team_member_name": "Team Member Name",
+            "team_member_position": "Team Member Position",
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
+            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+          }
+        },
+        "team_member_KrMVrt": {
+          "type": "team_member",
+          "settings": {
+            "team_member_name": "Team Member Name",
+            "team_member_position": "Team Member Position",
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
+            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+          }
+        },
+        "team_member_g4ig7E": {
+          "type": "team_member",
+          "settings": {
+            "team_member_name": "Team Member Name",
+            "team_member_position": "Team Member Position",
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
+            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+          }
+        },
+        "team_member_EpnagA": {
+          "type": "team_member",
+          "settings": {
+            "team_member_name": "Team Member Name",
+            "team_member_position": "Team Member Position",
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
+            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+          }
+        },
+        "team_member_Ym9VcX": {
+          "type": "team_member",
+          "settings": {
+            "team_member_name": "Team Member Name",
+            "team_member_position": "Team Member Position",
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
+            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "team_member_7GFFdb",
+        "team_member_KrMVrt",
+        "team_member_g4ig7E",
+        "team_member_EpnagA",
+        "team_member_Ym9VcX"
+      ],
       "settings": {
         "header_bg_image": "shopify://shop_images/fpo-header.jpg",
         "header_title": "Company",
@@ -27,7 +81,8 @@
         "header_button_link": "",
         "our_mission_image": "shopify://shop_images/fpo-award.jpg",
         "our_mission_text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Lorem ipsum dolor sit amet consectetur. Sit e</p>",
-        "our_team_text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>"
+        "our_team_text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "our_team_image": "shopify://shop_images/quote-bg.jpg"
       }
     }
   },
