@@ -11,13 +11,28 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hk_company_section_RVDdWD": {
+      "type": "hk-company-section",
+      "settings": {
+        "header_bg_image": "shopify://shop_images/fpo-header.jpg",
+        "header_title": "Company",
+        "header_text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "header_button_label": "Explore Careers",
+        "header_button_link": "",
+        "our_mission_image": "shopify://shop_images/fpo-award.jpg",
+        "our_mission_text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Lorem ipsum dolor sit amet consectetur. Sit e</p>",
+        "our_team_text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hk_company_section_RVDdWD"
   ]
 }
