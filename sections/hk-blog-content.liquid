@@ -6,6 +6,44 @@
   },
   "settings": [
     {
+      "type": "text",
+      "id": "leading_title",
+      "label": "Leading Title",
+      "info": "If you want a title above the text and image."
+    },
+    {
+      "type": "select",
+      "id": "leading_title_size",
+      "label": "Leading Title Size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h2"
+    },
+    {
       "type": "richtext",
       "id": "content",
       "label": "Content",
@@ -48,6 +86,9 @@
 
 <section class="blog-content">
   {% if section.settings.image %}
+    {% if section.settings.leading_title != blank %}
+      <h2 class="{{ section.settings.leading_title_size }}">{{ section.settings.leading_title }}</h2>
+    {% endif %}
     <div class="blog-content-wrapper page-width {% if section.settings.image_alignment == 'right' %}image-right{% else %}image-left{% endif %}">
       <div class="image-container">
         {{
