@@ -1,0 +1,23 @@
+<div class="team-member">
+  <div class="image relative circle overflow-hidden ratio-1-1">
+    {{
+      block.settings.team_member_image
+      | image_url: width: 424
+      | image_tag:
+        widths: '212, 424',
+        class: 'object-fit-cover',
+        loading: 'lazy',
+        sizes: '100vw',
+        alt: block.settings.team_member_image.alt
+    }}
+  </div>
+  <h2 class="h4 center mt-5">
+    {{ block.settings.team_member_name }}
+  </h2>
+  <h2 class="h6 center mt-5">
+    {{ block.settings.team_member_position }}
+  </h2>
+  <p class="description">
+    {{ block.settings.team_member_description }}
+  </p>
+</div>

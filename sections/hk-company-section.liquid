@@ -1,17 +1,10 @@
 {% schema %}
 {
-  "name": "HK Testimonials Section",
+  "name": "HK Company Section",
   "enabled_on": {
     "templates": ["page"]
   },
   "settings": [
-    {
-      "type": "metaobject_list",
-      "id": "testimonials",
-      "label": "Featured Testimonials",
-      "metaobject_type": "testimonial",
-      "limit": 2
-    },
     {
       "type": "image_picker",
       "id": "header_bg_image",
@@ -45,19 +38,59 @@
     },
     {
       "type": "image_picker",
-      "id": "quote_background_image",
-      "label": "Quote Background Image"
+      "id": "our_mission_image",
+      "label": "Our Mission Image"
+    },
+    {
+      "type": "richtext",
+      "id": "our_mission_text",
+      "label": "Our Mission Text"
+    },
+    {
+      "type": "richtext",
+      "id": "our_team_text",
+      "label": "Our Team Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "text",
+          "id": "team_member_name",
+          "label": "Team Member Name",
+          "default": "Team Member Name"
+        },
+        {
+          "type": "text",
+          "id": "team_member_position",
+          "label": "Team Member Position",
+          "default": "Team Member Position"
+        },
+        {
+          "type": "textarea",
+          "id": "team_member_description",
+          "label": "Team Member Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "team_member_image",
+          "label": "Team Member Image"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "HK Testimonials Section"
+      "name": "HK Company Section"
     }
   ]
 }
 {% endschema %}
 
-<section class="hk-testimonials-section testimonials-landing-page overflow-hidden relative">
+<section class="hk-company-section overflow-hidden relative">
   {% assign bg_image = section.settings.header_bg_image %}
   {% assign mobile_bg_image = section.settings.header_mobile_bg_image %}
 
@@ -113,74 +146,65 @@
     </div>
     <div class="bg-white sub-featured-container side-margin-auto radius-15 v-pad-6 v-margin-8 lg-v-margin-10">
       <div class="container page-width">
-        {% if section.settings.testimonials != blank %}
-          <div class="sub-featured-testimonials relative z-index-2">
-            {% for testimonial in section.settings.testimonials %}
-              <div class="sub-featured-testimonial relative z-index-1">
-                <div class="flex-container flex-clear-1024 align-center column-gap-80">
-                  {% if testimonial.image != blank %}
-                    <div class="image relative circle overflow-hidden ratio-1-1 mb-4 lg-mb-0 flex-basis-60 flex-shrink-0">
-                      {{
-                        testimonial.image
-                        | image_url: width: 760
-                        | image_tag:
-                          widths: '380, 760',
-                          class: 'object-fit-cover',
-                          loading: 'lazy',
-                          sizes: '380px',
-                          alt: testimonial.name
-                      }}
-                    </div>
-                  {% endif %}
-                  <div class="text">
-                    <h2 class="h4 title">{{ testimonial.name }}</h2>
-                    {% if testimonial.location %}
-                      <h2 class="h6 mt-2">{{ testimonial.location }}</h2>
-                    {% endif %}
-                    {% assign summary = testimonial.summary_text | default: testimonial.text %}
-                    {% if summary %}
-                      <div class="intro cms-content mt-4 line-height-175">
-                        <p>{{ summary | metafield_tag | strip_html | truncate: 200 }}</p>
-                      </div>
-                    {% endif %}
-                    {% assign first_name = testimonial.name | split: ' ' | first %}
-                    <a href="{{ testimonial.system.url }}" class="button mt-4">Read {{ first_name }}'s Full Story</a>
-                  </div>
-                </div>
-                {% if forloop.first and testimonial.quote_text %}
-                  <div class="block-quote-container relative pt-4 pb-8 lg-pb-9 mt-6">
-                    <div class="block-quote center v-margin-4">
-                      <div class="quote-icon color-green h1 font-weight-300 v-margin-0 relative z-index-2">“”</div>
-                      <h2 class="h2 font-weight-300 color-green v-margin-0 relative z-index-2">
-                        “{{ testimonial.quote_text }}”
-                      </h2>
-                    </div>
-                    {% if section.settings.quote_background_image != blank %}
-                      <div class="quote-background-image absolute-bg">
-                        {{
-                          section.settings.quote_background_image
-                          | image_url: width: 1200
-                          | image_tag: widths: '1200', class: 'object-fit-cover', loading: 'lazy', sizes: '1200px'
-                        }}
-                      </div>
-                    {% endif %}
-                  </div>
-                {% endif %}
-              </div>
-            {% endfor %}
-          </div>
-        {% endif %}
+        <div class="our-mission-container flex-container flex-clear-1024">
+          {% if section.settings.our_mission_image != blank %}
+            <div class="our-mission-image relative">
+              {{
+                section.settings.our_mission_image
+                | image_url: width: 1200
+                | image_tag:
+                  widths: '600, 1200',
+                  class: 'object-fit-cover',
+                  loading: 'lazy',
+                  sizes: '100vw',
+                  alt: section.settings.our_mission_image.alt
+              }}
+            </div>
+          {% endif %}
+          {% if section.settings.our_mission_title != blank %}
+            <h2 class="h3 our-mission-title">
+              {{ section.settings.our_mission_title }}
+            </h2>
+          {% endif %}
+          {% if section.settings.our_mission_text != blank %}
+            <div class="our-mission-text">
+              {{ section.settings.our_mission_text }}
+            </div>
+          {% endif %}
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="testimonials-grid v-margin-6 lg-v-margin-8">
-      {% assign featured_names = section.settings.testimonials | map: 'name' %}
-      {% for testimonial in metaobjects.testimonial.values %}
-        {% unless featured_names contains testimonial.name %}
-          {% render 'testimonial-item', testimonial: testimonial %}
-        {% endunless %}
-      {% endfor %}
+  <div class="our-team-banner relative">
+    <div class="container page-width center">
+      <h2 class="h2 our-team-title color-white">Our Team</h2>
+      {% if section.settings.our_team_text != blank %}
+        <div class="our-team-text center color-white">
+          {{ section.settings.our_team_text }}
+        </div>
+      {% endif %}
     </div>
+    {% if section.settings.our_team_image != blank %}
+      {{
+        section.settings.our_team_image
+        | image_url: width: 2880
+        | image_tag:
+          widths: '700, 1100, 1400, 2880',
+          class: 'object-fit-cover absolute-bg',
+          loading: 'lazy',
+          sizes: '100vw',
+          alt: section.settings.our_team_image.alt
+      }}
+    {% endif %}
+  </div>
+
+  <div class="our-team-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'team_member' %}
+        {% render 'team-member-item', block: block %}
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 
