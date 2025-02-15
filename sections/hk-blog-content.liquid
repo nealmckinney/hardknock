@@ -50,7 +50,7 @@
         {{
           section.settings.image
           | image_url: width: 800
-          | image_tag: widths: '700, 1100, 1400', loading: 'lazy', sizes: '100vw'
+          | image_tag: widths: '700, 1100, 1400', class: 'block border-radius-15', loading: 'lazy', sizes: '100vw'
         }}
         {% if section.settings.image_caption != blank %}
           <div class="image-caption">{{ section.settings.image_caption }}</div>

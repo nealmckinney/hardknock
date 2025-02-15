@@ -1484,13 +1484,13 @@
     ]
   },
   {
-    "name": "News & Events Settings",
+    "name": "Blog & Events Settings",
     "settings": [
       {
         "type": "image_picker",
-        "id": "news_events_page_header_bg",
-        "label": "News & Events Page Header Background Image",
-        "info": "Default background image for the Page Header section, used on News & Events pages."
+        "id": "blog_events_page_header_bg",
+        "label": "Blog & Events Page Header Background Image",
+        "info": "Default background image for the Page Header section, used on Blog & Events pages."
       }
     ]
   },
