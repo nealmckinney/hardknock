@@ -143,17 +143,17 @@
           </div>
         {% endif %}
         {% if section.settings.header_button_label != blank %}
-          <a href="{{ section.settings.header_button_link }}" class="button button--primary">
+          <a href="{{ section.settings.header_button_link }}" class="button button--green">
             {{ section.settings.header_button_label }}
           </a>
         {% endif %}
       </div>
     </div>
-    <div class="bg-white sub-featured-container side-margin-auto radius-15 v-pad-6 v-margin-8 lg-v-margin-10">
+    <div class="bg-white sub-featured-container side-margin-auto radius-15 v-pad-6 mt-8 lg-mt-10 mb-8">
       <div class="container page-width">
-        <div class="our-mission-container flex-container flex-clear-1024">
+        <div class="our-mission-container flex-container flex-clear-1024 column-gap-80">
           {% if section.settings.our_mission_image != blank %}
-            <div class="our-mission-image relative">
+            <div class="our-mission-image relative flex-basis-40 flex-shrink-0">
               {{
                 section.settings.our_mission_image
                 | image_url: width: 1200
@@ -166,24 +166,22 @@
               }}
             </div>
           {% endif %}
-          {% if section.settings.our_mission_title != blank %}
-            <h2 class="h3 our-mission-title">
-              {{ section.settings.our_mission_title }}
-            </h2>
-          {% endif %}
-          {% if section.settings.our_mission_text != blank %}
-            <div class="our-mission-text">
-              {{ section.settings.our_mission_text }}
-            </div>
-          {% endif %}
+          <div class="text">
+            <h2 class="h2 our-mission-title">Our Mission</h2>
+            {% if section.settings.our_mission_text != blank %}
+              <div class="our-mission-text">
+                {{ section.settings.our_mission_text }}
+              </div>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="our-team-banner relative">
-    <div class="container page-width center">
-      <h2 class="h2 our-team-title color-white">Our Team</h2>
+  <div class="our-team-banner relative flex-container align-center justify-center">
+    <div class="container page-width center relative z-index-2 max-width-640">
+      <h2 class="h1 our-team-title color-white mb-0">Our Team</h2>
       {% if section.settings.our_team_text != blank %}
         <div class="our-team-text center color-white">
           {{ section.settings.our_team_text }}
@@ -204,7 +202,7 @@
     {% endif %}
   </div>
 
-  <div class="our-team-grid">
+  <div class="our-team-grid container page-width v-margin-8 lg-v-margin-10">
     {% for block in section.blocks %}
       {% if block.type == 'team_member' %}
         {% render 'team-member-item', block: block %}
@@ -227,9 +225,44 @@
     margin-top: 200px;
   }
 
+  .our-team-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 20px;
+    row-gap: 40px;
+  }
+
+  .team-member .image {
+    max-width: 212px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .team-member p {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    .our-team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (min-width: 1025px) {
     .top-container {
       margin-top: 400px;
+    }
+    .our-team-grid {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 80px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .our-team-grid {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
@@ -239,34 +272,7 @@
 
   .sub-featured-container.bg-white {
     border-radius: 15px;
-    background: #fffcfc;
-    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
     position: relative;
-  }
-
-  .sub-featured-container.bg-white::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -100px;
-    height: 400px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 50%, white);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .sub-featured-container.bg-white::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    right: 0;
-    bottom: -30px;
-    background: #000;
-    width: 500px;
-    height: 1px;
-    transform: translateX(-50%);
-    z-index: 1;
   }
 
   .header-text > .container {
@@ -274,155 +280,22 @@
     padding-right: 0;
   }
 
-  .block-quote {
-    max-width: 682px;
-    margin-left: auto;
-    margin-right: auto;
+  .our-mission-image {
+    aspect-ratio: 1/0.68;
   }
 
-  .block-quote h2 {
-    font-weight: 400;
-    line-height: 1.5;
+  .our-team-banner {
+    aspect-ratio: 1/0.37;
   }
 
-  .sub-featured-testimonial .image {
-    border: 2px solid var(--color-green);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  @media (min-width: 1025px) {
-    .sub-featured-testimonial:nth-child(odd) > .flex-container {
-      flex-direction: row-reverse;
-    }
-
-    .sub-featured-testimonial:first-child .image {
-      margin-right: -160px;
-      margin-top: -160px;
-    }
-
-    .sub-featured-testimonial:last-child .image {
-      margin-left: -160px;
-    }
-
-    .testimonials-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  @media (min-width: 1300px) {
-    /* .sub-featured-container {
-      margin-top: 200px !important;
-    } */
-
-    .sub-featured-testimonial:first-child .image {
-      margin-right: -180px;
-      margin-top: -200px;
-      flex-basis: 65%;
-    }
-
-    .sub-featured-testimonial:last-child .image {
-      margin-left: -180px;
-      /* margin-bottom: -200px; */
-      flex-basis: 65%;
-    }
-  }
-
-  .testimonials-landing-page .title.hairline {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .testimonials-landing-page .title.hairline::before,
-  .testimonials-landing-page .title.hairline::after {
-    content: '';
-    height: 1px;
-    background-color: var(--color-grey);
-    flex: 1;
-  }
-
-  .testimonials-carousel .testimonial-item {
-    width: 80%;
-    margin-right: 32px;
-  }
-
-  @media (min-width: 768px) {
-    .testimonials-carousel .testimonial-item {
-      width: 50%;
-      margin-right: 48px;
-    }
-  }
-
-  @media (min-width: 1025px) {
-    .testimonials-carousel .testimonial-item {
-      width: 30%;
-      margin-right: 48px;
-    }
-  }
-
-  .testimonials-carousel .flickity-viewport {
-    overflow: visible;
-  }
-
-  .product-testimonials__item {
-    width: 100%;
-    flex-basis: auto;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .product-testimonials__item .text {
-    padding: 0px 24px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: flex-start;
-  }
-
-  .testimonial-image {
-    padding: 0px;
-    max-width: 260px;
-    margin-bottom: 20px;
-    align-self: center;
-  }
-
-  .testimonial-image img {
-    aspect-ratio: 1 / 1;
-    position: relative;
-  }
-
-  .quote-background-image:before {
+  .our-team-banner::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
-  .block-quote-container {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    margin-bottom: -50px;
-  }
-
-  @media (min-width: 750px) {
-    .block-quote-container {
-      margin-left: -5rem;
-      margin-right: -5rem;
-      margin-bottom: -100px;
-    }
   }
 </style>
