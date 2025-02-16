@@ -1488,9 +1488,15 @@
     "settings": [
       {
         "type": "image_picker",
-        "id": "blog_events_page_header_bg",
+        "id": "blog_page_header_bg",
         "label": "Blog & Events Page Header Background Image",
         "info": "Default background image for the Page Header section, used on Blog & Events pages."
+      },
+      {
+        "type": "image_picker",
+        "id": "blog_page_header_bg_mobile",
+        "label": "Blog & Events Page Header Background Image (Mobile)",
+        "info": "Optional background image for the Page Header section, used on Blog & Events pages on mobile devices."
       }
     ]
   },
