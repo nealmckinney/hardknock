@@ -71,6 +71,9 @@
           {{ article.content }}
         </div>
 
+      {%- when 'content_section' -%}
+        {% render 'hk-blog-content', section: block %}
+
       {%- when 'share' -%}
         <div
           class="article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -377,7 +380,144 @@
           "content": "t:sections.main-article.blocks.share.settings.title_info.content"
         }
       ]
+    },
+    {
+      "type": "content_section",
+      "name": "Content Section",
+      "limit": 40,
+      "settings": [
+        {
+          "type": "text",
+          "id": "leading_title",
+          "label": "Leading Title",
+          "info": "If you want a title above the text and image."
+        },
+        {
+          "type": "select",
+          "id": "leading_title_size",
+          "label": "Leading Title Size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Enter your content here</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "label": "Image Caption"
+        },
+        {
+          "type": "select",
+          "id": "image_alignment",
+          "label": "Image Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        }
+      ]
     }
   ]
 }
 {% endschema %}
+
+<style>
+  .article-width {
+    max-width: 1440px;
+  }
+
+  .article-template__content img {
+    display: block;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1025px) {
+    .article-template__content img[style*='float:left'],
+    .article-template__content img[style*='float: left'] {
+      margin-right: 40px;
+      max-width: 50%;
+    }
+
+    .article-template__content img[style*='float:right'],
+    .article-template__content img[style*='float: right'] {
+      margin-left: 40px;
+      max-width: 50%;
+    }
+  }
+
+  .blog-content-wrapper {
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .blog-content-wrapper.image-right {
+    flex-direction: row-reverse;
+  }
+
+  .blog-content-wrapper .image-container {
+    flex: 0 0 50%;
+  }
+
+  .blog-content-wrapper .image-caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .blog-content-wrapper .content {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .blog-content-wrapper {
+      flex-direction: column;
+    }
+
+    .image-container {
+      width: 100%;
+    }
+  }
+</style>

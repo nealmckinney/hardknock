@@ -1,0 +1,28 @@
+<section class="blog-content">
+  {% if section.settings.image %}
+    {% if section.settings.leading_title != blank %}
+      <div class="page-width article-width">
+        <h2 class="{{ section.settings.leading_title_size }}">{{ section.settings.leading_title }}</h2>
+      </div>
+    {% endif %}
+    <div class="blog-content-wrapper flex-container flex-clear-1024 page-width article-width {% if section.settings.image_alignment == 'right' %}image-right{% else %}image-left{% endif %}">
+      <div class="image-container">
+        {{
+          section.settings.image
+          | image_url: width: 800
+          | image_tag: widths: '700, 1100, 1400', class: 'block radius-15', loading: 'lazy', sizes: '100vw'
+        }}
+        {% if section.settings.image_caption != blank %}
+          <div class="image-caption">{{ section.settings.image_caption }}</div>
+        {% endif %}
+      </div>
+      <div class="content">
+        {{ section.settings.content }}
+      </div>
+    </div>
+  {% else %}
+    <div class="page-width article-width">
+      {{ section.settings.content }}
+    </div>
+  {% endif %}
+</section>

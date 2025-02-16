@@ -70,6 +70,10 @@ h6, .h6, .md-h6 { font-size:18px; }
     padding: 0 1.5rem;
 }
 
+.page-width--narrow {
+	max-width: 1440px;
+}
+
 .header.page-width,
 	.utility-bar__grid.page-width {
 	  padding-left: 1.5rem;
@@ -568,7 +572,6 @@ img.object-fit-contain {
     color: var(--color-black);
 	border: 1px solid var(--color-black);
 }
-
 
 /* Margins */
 

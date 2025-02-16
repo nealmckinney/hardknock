@@ -87,14 +87,16 @@
 <section class="blog-content">
   {% if section.settings.image %}
     {% if section.settings.leading_title != blank %}
-      <h2 class="{{ section.settings.leading_title_size }}">{{ section.settings.leading_title }}</h2>
+      <div class="page-width article-width">
+        <h2 class="{{ section.settings.leading_title_size }}">{{ section.settings.leading_title }}</h2>
+      </div>
     {% endif %}
-    <div class="blog-content-wrapper page-width {% if section.settings.image_alignment == 'right' %}image-right{% else %}image-left{% endif %}">
+    <div class="blog-content-wrapper flex-container flex-clear-1024 page-width article-width {% if section.settings.image_alignment == 'right' %}image-right{% else %}image-left{% endif %}">
       <div class="image-container">
         {{
           section.settings.image
           | image_url: width: 800
-          | image_tag: widths: '700, 1100, 1400', class: 'block border-radius-15', loading: 'lazy', sizes: '100vw'
+          | image_tag: widths: '700, 1100, 1400', class: 'block radius-15', loading: 'lazy', sizes: '100vw'
         }}
         {% if section.settings.image_caption != blank %}
           <div class="image-caption">{{ section.settings.image_caption }}</div>
@@ -105,16 +107,19 @@
       </div>
     </div>
   {% else %}
-    <div class="content-only">
+    <div class="page-width article-width">
       {{ section.settings.content }}
     </div>
   {% endif %}
 </section>
 
 <style>
+  .article-width {
+    max-width: 1440px;
+  }
+
   .blog-content-wrapper {
-    display: flex;
-    gap: 2rem;
+    gap: 40px;
     align-items: flex-start;
   }
 
@@ -123,7 +128,7 @@
   }
 
   .blog-content-wrapper .image-container {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
   }
 
   .blog-content-wrapper .image-caption {
