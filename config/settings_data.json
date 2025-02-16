@@ -125,7 +125,7 @@
     "cart_drawer_collection": "",
     "product_header_bg": "shopify://shop_images/fpo-header.jpg",
     "product_features_bg": "shopify://shop_images/product-features-bg.jpg",
-    "blog_events_page_header_bg": "shopify://shop_images/fpo-header.jpg",
+    "blog_page_header_bg": "shopify://shop_images/fpo-header.jpg",
     "pre_footer_bg": "shopify://shop_images/pre-footer-bg.jpg",
     "pre_footer_title": "HARD THINGS \nARE WORTH \nDOING",
     "how_it_works_bg": "shopify://shop_images/helmet-explode-white-bg.jpg",
@@ -134,6 +134,7 @@
     "how_it_works_flex_text": "Flexing helps to distribute the impact energy over a broader area of the helmet, reducing the localized force.",
     "how_it_works_crumple_text": "Similar to the crumple zones in cars, NURO cells are designed to absorb impact energy.",
     "how_it_works_glide_text": "Gliding movement helps to distribute rotational forces",
+    "blog_events_page_header_bg": "shopify://shop_images/fpo-header.jpg",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
