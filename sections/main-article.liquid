@@ -559,7 +559,7 @@
 
   .blog-content-wrapper .image-caption {
     margin-top: 0.5rem;
-    font-size: 0.9rem;
+    font-style: italic;
     color: #666;
   }
 
@@ -580,8 +580,10 @@
   .hardknock-page-header {
     position: relative;
     overflow: hidden;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #000;
+    margin-top: 0 !important;
+    padding-top: 180px;
   }
 
   .hardknock-page-header__background {
@@ -668,5 +670,30 @@
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
+  }
+
+  .article-template__content {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1025px) {
+    .article-template__content {
+      margin-bottom: 80px;
+    }
+  }
+
+  .article-template__content p {
+    max-width: 1200px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  .blog-content p {
+    max-width: 950px;
+    line-height: 1.75;
+  }
+
+  .blog-content h2 {
+    margin-bottom: 10px;
   }
 </style>
