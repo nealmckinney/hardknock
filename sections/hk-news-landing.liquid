@@ -1,0 +1,91 @@
+{% schema %}
+{
+  "name": "HK News Landing",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "settings": [
+    {
+      "type": "article",
+      "id": "featured_post",
+      "label": "Featured Blog Post",
+      "info": "If no post is selected, the most recent post will be displayed."
+    }
+  ],
+  "presets": [
+    {
+      "name": "HK News Landing"
+    }
+  ]
+}
+{% endschema %}
+
+{% assign featured_post = section.settings.featured_post | default: blogs.news.articles.first %}
+
+<div class="hardknock-page-header inner-content-style-{{ section.settings.inner_content_style }} inner-content-text-position-{{ section.settings.inner_content_text_position }}">
+  {% assign bg_image = settings.news_landing_background_image %}
+  {% assign mobile_bg_image = settings.news_landing_background_image_mobile %}
+
+  <picture class="hardknock-page-header__background">
+    {% if mobile_bg_image != blank %}
+      <source
+        media="(max-width: 768px)"
+        srcset="
+          {{ mobile_bg_image | image_url: width: 375 }} 375w,
+          {{ mobile_bg_image | image_url: width: 550 }} 550w,
+          {{ mobile_bg_image | image_url: width: 750 }} 750w
+        "
+        sizes="100vw"
+      >
+    {% endif %}
+    {% if bg_image != blank %}
+      <source
+        srcset="
+          {{ bg_image | image_url: width: 750 }} 750w,
+          {{ bg_image | image_url: width: 1100 }} 1100w,
+          {{ bg_image | image_url: width: 1500 }} 1500w,
+          {{ bg_image | image_url: width: 2000 }} 2000w
+        "
+        sizes="100vw"
+      >
+      <img
+        src="{{ bg_image | image_url: width: 1500 }}"
+        alt=""
+        loading="eager"
+        width="{{ bg_image.width }}"
+        height="{{ bg_image.height }}"
+      >
+    {% endif %}
+  </picture>
+
+  <div class="hardknock-page-header__container page-width ">
+    <div class="inner relative">
+      <div class="hardknock-page-header__content relative z-index-1">
+        <h1 class="hardknock-page-header__title color-white">
+          {{ featured_post.title }}
+        </h1>
+
+        {% if section.settings.content != blank %}
+          <div class="hardknock-page-header__text color-white">
+            {{ featured_post.excerpt }}
+          </div>
+        {% endif %}
+
+        <a href="{{ featured_post.url }}" class="button button--green">Read Story</a>
+      </div>
+
+      <div class="hardknock-page-header__inner-content-background">
+        {{
+          featured_post.image
+          | image_url: width: 1400
+          | image_tag:
+            widths: '700, 1100, 1400',
+            class: 'object-fit-cover',
+            loading: 'lazy',
+            sizes: '100vw',
+            alt: featured_post.image.alt
+        }}
+      </div>
+    </div>
+  </div>
+</div>
