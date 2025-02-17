@@ -15,7 +15,9 @@
 <section class="hk-events-grid section">
   <div class="container page-width">
     <div class="events-grid v-margin-6 lg-v-margin-8">
-      {% for event in metaobjects.event.values %}
+      {% comment %} {% assign sorted_events = metaobjects.event.values | sort: 'start_date.value' %} {% endcomment %}
+      {% assign sorted_events = metaobjects.event.values | sort_natural: 'start_date' %}
+      {% for event in sorted_events %}
         {% render 'event-grid-item', event: event %}
       {% endfor %}
     </div>
@@ -25,13 +27,77 @@
 <style>
   .events-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .event-grid-item {
+    margin-bottom: 40px;
+  }
+
+  .event-grid-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .event-grid-item__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-grid-item .button {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  .event-grid-item .image {
+    aspect-ratio: 1/0.86;
+  }
+
+  .event-grid-item .image:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .event-grid-item .image .date-title {
+    top: 40px;
+    left: 40px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .event-grid-item .image .date-title span {
+    display: block;
+    text-transform: uppercase;
+    line-height: 0.9;
+  }
+
+  .event-grid-item .image .date-title .month {
+    font-size: 40px;
+  }
+
+  .event-grid-item .image .date-title .day {
+    font-size: 100px;
+  }
+
+  @media (min-width: 768px) {
+    .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 1025px) {
     .events-grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

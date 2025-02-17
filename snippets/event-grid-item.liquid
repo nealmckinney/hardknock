@@ -5,13 +5,22 @@
       | image_url: width: 720
       | image_tag: widths: '380, 720', loading: 'lazy', class: 'object-fit-cover'
     }}
+    {% assign date_string = event.start_date | metafield_tag | time_tag: format: 'abbreviated_date' | strip_html %}
+    {% assign date_parts = date_string | split: ' ' %}
+    <h2 class="date-title color-white absolute z-index-2">
+      <span class="month">{{ date_parts[0] }}</span>
+      <span class="day">{{ date_parts[1] | remove: ',' }}</span>
+    </h2>
   </div>
 
   <div class="news-grid-item__content">
-    <h2 class="h3 news-grid-item__title mb-2">{{ event.title }}</h2>
+    <h2 class="h3 news-grid-item__title mb-1">{{ event.title }}</h2>
+    <h2 class="h4 font-weight-300 mt-0 mb-2">
+      {{- event.start_date | metafield_tag | time_tag: format: 'date' -}}
+    </h2>
     <p class="news-grid-item__excerpt">
       {% assign excerpt = event.description %}
-      {{ excerpt | strip_html | truncate: 400 }}
+      {{ excerpt | metafield_tag | strip_html | truncate: 400 }}
     </p>
   </div>
 
