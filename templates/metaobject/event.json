@@ -8,6 +8,19 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "hk_event_detail_M87DND": {
+      "type": "hk-event-detail",
+      "settings": {
+        "title": "{{ metaobject.title.value }}",
+        "description": "{{ metaobject.description | metafield_tag }}",
+        "image": "{{ metaobject.image.value }}",
+        "start_date": "{{ metaobject.start_date | metafield_text }}",
+        "end_date": "{{ metaobject.end_date | metafield_text }}"
+      }
+    }
+  },
+  "order": [
+    "hk_event_detail_M87DND"
+  ]
 }
