@@ -11,13 +11,31 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hk_page_header_pbQMXq": {
+      "type": "hk-page-header",
+      "settings": {
+        "title": "Events",
+        "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "background_image": "shopify://shop_images/fpo-header.jpg",
+        "inner_content_style": true,
+        "inner_content_background_image": "shopify://shop_images/quote-bg.jpg",
+        "inner_content_text_position": "bottom-center"
+      }
+    },
+    "hk_events_grid_ppDTgF": {
+      "type": "hk-events-grid",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "hk_page_header_pbQMXq",
+    "hk_events_grid_ppDTgF"
   ]
 }
