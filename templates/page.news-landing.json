@@ -11,13 +11,21 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hk_news_landing_iWnKYj": {
+      "type": "hk-news-landing",
+      "settings": {
+        "featured_post": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hk_news_landing_iWnKYj"
   ]
 }
