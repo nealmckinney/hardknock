@@ -1,0 +1,19 @@
+<div class="event-grid-item">
+  <div class="image block relative radius-15 overflow-hidden">
+    {{
+      event.image
+      | image_url: width: 720
+      | image_tag: widths: '380, 720', loading: 'lazy', class: 'object-fit-cover'
+    }}
+  </div>
+
+  <div class="news-grid-item__content">
+    <h2 class="h3 news-grid-item__title mb-2">{{ event.title }}</h2>
+    <p class="news-grid-item__excerpt">
+      {% assign excerpt = event.description %}
+      {{ excerpt | strip_html | truncate: 400 }}
+    </p>
+  </div>
+
+  <a href="{{ event.system.url }}" class="button mt-2">Read More</a>
+</div>

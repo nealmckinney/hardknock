@@ -1,0 +1,37 @@
+{% schema %}
+{
+  "name": "HK Events Grid",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "presets": [
+    {
+      "name": "HK Events Grid"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="hk-events-grid section">
+  <div class="container page-width">
+    <div class="events-grid v-margin-6 lg-v-margin-8">
+      {% for event in metaobjects.event.values %}
+        {% render 'event-grid-item', event: event %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (min-width: 1025px) {
+    .events-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

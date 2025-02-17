@@ -142,8 +142,8 @@
 
 <article class="article-template">
   <div class="hardknock-page-header inner-content-style-true">
-    {% assign bg_image = section.settings.image %}
-    {% assign mobile_bg_image = section.settings.image %}
+    {% assign bg_image = settings.blog_page_header_bg %}
+    {% assign mobile_bg_image = settings.blog_page_header_bg_mobile %}
 
     <picture class="hardknock-page-header__background">
       {% if mobile_bg_image != blank %}
