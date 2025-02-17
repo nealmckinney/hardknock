@@ -1,0 +1,19 @@
+<div class="news-grid-item">
+  <div class="image block relative radius-15 overflow-hidden">
+    {{
+      article.image
+      | image_url: width: 720
+      | image_tag: widths: '380, 720', loading: 'lazy', class: 'object-fit-cover'
+    }}
+  </div>
+
+  <div class="news-grid-item__content">
+    <h3 class="news-grid-item__title">{{ article.title }}</h3>
+    <p class="news-grid-item__excerpt">
+      {% assign excerpt = article.excerpt | default: article.content %}
+      {{ excerpt | strip_html | truncate: 400 }}
+    </p>
+  </div>
+
+  <a href="{{ article.url }}" class="button">Read The Article</a>
+</div>

@@ -2,7 +2,7 @@
 {
   "name": "HK News Landing",
   "enabled_on": {
-    "templates": ["page"]
+    "templates": ["page", "blog"]
   },
   "settings": [
     {
@@ -22,9 +22,9 @@
 
 {% assign featured_post = section.settings.featured_post | default: blogs.news.articles.first %}
 
-<div class="hardknock-page-header inner-content-style-{{ section.settings.inner_content_style }} inner-content-text-position-{{ section.settings.inner_content_text_position }}">
-  {% assign bg_image = settings.news_landing_background_image %}
-  {% assign mobile_bg_image = settings.news_landing_background_image_mobile %}
+<div class="hardknock-page-header inner-content-style-true inner-content-text-position-top-left">
+  {% assign bg_image = settings.blog_page_header_bg %}
+  {% assign mobile_bg_image = settings.blog_page_header_bg_mobile %}
 
   <picture class="hardknock-page-header__background">
     {% if mobile_bg_image != blank %}
@@ -65,11 +65,10 @@
           {{ featured_post.title }}
         </h1>
 
-        {% if section.settings.content != blank %}
-          <div class="hardknock-page-header__text color-white">
-            {{ featured_post.excerpt }}
-          </div>
-        {% endif %}
+        <div class="hardknock-page-header__text color-white">
+          {% assign excerpt = featured_post.excerpt | default: featured_post.content | strip_html | truncate: 200 %}
+          <p>{{ excerpt }}</p>
+        </div>
 
         <a href="{{ featured_post.url }}" class="button button--green">Read Story</a>
       </div>
@@ -89,3 +88,80 @@
     </div>
   </div>
 </div>
+
+<div class="page-width sub-featured-posts">
+  {% assign post_count = 0 %}
+  {% assign sub_featured_posts = null | sort %}
+
+  <div class="sub-featured-posts__grid">
+    {% for article in blogs.news.articles %}
+      {% if article.id != featured_post.id and post_count < 2 %}
+        {% render 'news-grid-item', article: article %}
+        {% assign id = article.id | sort %}
+        {% assign sub_featured_posts = sub_featured_posts | concat: id %}
+        {% assign post_count = post_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="page-width main-posts-grid mt-6 mb-8 lg-mb-10">
+  <div class="main-posts-grid__grid">
+    {% for article in blogs.news.articles %}
+      {% unless article.id == featured_post.id or sub_featured_posts contains article.id %}
+        {% render 'news-grid-item', article: article %}
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>
+
+{{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .sub-featured-posts__grid,
+  .main-posts-grid__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  @media (min-width: 768px) {
+    .sub-featured-posts__grid,
+    .main-posts-grid__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .main-posts-grid__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .sub-featured-posts__grid .news-grid-item .image {
+    aspect-ratio: 1/0.56;
+  }
+
+  .main-posts-grid__grid .news-grid-item .image {
+    aspect-ratio: 1/0.56;
+  }
+
+  .news-grid-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .news-grid-item__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .news-grid-item .button {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+</style>
