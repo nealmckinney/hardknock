@@ -8,12 +8,12 @@
   </div>
 
   <div class="news-grid-item__content">
-    <h3 class="news-grid-item__title">{{ article.title }}</h3>
+    <h2 class="h3 news-grid-item__title mb-2">{{ article.title }}</h2>
     <p class="news-grid-item__excerpt">
       {% assign excerpt = article.excerpt | default: article.content %}
       {{ excerpt | strip_html | truncate: 400 }}
     </p>
   </div>
 
-  <a href="{{ article.url }}" class="button">Read The Article</a>
+  <a href="{{ article.url }}" class="button mt-2">Read The Article</a>
 </div>

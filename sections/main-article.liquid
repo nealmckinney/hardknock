@@ -103,14 +103,14 @@
           {{ block.shopify_attributes }}
         >
           <h1
-            class="article-template__title"
+            class="h2 article-template__title"
           >
             {{ article.title | escape }}
           </h1>
           {%- if block.settings.blog_show_date -%}
-            <span class="circle-divider caption-with-letter-spacing">
+            <h2 class="h4 circle-divider caption-with-letter-spacing">
               {{- article.published_at | time_tag: format: 'date' -}}
-            </span>
+            </h2>
           {%- endif -%}
           {%- if block.settings.blog_show_author -%}
             <span class="caption-with-letter-spacing">
@@ -521,6 +521,10 @@
 {{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
 
 <style>
+  .hardknock-page-header {
+    margin-top: 0 !important;
+  }
+
   .hardknock-page-header__inner-content-background:before {
     display: none;
   }
@@ -537,6 +541,10 @@
   }
 
   @media (min-width: 1025px) {
+    .h2.article-template__title {
+      font-size: 50px;
+    }
+
     .article-template__content img[style*='float:left'],
     .article-template__content img[style*='float: left'] {
       margin-right: 40px;
