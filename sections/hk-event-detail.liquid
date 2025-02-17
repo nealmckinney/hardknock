@@ -181,14 +181,14 @@
       <div class="inner relative">
         <div class="hardknock-page-header__inner-content-background">
           {{
-            article.image
+            section.settings.image
             | image_url: width: 1400
             | image_tag:
               widths: '700, 1100, 1400',
               class: 'object-fit-cover',
               loading: 'lazy',
               sizes: '100vw',
-              alt: article.image.alt
+              alt: section.settings.image.alt
           }}
         </div>
       </div>
@@ -200,13 +200,13 @@
   >
     {%- if section.settings.start_date -%}
       <h2 class="h4 circle-divider caption-with-letter-spacing">
-        {{- article.published_at | time_tag: format: 'date' -}}
+        {{- section.settings.start_date | time_tag: format: 'date' -}}
       </h2>
     {%- endif -%}
     <h1
       class="h2 article-template__title"
     >
-      {{ section.settings.start_date | escape }}
+      {{ section.settings.title | escape }}
     </h1>
   </header>
 
