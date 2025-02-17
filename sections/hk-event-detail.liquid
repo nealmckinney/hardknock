@@ -1,0 +1,218 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .hardknock-page-header {
+    margin-top: 0 !important;
+  }
+
+  .hardknock-page-header__inner-content-background:before {
+    display: none;
+  }
+
+  .article-width {
+    max-width: 1440px;
+  }
+
+  .article-template__content img {
+    display: block;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1025px) {
+    .h2.article-template__title {
+      font-size: 50px;
+    }
+
+    .article-template__content img[style*='float:left'],
+    .article-template__content img[style*='float: left'] {
+      margin-right: 40px;
+      max-width: 50%;
+    }
+
+    .article-template__content img[style*='float:right'],
+    .article-template__content img[style*='float: right'] {
+      margin-left: 40px;
+      max-width: 50%;
+    }
+  }
+
+  .blog-content-wrapper {
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .blog-content-wrapper.image-right {
+    flex-direction: row-reverse;
+  }
+
+  .blog-content-wrapper .image-container {
+    flex: 0 0 50%;
+  }
+
+  .blog-content-wrapper .image-caption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #666;
+  }
+
+  .blog-content-wrapper .content {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .blog-content-wrapper {
+      flex-direction: column;
+    }
+
+    .image-container {
+      width: 100%;
+    }
+  }
+
+  .article-template__content {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1025px) {
+    .article-template__content {
+      margin-bottom: 80px;
+    }
+  }
+
+  .article-template__content p {
+    max-width: 1200px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  .blog-content p {
+    max-width: 950px;
+    line-height: 1.75;
+  }
+
+  .blog-content h2 {
+    margin-bottom: 10px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "HK Event Detail",
+  "tag": "section",
+  "disabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "start_date",
+      "label": "Start Date"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "End Date"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HK Event Detail"
+    }
+  ]
+}
+{% endschema %}
+
+<article class="article-template">
+  <div class="hardknock-page-header inner-content-style-true">
+    {% assign bg_image = section.settings.image %}
+    {% assign mobile_bg_image = section.settings.image %}
+
+    <picture class="hardknock-page-header__background">
+      {% if mobile_bg_image != blank %}
+        <source
+          media="(max-width: 768px)"
+          srcset="
+            {{ mobile_bg_image | image_url: width: 375 }} 375w,
+            {{ mobile_bg_image | image_url: width: 550 }} 550w,
+            {{ mobile_bg_image | image_url: width: 750 }} 750w
+          "
+          sizes="100vw"
+        >
+      {% endif %}
+      {% if bg_image != blank %}
+        <source
+          srcset="
+            {{ bg_image | image_url: width: 750 }} 750w,
+            {{ bg_image | image_url: width: 1100 }} 1100w,
+            {{ bg_image | image_url: width: 1500 }} 1500w,
+            {{ bg_image | image_url: width: 2000 }} 2000w
+          "
+          sizes="100vw"
+        >
+        <img
+          src="{{ bg_image | image_url: width: 1500 }}"
+          alt=""
+          loading="eager"
+          width="{{ bg_image.width }}"
+          height="{{ bg_image.height }}"
+        >
+      {% endif %}
+    </picture>
+
+    <div class="hardknock-page-header__container page-width ">
+      <div class="inner relative">
+        <div class="hardknock-page-header__inner-content-background">
+          {{
+            article.image
+            | image_url: width: 1400
+            | image_tag:
+              widths: '700, 1100, 1400',
+              class: 'object-fit-cover',
+              loading: 'lazy',
+              sizes: '100vw',
+              alt: article.image.alt
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header
+    class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+  >
+    {%- if section.settings.start_date -%}
+      <h2 class="h4 circle-divider caption-with-letter-spacing">
+        {{- article.published_at | time_tag: format: 'date' -}}
+      </h2>
+    {%- endif -%}
+    <h1
+      class="h2 article-template__title"
+    >
+      {{ section.settings.start_date | escape }}
+    </h1>
+  </header>
+
+  <div
+    class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  >
+    {{ section.settings.description }}
+  </div>
+</article>
