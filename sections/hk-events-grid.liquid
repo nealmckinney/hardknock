@@ -14,13 +14,33 @@
 
 <section class="hk-events-grid section">
   <div class="container page-width">
-    <div class="events-grid v-margin-6 lg-v-margin-8">
+    <div class="events-grid v-margin-6 lg-v-margin-8" data-events-grid style="opacity: 0; transition: opacity 0.3s;">
       {% comment %} {% assign sorted_events = metaobjects.event.values | sort: 'start_date.value' %} {% endcomment %}
       {% assign sorted_events = metaobjects.event.values | sort_natural: 'start_date' %}
       {% for event in sorted_events %}
-        {% render 'event-grid-item', event: event %}
+        <div data-event-date="{{ event.start_date }}">
+          {% render 'event-grid-item', event: event %}
+        </div>
       {% endfor %}
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const grid = document.querySelector('[data-events-grid]');
+        const now = new Date();
+        const events = document.querySelectorAll('[data-event-date]');
+
+        events.forEach((event) => {
+          const eventDate = new Date(event.dataset.eventDate);
+          if (eventDate < now) {
+            event.style.display = 'none';
+          }
+        });
+
+        // Show the grid once we've hidden past events
+        grid.style.opacity = '1';
+      });
+    </script>
   </div>
 </section>
 
