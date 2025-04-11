@@ -34,9 +34,8 @@
       ],
       "settings": {
         "title": "Awards &amp; Media",
-        "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "content": "<p>They say it’s not bragging if you can back it up. We say it makes us a little uncomfortable even when we can. But our mission is to get a Hardknock on as many workers as we can. So if listing our awards and press coverage helps you go for better protection, we’ll gladly toot our own horn any day.  </p>",
         "background_image": "shopify://shop_images/fpo-header.jpg",
-        "taller_header": false,
         "inner_content_style": true,
         "inner_content_background_image": "shopify://shop_images/awards-header-inner-bg.jpg",
         "inner_content_text_position": "top-left"
