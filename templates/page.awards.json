@@ -19,19 +19,6 @@
     },
     "hk_page_header_GCbhLj": {
       "type": "hk-page-header",
-      "blocks": {
-        "button_MynzMM": {
-          "type": "button",
-          "settings": {
-            "button_text": "Click Here",
-            "button_link": "",
-            "button_style": "green"
-          }
-        }
-      },
-      "block_order": [
-        "button_MynzMM"
-      ],
       "settings": {
         "title": "Awards &amp; Media",
         "content": "<p>They say it’s not bragging if you can back it up. We say it makes us a little uncomfortable even when we can. But our mission is to get a Hardknock on as many workers as we can. So if listing our awards and press coverage helps you go for better protection, we’ll gladly toot our own horn any day.  </p>",
