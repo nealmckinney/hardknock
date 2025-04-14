@@ -78,11 +78,6 @@
           "type": "textarea",
           "id": "team_member_description",
           "label": "Team Member Description"
-        },
-        {
-          "type": "image_picker",
-          "id": "team_member_image",
-          "label": "Team Member Image"
         }
       ]
     }
@@ -127,6 +122,7 @@
         loading="eager"
         width="{{ bg_image.width }}"
         height="{{ bg_image.height }}"
+        class="object-fit-cover"
       >
     {% endif %}
   </picture>
