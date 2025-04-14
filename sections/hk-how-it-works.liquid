@@ -30,23 +30,11 @@
             {{ settings.how_it_works_text }}
           </div>
         {% endif %}
-        <div class="callouts flex-container mt-6">
-          <div class="callout">
-            <img src="{{ 'icon-flex.png' | asset_url }}" alt="Flex Icon" class="icon" width="80" height="80">
-            <h2 class="h6 uppercase mb-4">Flex</h2>
-            <p>{{ settings.how_it_works_flex_text }}</p>
-          </div>
-          <div class="callout">
-            <img src="{{ 'icon-crumple.png' | asset_url }}" alt="Crumple Icon" class="icon" width="80" height="80">
-            <h2 class="h6 uppercase mb-4">Crumple</h2>
-            <p>{{ settings.how_it_works_crumple_text }}</p>
-          </div>
-          <div class="callout">
-            <img src="{{ 'icon-glide.png' | asset_url }}" alt="Glide Icon" class="icon" width="80" height="80">
-            <h2 class="h6 uppercase mb-4">Glide</h2>
-            <p>{{ settings.how_it_works_glide_text }}</p>
-          </div>
-        </div>
+        {% if settings.how_it_works_button_link != blank %}
+          <a href="{{ settings.how_it_works_button_link }}" class="button mt-4">
+            {{ settings.how_it_works_button_text }}
+          </a>
+        {% endif %}
       </div>
     </div>
   </div>

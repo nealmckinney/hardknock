@@ -1539,22 +1539,17 @@
         "info": "Text for the How it Works section"
       },
       {
-        "type": "textarea",
-        "id": "how_it_works_flex_text",
-        "label": "How it Works Flex Text",
-        "info": "Text for the How it Works flex section"
+        "type": "url",
+        "id": "how_it_works_button_link",
+        "label": "How it Works Button Link",
+        "info": "Link for the How it Works button"
       },
       {
-        "type": "textarea",
-        "id": "how_it_works_crumple_text",
-        "label": "How it Works Crumple Text",
-        "info": "Text for the How it Works crumple section"
-      },
-      {
-        "type": "textarea",
-        "id": "how_it_works_glide_text",
-        "label": "How it Works Glide Text",
-        "info": "Text for the How it Works glide section"
+        "type": "text",
+        "id": "how_it_works_button_text",
+        "label": "How it Works Button Text",
+        "info": "Text for the How it Works button",
+        "default": "Learn More"
       }
     ]
   }
