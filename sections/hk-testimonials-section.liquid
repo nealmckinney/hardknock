@@ -85,7 +85,8 @@
       >
       <img
         src="{{ bg_image | image_url: width: 1500 }}"
-        alt=""
+        alt="{{ bg_image.alt }}"
+        class="object-fit-cover"
         loading="eager"
         width="{{ bg_image.width }}"
         height="{{ bg_image.height }}"
