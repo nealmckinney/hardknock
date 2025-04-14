@@ -59,19 +59,19 @@
             </div>
 
             <div class="hk-product-card__content-lower pt-4 lg-pt-6">
-              {% if product.metafields.custom.features != blank %}
+              {% if product.metafields.custom.collection_description.value != blank %}
                 <div class="hk-product-card__bullets">
                   <h2 class="h5">Pro Features</h2>
-
-                  {% if product.metafields.collection_description != blank %}
-                    {{ product.metafields.collection_description | metafield_tag }}
-                  {% else %}
-                    <ul>
-                      {% for feature in product.metafields.custom.features.value %}
-                        <li>{{ feature.title }}</li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
+                  {{ product.metafields.custom.collection_description | metafield_tag }}
+                </div>
+              {% elsif product.metafields.custom.features != blank %}
+                <div class="hk-product-card__bullets">
+                  <h2 class="h5">Pro Features</h2>
+                  <ul>
+                    {% for feature in product.metafields.custom.features.value %}
+                      <li>{{ feature.title }}</li>
+                    {% endfor %}
+                  </ul>
                 </div>
               {% endif %}
 
