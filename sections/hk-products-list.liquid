@@ -62,11 +62,16 @@
               {% if product.metafields.custom.features != blank %}
                 <div class="hk-product-card__bullets">
                   <h2 class="h5">Pro Features</h2>
-                  <ul>
-                    {% for feature in product.metafields.custom.features.value %}
-                      <li>{{ feature.title }}</li>
-                    {% endfor %}
-                  </ul>
+
+                  {% if product.metafields.collection_description != blank %}
+                    {{ product.metafields.collection_description | metafield_tag }}
+                  {% else %}
+                    <ul>
+                      {% for feature in product.metafields.custom.features.value %}
+                        <li>{{ feature.title }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
                 </div>
               {% endif %}
 
