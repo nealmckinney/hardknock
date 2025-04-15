@@ -25,6 +25,11 @@
           "type": "richtext",
           "id": "header_text",
           "label": "Header Text"
+        },
+        {
+          "type": "html",
+          "id": "header_html",
+          "label": "Header HTML (optional)"
         }
       ],
       "blocks": [
@@ -63,6 +68,11 @@
               "type": "richtext",
               "id": "text_content",
               "label": "Text Content"
+            },
+            {
+              "type": "html",
+              "id": "html_content",
+              "label": "HTML Content (optional)"
             }
           ]
         },
@@ -105,6 +115,11 @@
               "type": "richtext",
               "id": "text",
               "label": "Text"
+            },
+            {
+              "type": "html",
+              "id": "html_text",
+              "label": "HTML Text (optional)"
             }
           ]
         }
@@ -165,34 +180,8 @@
                 {{ section.settings.header_text }}
               </div>
             {% endif %}
-            {% if section.settings.nuro_badge_image != blank %}
-              <div class="nuro-badge-container side-margin-auto mt-4 lg-mt-6">
-                <img src="{{ section.settings.nuro_badge_image | image_url: width: 200 }}" alt="Nuro Badge" class="nuro-badge block" width="200" height="auto">
-              </div>
-            {% endif %}
-          
           </div>
-
-          <div class="callouts flex-container mt-6 center">
-            <div class="callout">
-              <img src="{{ 'icon-flex.png' | asset_url }}" alt="Flex Icon" class="icon" width="80" height="80">
-              <h2 class="h6 uppercase mb-4">Flex</h2>
-              <p>{{ section.settings.how_it_works_flex_text }}</p>
-            </div>
-            <div class="callout">
-              <img src="{{ 'icon-crumple.png' | asset_url }}" alt="Crumple Icon" class="icon" width="80" height="80">
-              <h2 class="h6 uppercase mb-4">Crumple</h2>
-              <p>{{ section.settings.how_it_works_crumple_text }}</p>
-            </div>
-            <div class="callout">
-              <img src="{{ 'icon-glide.png' | asset_url }}" alt="Glide Icon" class="icon" width="80" height="80">
-              <h2 class="h6 uppercase mb-4">Glide</h2>
-              <p>{{ section.settings.how_it_works_glide_text }}</p>
-            </div>
-          </div>
-  
         </div>
-        
       </div>
 
       {% for block in section.blocks %}
@@ -222,6 +211,9 @@
             <section class="text-section">
               <div class="container">
                 {{ block.settings.text_content }}
+                {% if block.settings.html_content != blank %}
+                  {{ block.settings.html_content }}
+                {% endif %}
               </div>
             </section>
 
@@ -256,6 +248,9 @@
               <div class="container">
                 <h2>{{ block.settings.title }}</h2>
                 {{ block.settings.text }}
+                {% if block.settings.html_text != blank %}
+                  {{ block.settings.html_text }}
+                {% endif %}
               </div>
             </section>
         {% endcase %}
@@ -266,63 +261,7 @@
     
     
     <style>
-      .hardknock-page-header__background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: 0;
-      }
-    
-      .top-container {
-        margin-top: 200px;
-      }
-    
-      .header-text > .container {
-        padding-left: 0;
-        padding-right: 0;
-      }
 
-      .sub-featured-container {
-        max-width: 1190px;
-      }
-
-      .callouts {
-        column-gap: 24px;
-      }
-
-      .callouts .callout {
-          flex: 1;
-          min-width: 0;
-      }
-
-      .callouts .callout .icon {
-        max-width: 60px;
-        height: auto !important;
-        display: block;
-        margin-bottom: 20px;
-      }
-
-      @media (min-width: 1025px) {
-        .top-container {
-          margin-top: 400px;
-        }
-
-        .callouts .callout .icon {
-          max-width: 80px;
-          margin-bottom: 40px;
-        }
- 
-      }
-
-      .brain-injury-cause-background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
       
     </style>
     
