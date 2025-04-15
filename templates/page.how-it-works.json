@@ -70,6 +70,12 @@
             "custom_class": "",
             "full_width": false
           }
+        },
+        "text_section_4Uww3N": {
+          "type": "text_section",
+          "settings": {
+            "text_content": "<h2><strong>A breakthrough beyond safety standards. </strong></h2><p>Despite having the data for decades, ANSI standards still only measure direct, blunt impact. It’s hard to believe, but true. So while we continue to encourage governing bodies to develop tests to measure effectiveness at mitigating rotational torque, we designed our own test. And we applaud independent research facilities that are doing the same. </p><p><em>Helmets with Nuro technology are predicted to be 97% more effective at reducing the risk of brain injury compared to basic impact absorption.</em></p>"
+          }
         }
       },
       "block_order": [
@@ -79,7 +85,8 @@
         "image_section_fBx4ky",
         "text_section_eMrdD4",
         "button_section_3zfx7X",
-        "image_section_NDCBUk"
+        "image_section_NDCBUk",
+        "text_section_4Uww3N"
       ],
       "name": "HK How It Works Page",
       "settings": {
