@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "hk_how_it_works_page_iQThUw": {
+      "type": "hk-how-it-works-page",
+      "blocks": {
+        "image_section_QXYHCf": {
+          "type": "image_section",
+          "settings": {
+            "background_image": "shopify://shop_images/rotational-force.jpg",
+            "custom_class": "",
+            "full_width": false
+          }
+        },
+        "text_section_xbzGtP": {
+          "type": "text_section",
+          "settings": {
+            "text_content": "<h2>It’s not about direct force. It’s about rotational torque. </h2><p>Contrary to popular belief, most brain injury is caused by rotational torque, not direct force. The hidden damage occurs when the skull spins around the brain. Nuro is the first solution designed from the ground up to address rotational torque comprehensively and intelligently. </p>"
+          }
+        },
+        "text_over_image_NKEjry": {
+          "type": "text_over_image",
+          "settings": {
+            "background_image": "shopify://shop_images/how-it-works-cyclist.jpg",
+            "title": "A flat piece of plastic is not a real solution.",
+            "text": "<p>We’ve been researching rotational torque for 30 years. While we respect any technology trying to counteract rotational torque, we knew a truly intelligent solution would have to go further than off-the-shelf foam and a flat piece of plastic. “Slip liners” using materials like these may perform fine in the lab, but they don’t stand up in real-world scenarios. </p><p><em>“The variability of real-world scenarios is the problem. There’s a saying: If you want to know what helmet you should wear, tell me what kind of accident you’re going to have.” - Dr. Steven Madey</em></p>"
+          }
+        },
+        "image_section_fBx4ky": {
+          "type": "image_section",
+          "settings": {
+            "background_image": "shopify://shop_images/how-it-works-lower-bg.jpg",
+            "custom_class": "",
+            "full_width": true
+          }
+        },
+        "text_section_eMrdD4": {
+          "type": "text_section",
+          "settings": {
+            "text_content": "<h2><strong>The intelligent design inspired by nature.</strong></h2><p>The idea of Reactive Adaptation is commonly found in nature. We thought to ourselves, “could we bring that kind of intelligence to brain protection?” The Nuro Core™  is the only solution that adapts its shape depending on any angle of impact – so it can absorb direct force, and divert rotational force. It’s a solution born from problem-solving against real world scenarios, not just laboratory simulations.</p>"
+          }
+        },
+        "button_section_3zfx7X": {
+          "type": "button_section",
+          "settings": {
+            "button_label": "Download Analysis and Prevention whitepaper",
+            "button_link": "#"
+          }
+        },
+        "image_section_NDCBUk": {
+          "type": "image_section",
+          "settings": {
+            "background_image": "shopify://shop_images/how-it-works-97-percent.jpg",
+            "custom_class": "",
+            "full_width": false
+          }
+        },
+        "text_section_4Uww3N": {
+          "type": "text_section",
+          "settings": {
+            "text_content": "<h2><strong>A breakthrough beyond safety standards. </strong></h2><p>Despite having the data for decades, ANSI standards still only measure direct, blunt impact. It’s hard to believe, but true. So while we continue to encourage governing bodies to develop tests to measure effectiveness at mitigating rotational torque, we designed our own test. And we applaud independent research facilities that are doing the same. </p><p><em>Helmets with Nuro technology are predicted to be 97% more effective at reducing the risk of brain injury compared to basic impact absorption.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_section_QXYHCf",
+        "text_section_xbzGtP",
+        "text_over_image_NKEjry",
+        "image_section_fBx4ky",
+        "text_section_eMrdD4",
+        "button_section_3zfx7X",
+        "image_section_NDCBUk",
+        "text_section_4Uww3N"
+      ],
+      "name": "HK How It Works Page",
+      "settings": {
+        "header_image": "shopify://shop_images/header-how-it-works.jpg",
+        "mobile_header_image": "shopify://shop_images/header-how-it-works-mobile.jpg",
+        "header_display_title": "Reactive Adaptation: The Intelligence of Nuro Core.",
+        "header_text": "<p>The innovative Nuro Core is designed to react to each unique incident and intelligently adapt its shape depending on any angle of impact. No other protection technology can do this. No other method is as effective.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hk_how_it_works_page_iQThUw"
+  ]
+}
