@@ -69,12 +69,11 @@
       ],
       "name": "HK Contact Form",
       "settings": {
+        "background_image": "shopify://shop_images/fpo-header.jpg",
         "google_maps_api_key": "AIzaSyDwfyL-2k8aBo4fqL1dcaBDLjXpSqZbvSk",
         "heading": "Contact Us",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "form_title": "Get in Touch!",
+        "form_text": "Fill out the form, and our team will connect with you to provide the information or support you need."
       }
     }
   },
