@@ -1,39 +1,72 @@
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
+<div class="hardknock-page-header inner-content-style-true inner-content-text-position-top-left">
+  {% assign bg_image = section.settings.background_image %}
+  {% assign mobile_bg_image = section.settings.mobile_background_image %}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+  <picture class="hardknock-page-header__background">
+    {% if mobile_bg_image != blank %}
+      <source
+        media="(max-width: 768px)"
+        srcset="
+          {{ mobile_bg_image | image_url: width: 375 }} 375w,
+          {{ mobile_bg_image | image_url: width: 550 }} 550w,
+          {{ mobile_bg_image | image_url: width: 750 }} 750w
+        "
+        sizes="100vw"
+      >
+    {% endif %}
+    {% if bg_image != blank %}
+      <source
+        srcset="
+          {{ bg_image | image_url: width: 750 }} 750w,
+          {{ bg_image | image_url: width: 1100 }} 1100w,
+          {{ bg_image | image_url: width: 1500 }} 1500w,
+          {{ bg_image | image_url: width: 2000 }} 2000w
+        "
+        sizes="100vw"
+      >
+      <img
+        src="{{ bg_image | image_url: width: 1500 }}"
+        alt=""
+        loading="eager"
+        width="{{ bg_image.width }}"
+        height="{{ bg_image.height }}"
+      >
+    {% endif %}
+  </picture>
+  <div class="hardknock-page-header__container page-width ">
+    <div class="inner relative">
+      <div class="hardknock-page-header__content relative z-index-1">
+        <h1 class="hardknock-page-header__title">
+          {{ section.settings.heading }}
+        </h1>
+      </div>
+    
+        <div class="hardknock-page-header__inner-content-background">
+          <div id="location-map" data-address="7930 SW Burns Way # C, Wilsonville, OR 97070" data-marker-icon="{{ 'icon-find.svg' | asset_url }}" class="map-placeholder"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
-    {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading }}
-      </h2>
-    {%- else -%}
-      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
-    {%- endif -%}
+    
     {%- liquid
-      assign contact_form_class = 'isolate'
+      assign contact_form_class = 'isolate mb-6 lg-mb-9'
       if settings.animations_reveal_on_scroll
-        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+        assign contact_form_class = 'isolate scroll-trigger animate--slide-in mb-6 lg-mb-9'
       endif
     -%}
 
-    <div id="location-map" style="width: 100%; height: 400px;" data-address="7930 SW Burns Way # C, Wilsonville, OR 97070" data-marker-icon="{{ 'icon-find.svg' | asset_url }}" class="map-placeholder v-margin-6"></div>
+    
 
     {%- if section.blocks.size > 0 -%}
-      <div class="contact-blocks grid grid--{{ section.blocks.size }}-col-desktop">
+      <div class="contact-info flex-container flex-clear-1024 column-gap-60 v-margin-6 lg-v-margin-9">
         {%- for block in section.blocks -%}
 
             <div {% if block.settings.use_for_map %}id="map-details"{% endif %} class="office-block cms-content mb-4 lg-mb-0">
@@ -49,38 +82,17 @@
                 {% endif %}
                 {{ block.settings.rich_text }}
             </div>
-
-
-          {% comment %} <div class="contact-block" {{ block.shopify_attributes }}>
-            {%- if block.settings.title != blank -%}
-              <h3 class="contact-block__title">{{ block.settings.title }}</h3>
-            {%- endif -%}
-            
-            <div class="contact-block__content">
-              {%- if block.settings.address != blank -%}
-                <div class="contact-block__address">
-                  {{ block.settings.address | newline_to_br }}
-                </div>
-              {%- endif -%}
-              
-              {%- if block.settings.phone != blank -%}
-                <div class="contact-block__phone">
-                  {{ block.settings.phone }}
-                </div>
-              {%- endif -%}
-              
-              {%- if block.settings.additional_info != blank -%}
-                <div class="contact-block__additional">
-                  {{ block.settings.additional_info }}
-                </div>
-              {%- endif -%}
-            </div>
-          </div> {% endcomment %}
         {%- endfor -%}
       </div>
     {%- endif -%}
 
-    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+    <div class="contact-form flex-container flex-clear-1024 column-gap-40">
+      <div class="text flex-basis-33">
+          <h2 class="h2 color-grey mb-4 mt-0">{{ section.settings.form_title }}</h2>
+          <div class="mb-5">{{ section.settings.form_text }}</div>
+      </div>
+      <div class="flex-grow-1">
+        {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
           {{- 'icon-success.svg' | inline_asset_content -}}
@@ -196,6 +208,8 @@
         </button>
       </div>
     {%- endform -%}
+    </div>
+    </div>
   </div>
 </div>
 
@@ -209,6 +223,17 @@
   },
   "settings": [
     {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Header Background Image",
+      "info": "1920x1080 for standard resolution. 3840x2160 for 2x."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "HeaderMobile Background Image (optional)"
+    },
+    {
       "type": "text",
       "id": "google_maps_api_key",
       "label": "Google Maps API Key",
@@ -221,63 +246,22 @@
       "label": "t:sections.contact-form.settings.title.label"
     },
     {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        },
-        {
-          "value": "hxl",
-          "label": "t:sections.all.heading_size.options__4.label"
-        },
-        {
-          "value": "hxxl",
-          "label": "t:sections.all.heading_size.options__5.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
-    },
-    {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Get in Touch!"
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "type": "text",
+      "id": "form_text",
+      "label": "Form Text",
+      "default": "Fill out the form, and our team will connect with you to provide the information or support you need."
     }
+    
   ],
   "blocks": [
     {
@@ -324,6 +308,9 @@
   ]
 }
 {% endschema %}
+
+{{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
+{{ 'contact.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.google_maps_api_key != blank %}
   <script>
