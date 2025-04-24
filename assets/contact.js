@@ -168,9 +168,9 @@
                 const mapLink = mapDetails.querySelector('.map-link')?.getAttribute('href') || '#';
                 
                 contentString = `<div class="info-window-details">
-                  <div class="title">${title}</div>
+                  <h2 class="title h4">${title}</h2>
                   <div class="address">${phone}<br/>
-                  <a class="btn small mt-2" href="${mapLink}" target="_blank">Get Directions</a></div>
+                  <a class="button mt-2" href="${mapLink}" target="_blank">Get Directions</a></div>
                 </div>`;
               }
               

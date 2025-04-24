@@ -14,3 +14,35 @@
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
 }
+
+.info-window-details {
+	padding:32px 20px 20px;
+	line-height:1.5;
+	max-width:300px;
+    font-family: "Onest", Helvetica, sans-serif;
+}
+
+.info-window-details .title {
+	/* font-size:18px; */
+    font-family: var(--font-heading-family);
+    font-weight: 900 !important;
+    margin: 0;
+}
+
+.info-window-details .address {
+	font-size:16px;
+	font-weight:700;
+}
+
+.info-window-details .phone {
+	font-size:14px;
+	color:#606060;
+}
+
+.info-window-details .buttons {
+	margin-top:20px;
+}
+
+.gm-style-iw-chr {
+    flex-direction: row-reverse !important;
+}

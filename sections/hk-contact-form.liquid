@@ -45,7 +45,7 @@
       </div>
     
         <div class="hardknock-page-header__inner-content-background">
-          <div id="location-map" data-address="7930 SW Burns Way # C, Wilsonville, OR 97070" data-marker-icon="{{ 'icon-find.svg' | asset_url }}" class="map-placeholder"></div>
+          <div id="location-map" data-address="{{ section.settings.map_address }}" data-marker-icon="{{ 'icon-find.svg' | asset_url }}" class="map-placeholder"></div>
         </div>
     </div>
   </div>
@@ -238,6 +238,12 @@
       "id": "google_maps_api_key",
       "label": "Google Maps API Key",
       "info": "Required for displaying the location map"
+    },
+    {
+      "type": "text",
+      "id": "map_address",
+      "label": "Map Address",
+      "default": "7930 SW Burns Way # C, Wilsonville, OR 97070"
     },
     {
       "type": "inline_richtext",
