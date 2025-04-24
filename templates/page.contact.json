@@ -29,10 +29,47 @@
     },
     "hk_contact_form_XgHiit": {
       "type": "hk-contact-form",
+      "blocks": {
+        "contact_nMqbxD": {
+          "type": "contact",
+          "settings": {
+            "title": "Main Office",
+            "use_for_map": true,
+            "address": "7930 SW Burns Way # C \nWilsonville, OR 97070",
+            "phone": "888-261-2451",
+            "rich_text": ""
+          }
+        },
+        "contact_kpkEhK": {
+          "type": "contact",
+          "settings": {
+            "title": "Accounting Office",
+            "use_for_map": false,
+            "address": "7930 SW Burns Way # C \nWilsonville, OR 97070",
+            "phone": "888-261-2451",
+            "rich_text": ""
+          }
+        },
+        "contact_gNrCNz": {
+          "type": "contact",
+          "settings": {
+            "title": "Email",
+            "use_for_map": false,
+            "address": "",
+            "phone": "",
+            "rich_text": "<p><a href=\"mailto:support@nuro.com\">Customer Support</a> &gt;</p><p><a href=\"mailto:sales@nuro.com\">Sales Inquiries</a> &gt;</p>"
+          }
+        }
+      },
+      "block_order": [
+        "contact_nMqbxD",
+        "contact_kpkEhK",
+        "contact_gNrCNz"
+      ],
       "name": "HK Contact Form",
       "settings": {
         "google_maps_api_key": "AIzaSyDwfyL-2k8aBo4fqL1dcaBDLjXpSqZbvSk",
-        "heading": "Contact form",
+        "heading": "Get in Touch!",
         "heading_size": "h1",
         "color_scheme": "",
         "padding_top": 36,
