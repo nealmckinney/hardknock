@@ -32,6 +32,10 @@ h6, .h6, .md-h6 { font-size:18px; }
 	font-weight: 300 !important;
 }
 
+.cms-content a {
+	color: inherit;
+}
+
 @media(min-width:1025px) {
 	/* Original column-count version */
 	.two-column-text {
