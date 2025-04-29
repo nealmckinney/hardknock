@@ -29,19 +29,32 @@
 
 <section class="pre-footer relative">
   <div class="container page-width">
-    {% if settings.pre_footer_title != blank %}
+    {%- liquid
+      assign pre_footer_title = settings.pre_footer_title
+      assign pre_footer_bg = settings.pre_footer_bg
+      
+      if page.metafields.custom.pre_footer_title != blank
+        assign pre_footer_title = page.metafields.custom.pre_footer_title
+      endif
+      
+      if page.metafields.custom.pre_footer_bg != blank
+        assign pre_footer_bg = page.metafields.custom.pre_footer_bg
+      endif
+    -%}
+    
+    {% if pre_footer_title != blank %}
       <h2 class="h1 color-brand-green scroll-trigger animate--slide-in">
-        {{ settings.pre_footer_title | newline_to_br }}
+        {{ pre_footer_title | newline_to_br }}
       </h2>
     {% endif %}
     <div class="icon-logo">
       {% render 'hk-logo-icon' %}
     </div>
   </div>
-  {% if settings.pre_footer_bg != blank %}
+  {% if pre_footer_bg != blank %}
     <div class="background absolute">
       {{
-        settings.pre_footer_bg
+        pre_footer_bg
         | image_url: width: 1500
         | image_tag: widths: '1500, 2000, 3000', class: 'object-fit-cover', loading: 'lazy', sizes: '100vw'
       }}
@@ -147,8 +160,14 @@
                           {% render 'hk-logo-icon' %}
                         </div>
                       {%- endif -%}
-                      {%- if settings.brand_headline != blank -%}
-                        <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
+                      {%- liquid
+                        assign brand_headline = settings.brand_headline
+                        if page.metafields.custom.footer_brand_headline != blank
+                          assign brand_headline = page.metafields.custom.footer_brand_headline
+                        endif
+                      -%}
+                      {%- if brand_headline != blank -%}
+                        <h2 class="footer-block__heading rte">{{ brand_headline }}</h2>
                       {%- endif -%}
                       {%- if settings.brand_description != blank -%}
                         <div class="rte">{{ settings.brand_description }}</div>
@@ -579,6 +598,27 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Pre-footer overrides",
+      "info": "These settings allow you to override the pre-footer content on specific pages using page metafields."
+    },
+    {
+      "type": "paragraph",
+      "content": "To override the pre-footer on a specific page, add the following metafields to the page:"
+    },
+    {
+      "type": "paragraph",
+      "content": "1. pre_footer_title (text) - Overrides the pre-footer title"
+    },
+    {
+      "type": "paragraph",
+      "content": "2. pre_footer_bg (file_reference) - Overrides the pre-footer background image"
+    },
+    {
+      "type": "paragraph",
+      "content": "3. footer_brand_headline (text) - Overrides the footer brand headline"
     }
   ],
   "default": {
