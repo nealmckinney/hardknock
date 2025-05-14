@@ -42,44 +42,59 @@
       "label": "Our Mission Image"
     },
     {
+      "type": "text",
+      "id": "our_mission_title",
+      "label": "Our Mission Title"
+    },
+    {
       "type": "richtext",
       "id": "our_mission_text",
       "label": "Our Mission Text"
     },
     {
       "type": "richtext",
-      "id": "our_team_text",
-      "label": "Our Team Text"
+      "id": "banner_text",
+      "label": "Banner Text"
     },
     {
       "type": "image_picker",
-      "id": "our_team_image",
-      "label": "Our Team Image"
-    }
-  ],
-  "blocks": [
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
     {
-      "type": "team_member",
-      "name": "Team Member",
-      "settings": [
-        {
-          "type": "text",
-          "id": "team_member_name",
-          "label": "Team Member Name",
-          "default": "Team Member Name"
-        },
-        {
-          "type": "text",
-          "id": "team_member_position",
-          "label": "Team Member Position",
-          "default": "Team Member Position"
-        },
-        {
-          "type": "textarea",
-          "id": "team_member_description",
-          "label": "Team Member Description"
-        }
-      ]
+      "type": "image_picker",
+      "id": "we_do_bg_image",
+      "label": "We Do Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "we_do_image",
+      "label": "We Do Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "we_do_helmet_image",
+      "label": "We Do Helmet Image"
+    },
+    {
+      "type": "text",
+      "id": "we_do_title_1",
+      "label": "We Do Title 1"
+    },
+    {
+      "type": "richtext",
+      "id": "we_do_text_1",
+      "label": "We Do Text 1"
+    },
+    {
+      "type": "text",
+      "id": "we_do_title_2",
+      "label": "We Do Title 2"
+    },
+    {
+      "type": "richtext",
+      "id": "we_do_text_2",
+      "label": "We Do Text 2"
     }
   ],
   "presets": [
@@ -178,32 +193,59 @@
   <div class="our-team-banner relative flex-container align-center justify-center">
     <div class="container page-width center relative z-index-2 max-width-640">
       <h2 class="h1 our-team-title color-white mb-0">Our Team</h2>
-      {% if section.settings.our_team_text != blank %}
+      {% if section.settings.banner_text != blank %}
         <div class="our-team-text center color-white">
-          {{ section.settings.our_team_text }}
+          {{ section.settings.banner_text }}
         </div>
       {% endif %}
     </div>
-    {% if section.settings.our_team_image != blank %}
+    {% if section.settings.banner_image != blank %}
       {{
-        section.settings.our_team_image
+        section.settings.banner_image
         | image_url: width: 2880
         | image_tag:
           widths: '700, 1100, 1400, 2880',
           class: 'object-fit-cover absolute-bg',
           loading: 'lazy',
           sizes: '100vw',
-          alt: section.settings.our_team_image.alt
+          alt: section.settings.banner_image.alt
       }}
     {% endif %}
   </div>
 
-  <div class="our-team-grid container page-width v-margin-8 lg-v-margin-10">
-    {% for block in section.blocks %}
-      {% if block.type == 'team_member' %}
-        {% render 'team-member-item', block: block %}
-      {% endif %}
-    {% endfor %}
+  <div class="we-do-section relative container page-width v-margin-8 lg-v-margin-10">
+    {% if section.settings.we_do_bg_image != blank %}
+      {{
+        section.settings.we_do_bg_image
+        | image_url: width: 2880
+        | image_tag:
+          widths: '700, 1100, 1400, 2880',
+          class: 'object-fit-cover absolute-bg',
+          loading: 'lazy',
+          sizes: '100vw',
+          alt: section.settings.we_do_bg_image.alt
+      }}
+    {% endif %}
+    <div class="container page-width">
+      <div class="we-do-content flex-container flex-clear-1024 column-gap-80">
+        <div class="we-do-image">
+          {{ section.settings.we_do_image | image_url: width: 1200 | image_tag: widths: '600, 1200' }}
+        </div>
+        <div class="we-do-text">
+          <h2 class="h2 we-do-title">{{ section.settings.we_do_title_1 }}</h2>
+          {{ section.settings.we_do_text_1 }}
+        </div>
+      </div>
+      <div class="we-do-lower">
+        <div class="we-do-helmet-container">
+          {{ section.settings.we_do_helmet_image | image_url: width: 1200 | image_tag: widths: '600, 1200' }}
+        </div>
+        <div class="we-do-text-lower">
+          <h2 class="h2 we-do-title">{{ section.settings.we_do_title_2 }}</h2>
+          {{ section.settings.we_do_text_2 }}
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -221,44 +263,9 @@
     margin-top: 200px;
   }
 
-  .our-team-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    column-gap: 20px;
-    row-gap: 40px;
-  }
-
-  .team-member .image {
-    max-width: 212px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .team-member p {
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media (min-width: 768px) {
-    .our-team-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
   @media (min-width: 1025px) {
     .top-container {
       margin-top: 400px;
-    }
-    .our-team-grid {
-      grid-template-columns: repeat(3, 1fr);
-      row-gap: 80px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .our-team-grid {
-      grid-template-columns: repeat(4, 1fr);
     }
   }
 
@@ -277,11 +284,11 @@
   }
 
   .our-mission-image {
-    aspect-ratio: 1/0.68;
+    aspect-ratio: 1/1.32;
   }
 
   .our-team-banner {
-    aspect-ratio: 1/0.37;
+    aspect-ratio: 1/0.52;
   }
 
   .our-team-banner::before {
