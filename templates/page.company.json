@@ -25,8 +25,7 @@
           "settings": {
             "team_member_name": "Team Member Name",
             "team_member_position": "Team Member Position",
-            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
-            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat."
           }
         },
         "team_member_KrMVrt": {
@@ -34,8 +33,7 @@
           "settings": {
             "team_member_name": "Team Member Name",
             "team_member_position": "Team Member Position",
-            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
-            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat."
           }
         },
         "team_member_g4ig7E": {
@@ -43,8 +41,7 @@
           "settings": {
             "team_member_name": "Team Member Name",
             "team_member_position": "Team Member Position",
-            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
-            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat."
           }
         },
         "team_member_EpnagA": {
@@ -52,8 +49,7 @@
           "settings": {
             "team_member_name": "Team Member Name",
             "team_member_position": "Team Member Position",
-            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
-            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat."
           }
         },
         "team_member_Ym9VcX": {
@@ -61,8 +57,7 @@
           "settings": {
             "team_member_name": "Team Member Name",
             "team_member_position": "Team Member Position",
-            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat.",
-            "team_member_image": "shopify://shop_images/fpo-thumb.jpg"
+            "team_member_description": "Lorem ipsum dolor sit amet consectetur. Nisl leo felis fermentum et tincidunt tempus at nulla amet. Risus id cras posuere et pellentesque aliquam ut pretium consequat."
           }
         }
       },
@@ -75,7 +70,7 @@
       ],
       "settings": {
         "header_bg_image": "shopify://shop_images/fpo-header.jpg",
-        "header_title": "Company",
+        "header_title": "We Get You",
         "header_text": "<p>You’ve been doing the hard things for years without stopping to check if anyone noticed. Well, we noticed. And we make Hardknock for you. For men and women who can’t afford to be kept down after they’re knocked down. If you’re ready to join our team, we’re ready to hear from you. </p>",
         "header_button_label": "Join Hardknock",
         "header_button_link": "shopify://pages/careers",
