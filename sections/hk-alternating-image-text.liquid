@@ -115,7 +115,7 @@
       {% for block in section.blocks %}
         {% if block.type == 'content' %}
           <div
-            class="flex-container flex-clear-1024 align-center column-gap-80 v-margin-6 lg-v-margin-8 relative full-bleed-{{ block.settings.bleed_image }} pad-image-{{ block.settings.pad_image }}"
+            class="flex-container flex-clear-1024 align-center column-gap-80 v-margin-6 lg-v-margin-4 relative full-bleed-{{ block.settings.bleed_image }} pad-image-{{ block.settings.pad_image }}"
             {{ block.shopify_attributes }}
           >
             <div class="flex-basis-50 flex-shrink-0 image-container">
@@ -239,7 +239,8 @@
     }
 
     .content-blocks .flex-container.pad-image-true .image-container {
-      padding: 100px;
+      padding-left: 6%;
+      padding-right: 6%;
     }
   }
 
