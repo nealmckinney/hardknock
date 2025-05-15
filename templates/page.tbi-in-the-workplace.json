@@ -93,11 +93,17 @@
         "intro_text": "<p>Hardknock helmets, equipped with Nuro technology are designed to reduce the risk of traumatic brain injuries (TBIs) by providing advanced protection against impacts and rotational forces. Here's how HardKnock safety helmets help reduce or eliminate TBIs in the workplace:</p>",
         "intro_image": "shopify://shop_images/tbi-intro-helmet.png"
       }
+    },
+    "hk_how_it_works_Fy9VHr": {
+      "type": "hk-how-it-works",
+      "name": "HK How It Works",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "hk_page_header_Hwa3Fn",
-    "hk_alternating_image_text_hAe7TG"
+    "hk_alternating_image_text_hAe7TG",
+    "hk_how_it_works_Fy9VHr"
   ]
 }
