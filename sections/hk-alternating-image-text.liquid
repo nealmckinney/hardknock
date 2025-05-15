@@ -109,60 +109,33 @@
       {% for block in section.blocks %}
         {% if block.type == 'content' %}
           <div
-            class="flex-container flex-clear-1024 column-gap-80 v-margin-6 lg-v-margin-8"
+            class="flex-container flex-clear-1024 align-center column-gap-80 v-margin-6 lg-v-margin-8 relative full-bleed-{{ block.settings.bleed_image }}"
             {{ block.shopify_attributes }}
           >
-            <div class="flex-basis-50 flex-shrink-0">
-              <div class="relative">
-                {% if block.settings.bleed_image %}
-                  <div class="absolute-bg">
-                    <picture>
-                      {% if block.settings.mobile_image %}
-                        <source
-                          media="(max-width: 1024px)"
-                          srcset="
-                            {{ block.settings.mobile_image | image_url: width: 400 }} 400w,
-                            {{ block.settings.mobile_image | image_url: width: 600 }} 600w,
-                            {{ block.settings.mobile_image | image_url: width: 800 }} 800w,
-                            {{ block.settings.mobile_image | image_url: width: 1024 }} 1024w
-                          "
-                        >
-                      {% endif %}
-                      <img
-                        src="{{ block.settings.desktop_image | image_url: width: 2000 }}"
-                        srcset="
-                          {{ block.settings.desktop_image | image_url: width: 1200 }} 1200w,
-                          {{ block.settings.desktop_image | image_url: width: 1600 }} 1600w
-                        "
-                        alt="{{ block.settings.title }}"
-                        class="object-fit-cover"
-                      >
-                    </picture>
-                  </div>
-                {% else %}
-                  <picture>
-                    {% if block.settings.mobile_image %}
-                      <source
-                        media="(max-width: 1024px)"
-                        srcset="
-                          {{ block.settings.mobile_image | image_url: width: 400 }} 400w,
-                          {{ block.settings.mobile_image | image_url: width: 600 }} 600w,
-                          {{ block.settings.mobile_image | image_url: width: 800 }} 800w,
-                          {{ block.settings.mobile_image | image_url: width: 1024 }} 1024w
-                        "
-                      >
-                    {% endif %}
-                    <img
-                      src="{{ block.settings.desktop_image | image_url: width: 2000 }}"
+            <div class="flex-basis-50 flex-shrink-0 image-container">
+              <div class="relative-x">
+                <picture>
+                  {% if block.settings.mobile_image %}
+                    <source
+                      media="(max-width: 1024px)"
                       srcset="
-                        {{ block.settings.desktop_image | image_url: width: 1200 }} 1200w,
-                        {{ block.settings.desktop_image | image_url: width: 1600 }} 1600w
+                        {{ block.settings.mobile_image | image_url: width: 400 }} 400w,
+                        {{ block.settings.mobile_image | image_url: width: 600 }} 600w,
+                        {{ block.settings.mobile_image | image_url: width: 800 }} 800w,
+                        {{ block.settings.mobile_image | image_url: width: 1024 }} 1024w
                       "
-                      alt="{{ block.settings.title }}"
-                      class="block"
                     >
-                  </picture>
-                {% endif %}
+                  {% endif %}
+                  <img
+                    src="{{ block.settings.desktop_image | image_url: width: 2000 }}"
+                    srcset="
+                      {{ block.settings.desktop_image | image_url: width: 1200 }} 1200w,
+                      {{ block.settings.desktop_image | image_url: width: 1600 }} 1600w
+                    "
+                    alt="{{ block.settings.title }}"
+                    class="block"
+                  >
+                </picture>
               </div>
             </div>
 
@@ -176,8 +149,10 @@
     </div>
   </div>
 </div>
-
 <style>
+  #MainContent {
+    overflow: hidden;
+  }
   .top-container {
     max-width: 1450px;
     position: relative;
@@ -241,5 +216,38 @@
     .content-blocks .flex-container:nth-child(even) {
       flex-direction: row-reverse;
     }
+
+    /* .content-blocks .flex-container:nth-child(even).full-bleed-true .image-container {
+      left: 50%;
+    }
+
+    .content-blocks .flex-container:nth-child(even).full-bleed-true .image-container img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      object-position: right;
+    } */
+
+    .how-it-works-section {
+      padding-top: 0px !important;
+    }
+  }
+
+  .content-blocks .flex-container.full-bleed-true {
+    align-items: flex-end;
+  }
+
+  .content-blocks .flex-container.full-bleed-true:nth-child(even) .image-container img {
+    width: calc(100% + 5rem);
+  }
+
+  @media (min-width: 1465px) {
+    .content-blocks .flex-container.full-bleed-true:nth-child(even) .image-container img {
+      width: calc(100% + (100vw - 1450px) * 0.5 + 4.2rem);
+    }
+  }
+
+  .content-blocks .flex-container:last-child {
+    margin-bottom: 0px !important;
   }
 </style>
