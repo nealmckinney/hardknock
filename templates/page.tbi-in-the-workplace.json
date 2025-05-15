@@ -50,7 +50,8 @@
             "title": "Enhanced Impact Absorbtion",
             "text": "<h4>Superior Energy Absorption: </h4><p>Hardknock helmets with Nuro technology absorb and dissipate impact energy more effectively than traditional helmets, reducing the risk of both linear and rotational brain injuries.</p><h4> Multi-Directional Protection: </h4><p>The built-in Nuro technology handles impact from different angles and enhances the HardKnock helmet's overall head protection. </p>",
             "desktop_image": "shopify://shop_images/tbi-enhanced.jpg",
-            "bleed_image": false
+            "bleed_image": false,
+            "pad_image": false
           }
         },
         "content_DJPVny": {
@@ -59,7 +60,8 @@
             "title": "Reduction of  Rotational Forces: ",
             "text": "<h4>Mitigating Shear Forces: </h4><p>Rotational forces are a significant cause of TBIs. The Hardknock helmet design reduces these forces, which helps prevent injuries like concussions and diffuse axonal injuries.</p><h4>Brain Injury Prevention: </h4><p>By addressing both linear and rotational forces, HardKnock helmets provide comprehensive protection, significantly lowering the risk of TBIs. </p>",
             "desktop_image": "shopify://shop_images/tbi-reduction.jpg",
-            "bleed_image": false
+            "bleed_image": false,
+            "pad_image": true
           }
         },
         "content_rHDmMj": {
@@ -68,7 +70,8 @@
             "title": "Comfort and Usablity",
             "text": "<h4>Lightweight Design: </h4><p>Despite the advanced technology, HardKnock helmets are lightweight and comfortable to wear, encouraging consistent use by employees.</p><h4>Ventilation: </h4><p>Improved ventilation makes these helmets more comfortable in various working conditions, increasing the likelihood that workers will wear them properly. </p>",
             "desktop_image": "shopify://shop_images/tbi-comfort.jpg",
-            "bleed_image": false
+            "bleed_image": false,
+            "pad_image": true
           }
         },
         "content_bVm78j": {
@@ -77,7 +80,8 @@
             "title": "Versatility",
             "text": "<h4>Various Applications:</h4><p>Nuro technology can be integrated into helmets for different industries, including construction, manufacturing, and cycling, making it versatile for various workplace environments.</p><h4>Customizable Designs:</h4><p>Helmets can be designed to meet specific safety standards and requirements of different workplaces.</p>",
             "desktop_image": "shopify://shop_images/tbi-versatility.jpg",
-            "bleed_image": true
+            "bleed_image": true,
+            "pad_image": false
           }
         }
       },
