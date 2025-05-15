@@ -41,6 +41,53 @@
         "inner_content_text_position": "top-left"
       }
     },
+    "hk_type1_vs_type2_7aXf4y": {
+      "type": "hk-type1-vs-type2",
+      "blocks": {
+        "comparison_block_a7zbPb": {
+          "type": "comparison_block",
+          "settings": {
+            "title": "Impact Protection",
+            "text": "<p>Type 1 helmets are primarily for top impact protection, while Type 2 helmets provide multi-directional impact protection.</p>"
+          }
+        },
+        "comparison_block_UVMLDc": {
+          "type": "comparison_block",
+          "settings": {
+            "title": "Use Cases",
+            "text": "<p>Type 1 helmets are common in general construction, where the risk is primarily from falling objects. Type 2 helmets are more suitable for environments with potential hazards from multiple angles. </p>"
+          }
+        },
+        "comparison_block_fCenkq": {
+          "type": "comparison_block",
+          "settings": {
+            "title": "Form Factor",
+            "text": "<p>Type 2 helmets often have a more complex design with enhanced suspension systems to provide additional protection and may include foam padding to absorb impacts from multiple directions. </p>"
+          }
+        },
+        "comparison_block_eC8U4i": {
+          "type": "comparison_block",
+          "settings": {
+            "title": "Standard Compliance",
+            "text": "<p>In the United States, Type 2 helmets also comply with the ANSI Z89.1 standard but are subjected to more rigorous testing for side impact protection.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_block_a7zbPb",
+        "comparison_block_UVMLDc",
+        "comparison_block_fCenkq",
+        "comparison_block_eC8U4i"
+      ],
+      "name": "HK Type 1 vs Type 2",
+      "settings": {
+        "background_image": "shopify://shop_images/type1-vs-type2-bg.jpg",
+        "intro_title": "Type 1 vs. Type 2 Helmets",
+        "intro_text": "<p>Lorem ipsum dolor sit amet consectetur. Lorem mollis in ut non ante. Adipiscing pharetra suspendisse scelerisque enim facilisis dictum. Scelerisque turpis amet condimentum tincidunt tortor. Diam vitae odio aenean neque tempor quisque.</p>",
+        "lower_title": "Testing Standards",
+        "lower_text": "<p>HardKnock helmet's with Nuro technology significantly enhances head protection by effectively managing impact and rotational forces, which are critical in preventing TBIs. By integrating HardKnock helmets into workplace safety programs, employers can provide superior protection to their employees, thereby reducing the incidence of TBIs and promoting a safer work environment.</p>"
+      }
+    },
     "hk_alternating_image_text_hAe7TG": {
       "type": "hk-alternating-image-text",
       "blocks": {
@@ -102,60 +149,13 @@
       "type": "hk-how-it-works",
       "name": "HK How It Works",
       "settings": {}
-    },
-    "hk_type1_vs_type2_7aXf4y": {
-      "type": "hk-type1-vs-type2",
-      "blocks": {
-        "comparison_block_a7zbPb": {
-          "type": "comparison_block",
-          "settings": {
-            "title": "Impact Protection",
-            "text": "<p>Type 1 helmets are primarily for top impact protection, while Type 2 helmets provide multi-directional impact protection.</p>"
-          }
-        },
-        "comparison_block_UVMLDc": {
-          "type": "comparison_block",
-          "settings": {
-            "title": "Use Cases",
-            "text": "<p>Type 1 helmets are common in general construction, where the risk is primarily from falling objects. Type 2 helmets are more suitable for environments with potential hazards from multiple angles. </p>"
-          }
-        },
-        "comparison_block_fCenkq": {
-          "type": "comparison_block",
-          "settings": {
-            "title": "Form Factor",
-            "text": "<p>Type 2 helmets often have a more complex design with enhanced suspension systems to provide additional protection and may include foam padding to absorb impacts from multiple directions. </p>"
-          }
-        },
-        "comparison_block_eC8U4i": {
-          "type": "comparison_block",
-          "settings": {
-            "title": "Standard Compliance",
-            "text": "<p>In the United States, Type 2 helmets also comply with the ANSI Z89.1 standard but are subjected to more rigorous testing for side impact protection.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "comparison_block_a7zbPb",
-        "comparison_block_UVMLDc",
-        "comparison_block_fCenkq",
-        "comparison_block_eC8U4i"
-      ],
-      "name": "HK Type 1 vs Type 2",
-      "settings": {
-        "background_image": "shopify://shop_images/type1-vs-type2-bg.jpg",
-        "intro_title": "Type 1 vs. Type 2 Helmets",
-        "intro_text": "<p>Lorem ipsum dolor sit amet consectetur. Lorem mollis in ut non ante. Adipiscing pharetra suspendisse scelerisque enim facilisis dictum. Scelerisque turpis amet condimentum tincidunt tortor. Diam vitae odio aenean neque tempor quisque.</p>",
-        "lower_title": "Testing Standards",
-        "lower_text": "<p>HardKnock helmet's with Nuro technology significantly enhances head protection by effectively managing impact and rotational forces, which are critical in preventing TBIs. By integrating HardKnock helmets into workplace safety programs, employers can provide superior protection to their employees, thereby reducing the incidence of TBIs and promoting a safer work environment.</p>"
-      }
     }
   },
   "order": [
     "main",
     "hk_page_header_Hwa3Fn",
+    "hk_type1_vs_type2_7aXf4y",
     "hk_alternating_image_text_hAe7TG",
-    "hk_how_it_works_Fy9VHr",
-    "hk_type1_vs_type2_7aXf4y"
+    "hk_how_it_works_Fy9VHr"
   ]
 }
