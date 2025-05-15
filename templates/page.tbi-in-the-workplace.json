@@ -98,11 +98,6 @@
         "intro_image": "shopify://shop_images/tbi-intro-helmet.png"
       }
     },
-    "hk_how_it_works_Fy9VHr": {
-      "type": "hk-how-it-works",
-      "name": "HK How It Works",
-      "settings": {}
-    },
     "hk_type1_vs_type2_7aXf4y": {
       "type": "hk-type1-vs-type2",
       "blocks": {
@@ -149,6 +144,11 @@
         "lower_title": "Testing Standards",
         "lower_text": "<p>HardKnock helmet's with Nuro technology significantly enhances head protection by effectively managing impact and rotational forces, which are critical in preventing TBIs. By integrating HardKnock helmets into workplace safety programs, employers can provide superior protection to their employees, thereby reducing the incidence of TBIs and promoting a safer work environment.</p>"
       }
+    },
+    "hk_how_it_works_Fy9VHr": {
+      "type": "hk-how-it-works",
+      "name": "HK How It Works",
+      "settings": {}
     }
   },
   "order": [
