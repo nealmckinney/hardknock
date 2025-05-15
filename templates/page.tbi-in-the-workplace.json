@@ -11,13 +11,39 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hk_page_header_Hwa3Fn": {
+      "type": "hk-page-header",
+      "blocks": {
+        "button_TJgmWP": {
+          "type": "button",
+          "settings": {
+            "button_text": "More Info",
+            "button_link": "",
+            "button_style": "green"
+          }
+        }
+      },
+      "block_order": [
+        "button_TJgmWP"
+      ],
+      "name": "HK Page Header",
+      "settings": {
+        "title": "TBI in the Workplace",
+        "content": "<p>A Traumatic Brain Injury (TBI) in the workplace can have significant implications for the affected individual, their colleagues, and the organization as a whole. HardKnock's mission is to reduce and ulimately eliminate TBIs on the job, by offering innovative safety helmets built with lab-tested, science-proven technology.</p>",
+        "background_image": "shopify://shop_images/tbi-header.jpg",
+        "inner_content_style": false,
+        "inner_content_text_position": "top-left"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hk_page_header_Hwa3Fn"
   ]
 }
