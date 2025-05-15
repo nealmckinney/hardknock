@@ -40,10 +40,44 @@
         "inner_content_style": false,
         "inner_content_text_position": "top-left"
       }
+    },
+    "hk_alternating_image_text_hAe7TG": {
+      "type": "hk-alternating-image-text",
+      "blocks": {
+        "content_3XFPTU": {
+          "type": "content",
+          "settings": {
+            "title": "Enhanced Impact Absorbtion",
+            "text": "<h4>Superior Energy Absorption: </h4><p>Hardknock helmets with Nuro technology absorb and dissipate impact energy more effectively than traditional helmets, reducing the risk of both linear and rotational brain injuries.</p><h4> Multi-Directional Protection: </h4><p>The built-in Nuro technology handles impact from different angles and enhances the HardKnock helmet's overall head protection. </p>",
+            "desktop_image": "shopify://shop_images/tbi-enhanced.jpg",
+            "bleed_image": false
+          }
+        },
+        "content_DJPVny": {
+          "type": "content",
+          "settings": {
+            "title": "Reduction of  Rotational Forces: ",
+            "text": "<h4>Mitigating Shear Forces: </h4><p>Rotational forces are a significant cause of TBIs. The Hardknock helmet design reduces these forces, which helps prevent injuries like concussions and diffuse axonal injuries.</p><h4>Brain Injury Prevention: </h4><p>By addressing both linear and rotational forces, HardKnock helmets provide comprehensive protection, significantly lowering the risk of TBIs. </p>",
+            "desktop_image": "shopify://shop_images/tbi-reduction.jpg",
+            "bleed_image": false
+          }
+        }
+      },
+      "block_order": [
+        "content_3XFPTU",
+        "content_DJPVny"
+      ],
+      "name": "HK Alternating Image Text",
+      "settings": {
+        "intro_title": "Hardknock Helmets",
+        "intro_text": "<p>Hardknock helmets, equipped with Nuro technology are designed to reduce the risk of traumatic brain injuries (TBIs) by providing advanced protection against impacts and rotational forces. Here's how HardKnock safety helmets help reduce or eliminate TBIs in the workplace:</p>",
+        "intro_image": "shopify://shop_images/tbi-intro-helmet.png"
+      }
     }
   },
   "order": [
     "main",
-    "hk_page_header_Hwa3Fn"
+    "hk_page_header_Hwa3Fn",
+    "hk_alternating_image_text_hAe7TG"
   ]
 }
