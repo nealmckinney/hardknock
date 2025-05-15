@@ -61,11 +61,31 @@
             "desktop_image": "shopify://shop_images/tbi-reduction.jpg",
             "bleed_image": false
           }
+        },
+        "content_rHDmMj": {
+          "type": "content",
+          "settings": {
+            "title": "Comfort and Usablity",
+            "text": "<h4>Lightweight Design: </h4><p>Despite the advanced technology, HardKnock helmets are lightweight and comfortable to wear, encouraging consistent use by employees.</p><h4>Ventilation: </h4><p>Improved ventilation makes these helmets more comfortable in various working conditions, increasing the likelihood that workers will wear them properly. </p>",
+            "desktop_image": "shopify://shop_images/tbi-comfort.jpg",
+            "bleed_image": false
+          }
+        },
+        "content_bVm78j": {
+          "type": "content",
+          "settings": {
+            "title": "Versatility",
+            "text": "<h4>Various Applications:</h4><p>Nuro technology can be integrated into helmets for different industries, including construction, manufacturing, and cycling, making it versatile for various workplace environments.</p><h4>Customizable Designs:</h4><p>Helmets can be designed to meet specific safety standards and requirements of different workplaces.</p>",
+            "desktop_image": "shopify://shop_images/tbi-versatility.jpg",
+            "bleed_image": false
+          }
         }
       },
       "block_order": [
         "content_3XFPTU",
-        "content_DJPVny"
+        "content_DJPVny",
+        "content_rHDmMj",
+        "content_bVm78j"
       ],
       "name": "HK Alternating Image Text",
       "settings": {
