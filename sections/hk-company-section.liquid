@@ -7,37 +7,6 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "header_bg_image",
-      "label": "Header Background Image",
-      "info": "1920x1080 for standard resolution. 3840x2160 for 2x."
-    },
-    {
-      "type": "image_picker",
-      "id": "header_mobile_bg_image",
-      "label": "Header Mobile Background Image (optional)"
-    },
-    {
-      "type": "text",
-      "id": "header_title",
-      "label": "Header Title"
-    },
-    {
-      "type": "richtext",
-      "id": "header_text",
-      "label": "Header Text"
-    },
-    {
-      "type": "text",
-      "id": "header_button_label",
-      "label": "Header Button Label"
-    },
-    {
-      "type": "url",
-      "id": "header_button_link",
-      "label": "Header Button Link"
-    },
-    {
-      "type": "image_picker",
       "id": "our_mission_image",
       "label": "Our Mission Image"
     },
@@ -111,65 +80,8 @@
 {% endschema %}
 
 <section class="hk-company-section relative">
-  {% assign bg_image = section.settings.header_bg_image %}
-  {% assign mobile_bg_image = section.settings.header_mobile_bg_image %}
-
-  {% comment %}
-    <picture class="hardknock-page-header__background">
-      {% if mobile_bg_image != blank %}
-        <source
-          media="(max-width: 768px)"
-          srcset="
-            {{ mobile_bg_image | image_url: width: 375 }} 375w,
-            {{ mobile_bg_image | image_url: width: 550 }} 550w,
-            {{ mobile_bg_image | image_url: width: 750 }} 750w
-          "
-          sizes="100vw"
-        >
-      {% endif %}
-      {% if bg_image != blank %}
-        <source
-          srcset="
-            {{ bg_image | image_url: width: 750 }} 750w,
-            {{ bg_image | image_url: width: 1100 }} 1100w,
-            {{ bg_image | image_url: width: 1500 }} 1500w,
-            {{ bg_image | image_url: width: 2000 }} 2000w
-          "
-          sizes="100vw"
-        >
-        <img
-          src="{{ bg_image | image_url: width: 1500 }}"
-          alt=""
-          loading="eager"
-          width="{{ bg_image.width }}"
-          height="{{ bg_image.height }}"
-          class="object-fit-cover"
-        >
-      {% endif %}
-    </picture>
-  {% endcomment %}
   <div class="container top-container page-width relative z-index-2">
-    {% comment %}
-      <div class="sub-featured-container side-margin-auto">
-        <div class="header-text max-width-640">
-          <h1 class="hardknock-page-header__title color-white mb-4">
-            {{ section.settings.header_title }}
-          </h1>
-
-          {% if section.settings.header_text != blank %}
-            <div class="hardknock-page-header__text color-white mb-5">
-              {{ section.settings.header_text }}
-            </div>
-          {% endif %}
-          {% if section.settings.header_button_label != blank %}
-            <a href="{{ section.settings.header_button_link }}" class="button button--green">
-              {{ section.settings.header_button_label }}
-            </a>
-          {% endif %}
-        </div>
-      </div>
-    {% endcomment %}
-    <div class="bg-white-x sub-featured-container side-margin-auto radius-15 pt-6-x mt-7-x lg-mt-9-x">
+    <div class="bg-white-x sub-featured-container side-margin-auto radius-15">
       <div class="container page-width relative pt-3 lg-pt-6">
         <div class="our-mission-container flex-container flex-clear-1024 column-gap-80 relative z-index-2">
           {% if section.settings.our_mission_image != blank %}
@@ -297,7 +209,6 @@
   }
 
   .sub-featured-container {
-    /* margin-bottom: -160px !important; */
     border-radius: 15px;
     position: relative;
   }
@@ -317,10 +228,6 @@
     padding-left: 0;
     padding-right: 0;
   }
-
-  /* .our-mission-image {
-    aspect-ratio: 1/1.32;
-  } */
 
   .our-team-banner {
     aspect-ratio: 1/1;
@@ -353,12 +260,5 @@
     .our-team-banner {
       aspect-ratio: 1/0.52;
     }
-    /* .white-border-image {
-      position: relative;
-      border-radius: 22px;
-      overflow: hidden;
-      padding: 15px;
-      background: #fff;
-    } */
   }
 </style>
