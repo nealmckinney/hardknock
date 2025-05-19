@@ -17,6 +17,30 @@
         "padding_bottom": 28
       }
     },
+    "hk_page_header_iURQT8": {
+      "type": "hk-page-header",
+      "blocks": {
+        "button_qDanFc": {
+          "type": "button",
+          "settings": {
+            "button_text": "Tell us your story",
+            "button_link": "shopify://pages/data-sale-opt-out",
+            "button_style": "black"
+          }
+        }
+      },
+      "block_order": [
+        "button_qDanFc"
+      ],
+      "name": "HK Page Header",
+      "settings": {
+        "title": "In Their Words",
+        "content": "<p>Talk is cheap. But stories about Hardknock helmets protecting workers on the jobsite are straight priceless. We’re proud to collect these testimonials, and we want everyone to hear them. Whether sharing tales of what could have happened, medical endorsements or peer-reviewed studies, any time someone gives an opinion about Hardknock, it’s valuable. While we continue working hard to go beyond standards, stories like these prove that every effort is more than worthwhile. </p>",
+        "background_image": "shopify://shop_images/fpo-header.jpg",
+        "inner_content_style": false,
+        "inner_content_text_position": "top-left"
+      }
+    },
     "hk_testimonials_section_g4dz46": {
       "type": "hk-testimonials-section",
       "settings": {
@@ -35,6 +59,7 @@
   },
   "order": [
     "main",
+    "hk_page_header_iURQT8",
     "hk_testimonials_section_g4dz46"
   ]
 }
