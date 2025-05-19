@@ -110,62 +110,66 @@
 }
 {% endschema %}
 
-<section class="hk-company-section overflow-hidden relative">
+<section class="hk-company-section relative">
   {% assign bg_image = section.settings.header_bg_image %}
   {% assign mobile_bg_image = section.settings.header_mobile_bg_image %}
 
-  <picture class="hardknock-page-header__background">
-    {% if mobile_bg_image != blank %}
-      <source
-        media="(max-width: 768px)"
-        srcset="
-          {{ mobile_bg_image | image_url: width: 375 }} 375w,
-          {{ mobile_bg_image | image_url: width: 550 }} 550w,
-          {{ mobile_bg_image | image_url: width: 750 }} 750w
-        "
-        sizes="100vw"
-      >
-    {% endif %}
-    {% if bg_image != blank %}
-      <source
-        srcset="
-          {{ bg_image | image_url: width: 750 }} 750w,
-          {{ bg_image | image_url: width: 1100 }} 1100w,
-          {{ bg_image | image_url: width: 1500 }} 1500w,
-          {{ bg_image | image_url: width: 2000 }} 2000w
-        "
-        sizes="100vw"
-      >
-      <img
-        src="{{ bg_image | image_url: width: 1500 }}"
-        alt=""
-        loading="eager"
-        width="{{ bg_image.width }}"
-        height="{{ bg_image.height }}"
-        class="object-fit-cover"
-      >
-    {% endif %}
-  </picture>
+  {% comment %}
+    <picture class="hardknock-page-header__background">
+      {% if mobile_bg_image != blank %}
+        <source
+          media="(max-width: 768px)"
+          srcset="
+            {{ mobile_bg_image | image_url: width: 375 }} 375w,
+            {{ mobile_bg_image | image_url: width: 550 }} 550w,
+            {{ mobile_bg_image | image_url: width: 750 }} 750w
+          "
+          sizes="100vw"
+        >
+      {% endif %}
+      {% if bg_image != blank %}
+        <source
+          srcset="
+            {{ bg_image | image_url: width: 750 }} 750w,
+            {{ bg_image | image_url: width: 1100 }} 1100w,
+            {{ bg_image | image_url: width: 1500 }} 1500w,
+            {{ bg_image | image_url: width: 2000 }} 2000w
+          "
+          sizes="100vw"
+        >
+        <img
+          src="{{ bg_image | image_url: width: 1500 }}"
+          alt=""
+          loading="eager"
+          width="{{ bg_image.width }}"
+          height="{{ bg_image.height }}"
+          class="object-fit-cover"
+        >
+      {% endif %}
+    </picture>
+  {% endcomment %}
   <div class="container top-container page-width relative z-index-2">
-    <div class="sub-featured-container side-margin-auto">
-      <div class="header-text max-width-640">
-        <h1 class="hardknock-page-header__title color-white mb-4">
-          {{ section.settings.header_title }}
-        </h1>
+    {% comment %}
+      <div class="sub-featured-container side-margin-auto">
+        <div class="header-text max-width-640">
+          <h1 class="hardknock-page-header__title color-white mb-4">
+            {{ section.settings.header_title }}
+          </h1>
 
-        {% if section.settings.header_text != blank %}
-          <div class="hardknock-page-header__text color-white mb-5">
-            {{ section.settings.header_text }}
-          </div>
-        {% endif %}
-        {% if section.settings.header_button_label != blank %}
-          <a href="{{ section.settings.header_button_link }}" class="button button--green">
-            {{ section.settings.header_button_label }}
-          </a>
-        {% endif %}
+          {% if section.settings.header_text != blank %}
+            <div class="hardknock-page-header__text color-white mb-5">
+              {{ section.settings.header_text }}
+            </div>
+          {% endif %}
+          {% if section.settings.header_button_label != blank %}
+            <a href="{{ section.settings.header_button_link }}" class="button button--green">
+              {{ section.settings.header_button_label }}
+            </a>
+          {% endif %}
+        </div>
       </div>
-    </div>
-    <div class="bg-white-x sub-featured-container side-margin-auto radius-15 pt-6 mt-7 lg-mt-9">
+    {% endcomment %}
+    <div class="bg-white-x sub-featured-container side-margin-auto radius-15 pt-6-x mt-7-x lg-mt-9-x">
       <div class="container page-width relative pt-3 lg-pt-6">
         <div class="our-mission-container flex-container flex-clear-1024 column-gap-80 relative z-index-2">
           {% if section.settings.our_mission_image != blank %}
@@ -269,35 +273,16 @@
   </div>
 </section>
 
+{{ 'hk-page-header-justify-end.css' | asset_url | stylesheet_tag }}
+
 <style>
-  .hardknock-page-header__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 0;
-  }
-
-  .top-container {
-    margin-top: 200px;
-  }
-
   @media (min-width: 1025px) {
-    .top-container {
-      margin-top: 400px;
-    }
-
     .our-team-banner {
       margin-top: -100px !important;
     }
 
     .we-do-image {
       margin-top: -80px;
-    }
-
-    .hardknock-page-header__background {
-      min-height: 1000px;
     }
   }
 
