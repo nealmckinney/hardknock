@@ -122,6 +122,9 @@
     .hardknock-page-header {
       min-height: 800px;
     }
+    .hardknock-page-header.inner-content-style-true {
+      min-height: 900px;
+    }
   }
 
   .hardknock-page-header.inner-content-text-position-bottom-center .hardknock-page-header__container .inner {
