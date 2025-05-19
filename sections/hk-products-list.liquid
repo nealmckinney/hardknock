@@ -12,7 +12,7 @@
 }
 {% endschema %}
 
-<section class="hk-products-list-section pb-6 lg-pb-8 relative z-index-1">
+<section class="hk-products-list-section top-container pb-6 lg-pb-8 relative z-index-1">
   {% if collection.products.size > 0 %}
     <div class="hk-products-list page-width">
       {% for product in collection.products %}
@@ -88,6 +88,8 @@
   {% endif %}
 </section>
 
+{{ 'hk-page-header-justify-end.css' | asset_url | stylesheet_tag }}
+
 <style>
   .hk-product-card:not(:last-child) {
     margin-bottom: 60px;
@@ -113,14 +115,7 @@
     margin-top: -100px;
   }
 
-  .hk-products-list-section {
-    margin-top: -100px;
-  }
-
   @media (min-width: 1025px) {
-    .hk-products-list-section {
-      margin-top: -225px;
-    }
     .hk-product-card:nth-child(even) .hk-product-card__text,
     .hk-product-card:nth-child(even) .hk-product-card__image {
       margin-right: 60px;
