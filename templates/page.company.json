@@ -17,6 +17,30 @@
         "padding_bottom": 28
       }
     },
+    "hk_page_header_GBeHEi": {
+      "type": "hk-page-header",
+      "blocks": {
+        "button_dDAKrK": {
+          "type": "button",
+          "settings": {
+            "button_text": "Join Hardknock",
+            "button_link": "shopify://pages/careers",
+            "button_style": "green"
+          }
+        }
+      },
+      "block_order": [
+        "button_dDAKrK"
+      ],
+      "name": "HK Page Header",
+      "settings": {
+        "title": "We Get You",
+        "content": "<p>You’ve been doing the hard things for years without stopping to check if anyone noticed. Well, we noticed. And we make Hardknock for you. For men and women who can’t afford to be kept down after they’re knocked down. If you’re ready to join our team, we’re ready to hear from you. </p>",
+        "background_image": "shopify://shop_images/company-header.jpg",
+        "inner_content_style": false,
+        "inner_content_text_position": "top-left"
+      }
+    },
     "hk_company_section_RVDdWD": {
       "type": "hk-company-section",
       "settings": {
@@ -43,6 +67,7 @@
   },
   "order": [
     "main",
+    "hk_page_header_GBeHEi",
     "hk_company_section_RVDdWD"
   ]
 }
