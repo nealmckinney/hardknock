@@ -554,10 +554,10 @@ img.object-fit-contain {
 .object-position-top { object-position: top center; }
 
 /* Buttons */
-.button {
-    font-family: "Oswald", Helvetica, sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
+.button, .shopify-payment-button__button, .shopify-payment-button__button--unbranded {
+    font-family: "Oswald", Helvetica, sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
 }
 
 @media(min-width: 990px) {
