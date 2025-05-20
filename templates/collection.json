@@ -11,10 +11,20 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": true,
         "color_scheme": "scheme-1"
+      }
+    },
+    "hk_collection_header_96YtBf": {
+      "type": "hk-collection-header",
+      "name": "HK Collection Header",
+      "settings": {
+        "title": "{{ collection.title }}",
+        "content": "{{ collection.description }}",
+        "background_image": "{{ collection.image }}"
       }
     },
     "product-grid": {
@@ -40,6 +50,7 @@
   },
   "order": [
     "banner",
+    "hk_collection_header_96YtBf",
     "product-grid"
   ]
 }
