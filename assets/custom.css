@@ -528,8 +528,6 @@ body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path {
   }
 }
 
-
-
 .block { display:block; }
 img.block {
 	display:block;
@@ -577,6 +575,17 @@ img.object-fit-contain {
     color: var(--color-black);
 	border: 1px solid var(--color-black);
 }
+
+/* Collection Page */
+.card .card__inner .card__media,
+.card__media .media {
+	/* prevent hover scale up from being cropped */
+	overflow: visible !important;
+}
+.card__media .media img {
+	object-fit: contain !important;
+}
+
 
 /* Margins */
 
