@@ -24,6 +24,21 @@
       "type": "image_picker",
       "id": "mobile_background_image",
       "label": "Mobile Background Image (optional)"
+    },
+    {
+      "type": "select",
+      "id": "header_height",
+      "label": "Header Height",
+      "options": [
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "short",
+          "label": "Short"
+        }
+      ]
     }
   ],
   "presets": [
@@ -34,7 +49,7 @@
 }
 {% endschema %}
 
-<div class="hardknock-page-header">
+<div class="hardknock-page-header hardknock-page-header--{{ section.settings.header_height }}">
   {% assign bg_image = section.settings.background_image %}
   {% assign mobile_bg_image = section.settings.mobile_background_image %}
 

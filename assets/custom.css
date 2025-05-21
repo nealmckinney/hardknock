@@ -586,6 +586,16 @@ img.object-fit-contain {
 	object-fit: contain !important;
 }
 
+.card--card, .card--standard .card__inner {
+	border-color: #E1E1E1 !important;
+}
+
+@media(max-width: 767px) {
+	.card--card, .card--standard .card__inner {
+		border-width: 6px !important;
+	}
+}
+
 
 /* Margins */
 
