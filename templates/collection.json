@@ -24,7 +24,8 @@
       "settings": {
         "title": "{{ collection.title }}",
         "content": "{{ collection.description }}",
-        "background_image": "{{ collection.image }}"
+        "background_image": "{{ collection.image }}",
+        "header_height": "short"
       }
     },
     "product-grid": {
