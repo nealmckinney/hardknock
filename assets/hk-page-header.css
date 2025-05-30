@@ -111,7 +111,7 @@
   }
 
   .hardknock-page-header.hardknock-page-header--short {
-    min-height: 500px;
+    min-height: 400px;
   }
 
   @media (min-width: 750px) {
@@ -134,7 +134,7 @@
       min-height: 900px;
     }
     .hardknock-page-header.hardknock-page-header--short {
-      min-height: 600px;
+      min-height: 500px;
     }
   }
 
