@@ -33,18 +33,16 @@
               <div class="product-slider__item swiper-slide radius-20 overflow-hidden">
                 {% if product.featured_image != blank %}
                   <div class="product-slider__item-image relative">
-                    <div class="inner relative">
-                      {{
-                        product.featured_image
-                        | image_url: width: 760
-                        | image_tag:
-                          widths: '380, 760',
-                          class: 'product-slider__item-image__image object-fit-contain',
-                          loading: 'lazy',
-                          sizes: '380px',
-                          alt: product.title
-                      }}
-                    </div>
+                    {{
+                      product.featured_image
+                      | image_url: width: 760
+                      | image_tag:
+                        widths: '380, 760',
+                        class: 'product-slider__item-image__image object-fit-contain',
+                        loading: 'lazy',
+                        sizes: '380px',
+                        alt: product.title
+                    }}
                   </div>
                 {% endif %}
 
@@ -113,12 +111,12 @@
 
   .product-slider__item .product-slider__item-image {
     aspect-ratio: 1 / 0.62;
-    padding: 40px;
+    /* padding: 40px; */
     /* background-color: #000; */
   }
-
-  .product-slider__item .product-slider__item-image .inner {
-    height: 100%;
+  .product-slider__item .product-slider__item-image img {
+    padding: 40px;
+    box-sizing: border-box;
   }
 
   .product-slider-section .background {

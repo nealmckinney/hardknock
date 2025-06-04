@@ -23,7 +23,7 @@
   <div class="container page-width relative">
     <div class="inner radius-15 flex-container flex-clear-1023">
       <div class="text">
-        <h2 class="h6 uppercase mb-2">How It Works</h2>
+        <h2 class="h6 uppercase mb-2 mt-0">How It Works</h2>
         <h2 class="h2 mt-0">Nuro Technology</h2>
         {% if settings.how_it_works_text != blank %}
           <div class="copy mt-4">
@@ -86,6 +86,10 @@
       left: 0;
       right: 50%;
       bottom: 0;
+    }
+
+    .image-text-section .inner {
+      padding: var(--gutter-lg);
     }
 
     .image-text-section > .container {
