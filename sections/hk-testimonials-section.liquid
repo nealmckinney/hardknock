@@ -39,12 +39,12 @@
                     <div class="image relative circle overflow-hidden ratio-1-1 mb-4 lg-mb-0 flex-basis-60 flex-shrink-0">
                       {{
                         testimonial.image
-                        | image_url: width: 760
+                        | image_url: width: 1200
                         | image_tag:
-                          widths: '380, 760',
+                          widths: '380, 760, 1200',
                           class: 'object-fit-cover',
                           loading: 'lazy',
-                          sizes: '380px',
+                          sizes: '(max-width: 749px) 380px, (max-width: 1024px) 760px, 1200px',
                           alt: testimonial.name
                       }}
                     </div>
