@@ -1,0 +1,298 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+<div class="gradient">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+    {%- liquid
+      assign contact_form_class = 'isolate mb-6 lg-mb-9'
+      if settings.animations_reveal_on_scroll
+        assign contact_form_class = 'isolate scroll-trigger animate--slide-in mb-6 lg-mb-9'
+      endif
+    -%}
+
+    <div class="contact-form flex-container flex-clear-1024 column-gap-40">
+      <div class="text flex-basis-33">
+        <h2 class="h2 color-grey mb-4 mt-0">{{ section.settings.form_title }}</h2>
+        <div class="mb-5">{{ section.settings.form_text }}</div>
+      </div>
+      <div class="flex-grow-1">
+        {%- form 'contact', id: 'InquiryForm', class: contact_form_class -%}
+          {%- if form.posted_successfully? -%}
+            <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+              {{- 'icon-success.svg' | inline_asset_content -}}
+              {{ 'templates.contact.form.post_success' | t }}
+            </h2>
+          {%- elsif form.errors -%}
+            <div class="form__message">
+              <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+                {{- 'icon-error.svg' | inline_asset_content -}}
+                {{ 'templates.contact.form.error_heading' | t }}
+              </h2>
+            </div>
+            <ul class="form-status-list caption-large" role="list">
+              <li>
+                <a href="#InquiryForm-email" class="link">
+                  {{ form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email }}
+                </a>
+              </li>
+            </ul>
+          {%- endif -%}
+          <div class="contact__fields">
+            <div class="field">
+              <input
+                class="field__input"
+                autocomplete="name"
+                type="text"
+                id="InquiryForm-name"
+                name="contact[Full Name]"
+                value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                placeholder="Full Name"
+              >
+              <label class="field__label" for="InquiryForm-name">Full Name</label>
+            </div>
+            <div class="field">
+              <input
+                class="field__input"
+                type="text"
+                id="InquiryForm-company"
+                name="contact[Company]"
+                value="{% if form.company %}{{ form.company }}{% endif %}"
+                placeholder="Company"
+              >
+              <label class="field__label" for="InquiryForm-company">Company</label>
+            </div>
+            <div class="field field--with-error">
+              <input
+                autocomplete="email"
+                type="email"
+                id="InquiryForm-email"
+                class="field__input"
+                name="contact[email]"
+                spellcheck="false"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                aria-required="true"
+                {% if form.errors contains 'email' %}
+                  aria-invalid="true"
+                  aria-describedby="InquiryForm-email-error"
+                {% endif %}
+                placeholder="{{ 'templates.contact.form.email' | t }}"
+              >
+              <label class="field__label" for="InquiryForm-email">
+                {{- 'templates.contact.form.email' | t }}
+                <span aria-hidden="true">*</span></label
+              >
+              {%- if form.errors contains 'email' -%}
+                <small class="contact__field-error" id="InquiryForm-email-error">
+                  <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                  <span class="form__message">
+                    <span class="svg-wrapper">
+                      {{- 'icon-error.svg' | inline_asset_content -}}
+                    </span>
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email -}}
+                  </span>
+                </small>
+              {%- endif -%}
+            </div>
+            <div class="field">
+              <select
+                id="InquiryForm-inquiry-type"
+                class="field__input"
+                name="contact[Inquiry Type]"
+                required
+                aria-label="Inquiry Type"
+              >
+                <option value="">Select an inquiry type</option>
+                <option value="General">General</option>
+                <option value="Support">Support</option>
+                <option value="Sales">Sales</option>
+                <option value="Partnership">Partnership</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <textarea
+              rows="10"
+              id="InquiryForm-body"
+              class="text-area field__input"
+              name="contact[Message]"
+              placeholder="Message"
+            >
+          {{- form.body -}}
+        </textarea>
+            <label class="form__label field__label" for="InquiryForm-body"> Message </label>
+          </div>
+          <div class="contact__button">
+            <button type="submit" class="button">
+              {{ 'templates.contact.form.send' | t }}
+            </button>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+
+    <div class="contact-form flex-container flex-clear-1024 column-gap-40">
+      <div class="text flex-basis-33">
+        <h2 class="h2 color-grey mb-4 mt-0">{{ section.settings.form_title }}</h2>
+        <div class="mb-5">{{ section.settings.form_text }}</div>
+      </div>
+      <div class="flex-grow-1">
+        {%- form 'contact', id: 'DealerForm', class: contact_form_class -%}
+          {%- if form.posted_successfully? -%}
+            <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+              {{- 'icon-success.svg' | inline_asset_content -}}
+              {{ 'templates.contact.form.post_success' | t }}
+            </h2>
+          {%- elsif form.errors -%}
+            <div class="form__message">
+              <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+                {{- 'icon-error.svg' | inline_asset_content -}}
+                {{ 'templates.contact.form.error_heading' | t }}
+              </h2>
+            </div>
+            <ul class="form-status-list caption-large" role="list">
+              <li>
+                <a href="#DealerForm-email" class="link">
+                  {{ form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email }}
+                </a>
+              </li>
+            </ul>
+          {%- endif -%}
+          <div class="contact__fields">
+            <div class="field">
+              <input
+                class="field__input"
+                autocomplete="name"
+                type="text"
+                id="DealerForm-name"
+                name="contact[Full Name]"
+                value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                placeholder="Full Name"
+              >
+              <label class="field__label" for="DealerForm-name">Full Name</label>
+            </div>
+            <div class="field">
+              <input
+                class="field__input"
+                type="text"
+                id="DealerForm-company"
+                name="contact[Company]"
+                value="{% if form.company %}{{ form.company }}{% endif %}"
+                placeholder="Company"
+              >
+              <label class="field__label" for="DealerForm-company">Company</label>
+            </div>
+            <div class="field field--with-error">
+              <input
+                autocomplete="email"
+                type="email"
+                id="DealerForm-email"
+                class="field__input"
+                name="contact[email]"
+                spellcheck="false"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                aria-required="true"
+                {% if form.errors contains 'email' %}
+                  aria-invalid="true"
+                  aria-describedby="DealerForm-email-error"
+                {% endif %}
+                placeholder="{{ 'templates.contact.form.email' | t }}"
+              >
+              <label class="field__label" for="DealerForm-email">
+                {{- 'templates.contact.form.email' | t }}
+                <span aria-hidden="true">*</span></label
+              >
+              {%- if form.errors contains 'email' -%}
+                <small class="contact__field-error" id="DealerForm-email-error">
+                  <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                  <span class="form__message">
+                    <span class="svg-wrapper">
+                      {{- 'icon-error.svg' | inline_asset_content -}}
+                    </span>
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email -}}
+                  </span>
+                </small>
+              {%- endif -%}
+            </div>
+            <div class="field">
+              <select
+                id="DealerForm-inquiry-type"
+                class="field__input"
+                name="contact[Inquiry Type]"
+                required
+                aria-label="Inquiry Type"
+              >
+                <option value="">Select an inquiry type</option>
+                <option value="General">General</option>
+                <option value="Support">Support</option>
+                <option value="Sales">Sales</option>
+                <option value="Partnership">Partnership</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <textarea
+              rows="10"
+              id="DealerForm-body"
+              class="text-area field__input"
+              name="contact[Message]"
+              placeholder="Message"
+            >
+          {{- form.body -}}
+        </textarea>
+            <label class="form__label field__label" for="DealerForm-body"> Message </label>
+          </div>
+          <div class="contact__button">
+            <button type="submit" class="button">
+              {{ 'templates.contact.form.send' | t }}
+            </button>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "HK Support Forms",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Get in Touch!"
+    },
+    {
+      "type": "text",
+      "id": "form_text",
+      "label": "Form Text",
+      "default": "Fill out the form, and our team will connect with you to provide the information or support you need."
+    }
+  ],
+  "presets": [
+    {
+      "name": "HK Support Forms"
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
+{{ 'contact.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.google_maps_api_key != blank %}
+  <script>
+    window.mapKey = '{{ section.settings.google_maps_api_key }}';
+  </script>
+  {{ 'contact.js' | asset_url | script_tag }}
+{% endif %}
