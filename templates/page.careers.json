@@ -21,7 +21,7 @@
       "type": "hk-page-header",
       "settings": {
         "title": "Join The Hardknock Team",
-        "content": "<p>While we don’t have any openings at the moment, we’re always growing. Check back soon and follow us on LinkedIn for updates on future opportunities.</p>",
+        "content": "<p>Interested in joining the Hardknock team? See our current open positions below, and if nothing feels like a fit right now, be sure to check back often. Feel free to follow us on LinkedIn, and reach out here with any general employment inquiries. Thank you for your interest.</p>",
         "background_image": "shopify://shop_images/fpo-header.jpg",
         "inner_content_style": true,
         "inner_content_background_image": "shopify://shop_images/awards-header-inner-bg.jpg",
@@ -176,7 +176,6 @@
         "text_q6yJCL",
         "button_7QGUaM"
       ],
-      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
