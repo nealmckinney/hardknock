@@ -33,24 +33,26 @@
           <div class="swiper-wrapper">
             {% for feature in product.metafields.custom.features.value %}
               <div class="product-features__item swiper-slide radius-15 overflow-hidden">
-                {% if feature.image != blank %}
-                  <div class="feature-image relative">
-                    {{
-                      feature.image
-                      | image_url: width: 760
-                      | image_tag:
-                        widths: '380, 760',
-                        class: 'feature-image__image object-fit-cover',
-                        loading: 'lazy',
-                        sizes: '380px',
-                        alt: feature.title
-                    }}
-                  </div>
-                {% endif %}
+                {% comment %}
+                  {% if feature.image != blank %}
+                    <div class="feature-image relative">
+                      {{
+                        feature.image
+                        | image_url: width: 760
+                        | image_tag:
+                          widths: '380, 760',
+                          class: 'feature-image__image object-fit-cover',
+                          loading: 'lazy',
+                          sizes: '380px',
+                          alt: feature.title
+                      }}
+                    </div>
+                  {% endif %}
+                {% endcomment %}
 
                 <div class="text">
                   {% if feature.title != blank %}
-                    <h2 class="h3 product-features__item-title mt-0 mb-2">{{ feature.title }}</h2>
+                    <h2 class="h3 product-features__item-title mt-0 mb-2 color-white">{{ feature.title }}</h2>
                   {% endif %}
 
                   {% if feature.text != blank %}
@@ -58,7 +60,9 @@
                   {% endif %}
 
                   {% if feature.link != blank %}
-                    <a href="{{ feature.link }}" class="button product-features__item-link width-auto">Learn More</a>
+                    <a href="{{ feature.link }}" class="button button--green product-features__item-link width-auto"
+                      >Learn More</a
+                    >
                   {% endif %}
                 </div>
               </div>
@@ -89,9 +93,10 @@
   .product-features__item {
     width: 100%;
     flex-basis: auto;
-    background-color: #fff;
+    background-color: #000;
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--color-green);
   }
 
   .product-features__item .text {
@@ -99,6 +104,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    color: #fff;
   }
 
   .product-features__item .text .button {
@@ -167,6 +173,10 @@
 
   .swiper-slide {
     height: auto !important;
+  }
+
+  .product-features-section .swiper-pagination-bullets {
+    display: none;
   }
 </style>
 
