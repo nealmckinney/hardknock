@@ -28,10 +28,19 @@
         "inner_content_background_image": "shopify://shop_images/Fry_Steel_Company.jpg",
         "inner_content_text_position": "top-right"
       }
+    },
+    "hk_support_forms_9VtdJz": {
+      "type": "hk-support-forms",
+      "name": "HK Support Forms",
+      "settings": {
+        "form_title": "Get in Touch!",
+        "form_text": "Fill out the form, and our team will connect with you to provide the information or support you need."
+      }
     }
   },
   "order": [
     "main",
-    "hk_page_header_NxtnKg"
+    "hk_page_header_NxtnKg",
+    "hk_support_forms_9VtdJz"
   ]
 }
