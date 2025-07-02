@@ -11,13 +11,27 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hk_page_header_NxtnKg": {
+      "type": "hk-page-header",
+      "name": "HK Page Header",
+      "settings": {
+        "title": "Support",
+        "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "background_image": "shopify://shop_images/tbi-header.jpg",
+        "inner_content_style": true,
+        "inner_content_background_image": "shopify://shop_images/Fry_Steel_Company.jpg",
+        "inner_content_text_position": "top-right"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hk_page_header_NxtnKg"
   ]
 }
