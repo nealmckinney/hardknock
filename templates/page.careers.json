@@ -33,6 +33,7 @@
       "blocks": {
         "benefit_tbzJhE": {
           "type": "benefit",
+          "disabled": true,
           "settings": {
             "benefit_title": "Insurance:",
             "benefit_description": "<p>We offer comprehensive medical, dental, and vision insurance plans to ensure you and your family have access to quality healthcare. Life and disability coverage is also available for added peace of mind</p>"
@@ -40,6 +41,7 @@
         },
         "benefit_mt3cGP": {
           "type": "benefit",
+          "disabled": true,
           "settings": {
             "benefit_title": "401K:",
             "benefit_description": "<p>Our 401K plan comes with competitive employer matching, helping you invest in your retirement while you build your career with us. We’re committed to supporting your financial well-being.</p>"
@@ -47,6 +49,7 @@
         },
         "benefit_eeqniC": {
           "type": "benefit",
+          "disabled": true,
           "settings": {
             "benefit_title": "Holidays:",
             "benefit_description": "<p>We recognize the importance of time to recharge and spend with loved ones. At NURO, employees enjoy &lcub;xx&rcub; paid holidays throughout the year, including major national holidays, plus additional time off to celebrate personal or cultural traditions. We believe in creating a balance between work and rest, ensuring you're refreshed and ready to innovate.</p>"
@@ -54,6 +57,7 @@
         },
         "benefit_FgeUdz": {
           "type": "benefit",
+          "disabled": true,
           "settings": {
             "benefit_title": "Health & Wellness:",
             "benefit_description": "<p>At NURO we prioritize your health and wellness. We offer wellness programs, fitness incentives, and access to mental health resources to help you stay healthy and energized both in and outside of work.</p>"
@@ -61,6 +65,7 @@
         },
         "benefit_mY8cEe": {
           "type": "benefit",
+          "disabled": true,
           "settings": {
             "benefit_title": "Family:",
             "benefit_description": "<p>Family comes first. We offer flexible schedules, generous parental leave, and family support resources to ensure you can maintain a healthy work-life balance while taking care of what matters most.</p>"
@@ -68,6 +73,7 @@
         },
         "benefit_49Rzkp": {
           "type": "benefit",
+          "disabled": true,
           "settings": {
             "benefit_title": "Company Culture:",
             "benefit_description": "<p>We foster a collaborative, innovation-driven environment where every team member is valued. With a focus on inclusion and creativity, we encourage new ideas and continuous improvement in everything we do.</p>"
@@ -75,6 +81,7 @@
         },
         "benefit_D7MmHd": {
           "type": "benefit",
+          "disabled": true,
           "settings": {
             "benefit_title": "Employee Development:",
             "benefit_description": "<p>We believe in helping our employees grow. From mentorship programs to ongoing training and development, we invest in your professional journey to ensure you have the tools to succeed and advance in your career.</p>"
@@ -82,6 +89,7 @@
         },
         "position_48mXHr": {
           "type": "position",
+          "disabled": true,
           "settings": {
             "position_title": "Engineer",
             "position_description": "<p>Lorem ipsum dolor sit amet consectetur. Gravida pretium sem amet habitant purus morbi pellentesque dui. Ante lectus adipiscing enim cursus massa dui. Fames purus duis mauris facilisis euismod adipiscing sollicitudin pharetra. Praesent pellentesque tempus donec vel vel tempor sit pretium.</p>",
@@ -90,6 +98,7 @@
         },
         "position_yQxAb4": {
           "type": "position",
+          "disabled": true,
           "settings": {
             "position_title": "Account Co-ordinator",
             "position_description": "<p>Lorem ipsum dolor sit amet consectetur. Gravida pretium sem amet habitant purus morbi pellentesque dui. Ante lectus adipiscing enim cursus massa dui. Fames purus duis mauris facilisis euismod adipiscing sollicitudin pharetra. Praesent pellentesque tempus donec vel vel tempor sit pretium.</p>",
@@ -98,6 +107,7 @@
         },
         "position_wJ6rrm": {
           "type": "position",
+          "disabled": true,
           "settings": {
             "position_title": "Data Technician",
             "position_description": "<p>Lorem ipsum dolor sit amet consectetur. Gravida pretium sem amet habitant purus morbi pellentesque dui. Ante lectus adipiscing enim cursus massa dui. Fames purus duis mauris facilisis euismod adipiscing sollicitudin pharetra. Praesent pellentesque tempus donec vel vel tempor sit pretium.</p>",
@@ -106,6 +116,7 @@
         },
         "position_CLjN4A": {
           "type": "position",
+          "disabled": true,
           "settings": {
             "position_title": "Design Director",
             "position_description": "<p>Lorem ipsum dolor sit amet consectetur. Gravida pretium sem amet habitant purus morbi pellentesque dui. Ante lectus adipiscing enim cursus massa dui. Fames purus duis mauris facilisis euismod adipiscing sollicitudin pharetra. Praesent pellentesque tempus donec vel vel tempor sit pretium.</p>",
@@ -126,15 +137,60 @@
         "position_wJ6rrm",
         "position_CLjN4A"
       ],
+      "disabled": true,
       "settings": {
         "benefits_title": "Hardknock Employee Benefits",
         "positions_title": "Current Open Positions"
+      }
+    },
+    "rich_text_cVQ6Ca": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RtqMqN": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_q6yJCL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>While we don’t have any openings at the moment, we’re always growing. Check back soon and follow us on LinkedIn for updates on future opportunities.</p>"
+          }
+        },
+        "button_7QGUaM": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_RtqMqN",
+        "text_q6yJCL",
+        "button_7QGUaM"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "main",
     "hk_page_header_W9g9tD",
-    "hk_careers_section_yxefih"
+    "hk_careers_section_yxefih",
+    "rich_text_cVQ6Ca"
   ]
 }
