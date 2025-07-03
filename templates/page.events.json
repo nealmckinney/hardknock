@@ -22,9 +22,9 @@
       "settings": {
         "title": "Mark Your Calendars",
         "content": "<p>Upcoming tradeshows and industry events that we’re planning to attend. If you know of a happening you think we shouldn’t miss, let us know here. </p>",
-        "background_image": "shopify://shop_images/fpo-header.jpg",
+        "background_image": "shopify://shop_images/header-standard.jpg",
         "inner_content_style": true,
-        "inner_content_background_image": "shopify://shop_images/quote-bg.jpg",
+        "inner_content_background_image": "shopify://shop_images/header-events.jpg",
         "inner_content_text_position": "bottom-center"
       }
     },
