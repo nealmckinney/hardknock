@@ -32,16 +32,25 @@
     {%- liquid
       assign pre_footer_title = settings.pre_footer_title
       assign pre_footer_bg = settings.pre_footer_bg
-      
+
+      if request.page_type == 'index'
+        if settings.pre_footer_title_homepage != blank
+          assign pre_footer_title = settings.pre_footer_title_homepage
+        endif
+        if settings.pre_footer_bg_homepage != blank
+          assign pre_footer_bg = settings.pre_footer_bg_homepage
+        endif
+      endif
+
       if page.metafields.custom.pre_footer_title != blank
         assign pre_footer_title = page.metafields.custom.pre_footer_title
       endif
-      
+
       if page.metafields.custom.pre_footer_bg != blank
         assign pre_footer_bg = page.metafields.custom.pre_footer_bg
       endif
     -%}
-    
+
     {% if pre_footer_title != blank %}
       <h2 class="h1 color-brand-green scroll-trigger animate--slide-in">
         {{ pre_footer_title | newline_to_br }}

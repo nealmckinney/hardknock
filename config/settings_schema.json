@@ -1514,6 +1514,22 @@
         "id": "pre_footer_title",
         "label": "Pre Footer Title",
         "info": "Title for the Pre Footer section"
+      },
+      {
+        "type": "header",
+        "content": "Homepage Overrides"
+      },
+      {
+        "type": "image_picker",
+        "id": "pre_footer_bg_homepage",
+        "label": "Pre Footer Background Image (Homepage)",
+        "info": "Optional background image override for the Pre Footer section on the homepage"
+      },
+      {
+        "type": "textarea",
+        "id": "pre_footer_title_homepage",
+        "label": "Pre Footer Title (Homepage)",
+        "info": "Optional title override for the Pre Footer section on the homepage"
       }
     ]
   },
