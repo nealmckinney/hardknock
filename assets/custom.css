@@ -1,3 +1,45 @@
+/* Colors & Global Vars */
+:root {
+	--color-body: #282F33;;
+	--color-black: #000;
+	--color-brand-green: #D1D84D;
+	--color-green: #D1D84D;
+	--color-grey: #2D363A;
+	--color-white: #fff;
+	--color-blue: #3A64FF;
+
+	--gutter-sm: 22px;
+	--gutter-lg: 100px;
+
+	--margin-sm: 8px;
+	--margin-md: 32px;
+	--margin-lg: 40px;
+	--margin-xlg: 60px;
+
+	--header-ht:150px;
+	--header-scrolled-ht:70px;
+
+	--mobile-header-ht:54px;
+	--mobile-header-scrolled-ht:50px;
+
+	--page-width: calc(1445px + 10rem);
+}
+
+.color-brand-green { color: var(--color-brand-green); }
+.bg-brand-green { background-color: var(--color-brand-green); }
+.color-green { color: var(--color-green); }
+.bg-green { background-color: var(--color-green); }
+.color-body { color: var(--color-body); }
+.bg-body { background-color: var(--color-body); }
+.color-white { color: var(--color-white); }
+.bg-white { background-color: var(--color-white); }
+.color-black { color: var(--color-black); }
+.bg-black { background-color: var(--color-black); }
+.color-blue { color: var(--color-blue); }
+.bg-blue { background-color: var(--color-blue); }
+.color-grey { color: var(--color-grey); }
+.bg-grey { background-color: var(--color-grey); }
+
 /* ------------------
     TYPOGRAPHY
 ------------------ */
@@ -334,20 +376,20 @@ header-drawer {
 	object-fit: contain;
 }
 
-body:not(.template-index) .footer {
-	background-color: #2B363B !important;
+.footer { /*body:not(.template-index) .footer*/
+	background-color: var(--color-grey) !important;
 	color: var(--color-brand-green) !important;
 }
 
-body:not(.template-index) .footer * {
+.footer * { /*body:not(.template-index) .footer * */
 	color: var(--color-brand-green) !important;
 }
 
-body:not(.template-index) .footer-block .footer-block__brand-info {
+.footer-block .footer-block__brand-info { /*body:not(.template-index) .footer-block .footer-block__brand-info */
     border-bottom: 1px solid var(--color-brand-green) !important;
 }
 
-body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path {
+.footer-block__image-wrapper.svg-wrapper svg path { /*body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path */
 	fill: var(--color-brand-green) !important;
 }
 
@@ -382,46 +424,6 @@ body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path {
     background: linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 100%);
     transform: translateY(0px);
 }
-
-
-/* Colors & Global Vars */
-:root {
-	--color-body: #282F33;;
-	--color-black: #000;
-	--color-brand-green: #D1D84D;
-	--color-green: #D1D84D;
-	--color-white: #fff;
-	--color-blue: #3A64FF;
-
-	--gutter-sm: 22px;
-	--gutter-lg: 100px;
-
-	--margin-sm: 8px;
-	--margin-md: 32px;
-	--margin-lg: 40px;
-	--margin-xlg: 60px;
-
-	--header-ht:150px;
-	--header-scrolled-ht:70px;
-
-	--mobile-header-ht:54px;
-	--mobile-header-scrolled-ht:50px;
-
-	--page-width: calc(1445px + 10rem);
-}
-
-.color-brand-green { color: var(--color-brand-green); }
-.bg-brand-green { background-color: var(--color-brand-green); }
-.color-green { color: var(--color-green); }
-.bg-green { background-color: var(--color-green); }
-.color-body { color: var(--color-body); }
-.bg-body { background-color: var(--color-body); }
-.color-white { color: var(--color-white); }
-.bg-white { background-color: var(--color-white); }
-.color-black { color: var(--color-black); }
-.bg-black { background-color: var(--color-black); }
-.color-blue { color: var(--color-blue); }
-.bg-blue { background-color: var(--color-blue); }
 
 
 /* Utility */
