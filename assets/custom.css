@@ -366,7 +366,7 @@ body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path {
 }
 
 .product-header-background-image {
-	height: 100vh;
+	height: 100%;
 	top: 0;
 	left: 0;
 }
@@ -379,7 +379,7 @@ body:not(.template-index) .footer-block__image-wrapper.svg-wrapper svg path {
     right: 0;
     bottom: 0;
     z-index: 1;
-    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 100%);
     transform: translateY(0px);
 }
 

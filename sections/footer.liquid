@@ -57,6 +57,14 @@
       if collection.metafields.custom.pre_footer_bg != blank
         assign pre_footer_bg = collection.metafields.custom.pre_footer_bg
       endif
+
+      if product.metafields.custom.pre_footer_title != blank
+        assign pre_footer_title = product.metafields.custom.pre_footer_title
+      endif
+
+      if product.metafields.custom.pre_footer_bg != blank
+        assign pre_footer_bg = product.metafields.custom.pre_footer_bg
+      endif
     -%}
 
     {% if pre_footer_title != blank %}
