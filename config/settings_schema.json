@@ -1530,6 +1530,12 @@
         "id": "pre_footer_title_homepage",
         "label": "Pre Footer Title (Homepage)",
         "info": "Optional title override for the Pre Footer section on the homepage"
+      },
+      {
+        "type": "text",
+        "id": "footer_brand_headline",
+        "label": "Footer Brand Headline",
+        "info": "Optional brand headline override for the Footer section"
       }
     ]
   },

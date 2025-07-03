@@ -187,8 +187,23 @@
                       {%- endif -%}
                       {%- liquid
                         assign brand_headline = settings.brand_headline
+
+                        if request.page_type == 'index'
+                          if settings.footer_brand_headline != blank
+                            assign brand_headline = settings.footer_brand_headline
+                          endif
+                        endif
+
                         if page.metafields.custom.footer_brand_headline != blank
                           assign brand_headline = page.metafields.custom.footer_brand_headline
+                        endif
+
+                        if collection.metafields.custom.footer_brand_headline != blank
+                          assign brand_headline = collection.metafields.custom.footer_brand_headline
+                        endif
+
+                        if product.metafields.custom.footer_brand_headline != blank
+                          assign brand_headline = product.metafields.custom.footer_brand_headline
                         endif
                       -%}
                       {%- if brand_headline != blank -%}
