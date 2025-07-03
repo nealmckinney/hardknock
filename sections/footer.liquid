@@ -49,6 +49,14 @@
       if page.metafields.custom.pre_footer_bg != blank
         assign pre_footer_bg = page.metafields.custom.pre_footer_bg
       endif
+
+      if collection.metafields.custom.pre_footer_title != blank
+        assign pre_footer_title = collection.metafields.custom.pre_footer_title
+      endif
+
+      if collection.metafields.custom.pre_footer_bg != blank
+        assign pre_footer_bg = collection.metafields.custom.pre_footer_bg
+      endif
     -%}
 
     {% if pre_footer_title != blank %}
