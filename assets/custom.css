@@ -200,7 +200,7 @@ header-drawer {
 @media(min-width:1025px) {
 
 	.pre-footer {
-		aspect-ratio: 1 / 0.58;
+		aspect-ratio: 1 / 0.51785;
 		padding: 20px 0;
 	}
 
@@ -214,7 +214,7 @@ header-drawer {
 	}
 }
 
-body.template-index .pre-footer {
+/* body.template-index .pre-footer {
 	margin-top: -200px;
 	padding-top: 200px;
 }
@@ -225,7 +225,7 @@ body.template-index .pre-footer {
 		padding-top: 420px;
 		padding-bottom: 375px;
 	}
-}
+} */
 
 .footer {
     padding-top: 100px !important;
