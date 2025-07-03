@@ -76,21 +76,29 @@
   <div class="product-wrapper relative">
     {% if product.metafields.custom.header_background_image %}
       <div class="product-header-background-image absolute width-100">
-        <img
-          src="{{ product.metafields.custom.header_background_image | image_url: width: 1920 }}"
-          alt="{{ product.title }}"
-          width="100%"
-          height="100%"
-        >
+        {{
+          product.metafields.custom.header_background_image
+          | image_url: width: 2000
+          | image_tag:
+            widths: '750, 1100, 1500, 2000',
+            class: 'object-fit-cover',
+            loading: 'lazy',
+            sizes: '100vw',
+            alt: product.title
+        }}
       </div>
     {% elsif settings.product_header_bg %}
       <div class="product-header-background-image absolute width-100">
-        <img
-          src="{{ settings.product_header_bg | image_url: width: 1920 }}"
-          alt="{{ product.title }}"
-          width="100%"
-          height="100%"
-        >
+        {{
+          settings.product_header_bg
+          | image_url: width: 2000
+          | image_tag:
+            widths: '750, 1100, 1500, 2000',
+            class: 'object-fit-cover',
+            loading: 'lazy',
+            sizes: '100vw',
+            alt: product.title
+        }}
       </div>
     {% endif %}
     <div class="page-width pt-1">
