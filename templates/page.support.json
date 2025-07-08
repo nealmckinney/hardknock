@@ -23,9 +23,9 @@
       "settings": {
         "title": "Drop us a line",
         "content": "<p>Questions about your Harkdnock helmets? Or interested in becoming a Dealer? Get in touch with our team here.</p><p> Whether you have a question about your Hardknock, need some product support or are interested in becoming a Hardknock dealer, you’re in the right place. Drop us a line and let’s figure it out.</p>",
-        "background_image": "shopify://shop_images/tbi-header.jpg",
+        "background_image": "shopify://shop_images/header-standard.jpg",
         "inner_content_style": true,
-        "inner_content_background_image": "shopify://shop_images/Fry_Steel_Company.jpg",
+        "inner_content_background_image": "shopify://shop_images/header-events.jpg",
         "inner_content_text_position": "top-right"
       }
     },
