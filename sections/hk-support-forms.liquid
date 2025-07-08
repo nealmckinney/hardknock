@@ -23,12 +23,12 @@
     </div>
     <div class="flex-grow-1">
       {%- form 'contact', id: 'InquiryForm', class: contact_form_class -%}
-        {%- if form.posted_successfully? and request.querystring contains 'form=inquiry' -%}
-          <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+        {%- if form.posted_successfully? -%}
+          <h2 class="form-status form-status-list form__message inquiry-success" tabindex="-1" autofocus>
             {{- 'icon-success.svg' | inline_asset_content -}}
             {{ 'templates.contact.form.post_success' | t }}
           </h2>
-        {%- elsif form.errors and request.querystring contains 'form=inquiry' -%}
+        {%- elsif form.errors -%}
           <div class="form__message">
             <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
               {{- 'icon-error.svg' | inline_asset_content -}}
@@ -162,12 +162,12 @@
     </div>
     <div class="flex-grow-1">
       {%- form 'contact', id: 'DealerForm', class: contact_form_class -%}
-        {%- if form.posted_successfully? and request.querystring contains 'form=dealer' -%}
-          <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+        {%- if form.posted_successfully? -%}
+          <h2 class="form-status form-status-list form__message dealer-success" tabindex="-1" autofocus>
             {{- 'icon-success.svg' | inline_asset_content -}}
             {{ 'templates.contact.form.post_success' | t }}
           </h2>
-        {%- elsif form.errors and request.querystring contains 'form=dealer' -%}
+        {%- elsif form.errors -%}
           <div class="form__message">
             <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
               {{- 'icon-error.svg' | inline_asset_content -}}
@@ -364,6 +364,20 @@
 {{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
 {{ 'contact.css' | asset_url | stylesheet_tag }}
 
+<style>
+  /* Hide success messages by default when both forms are on the same page */
+  .inquiry-success,
+  .dealer-success {
+    display: none;
+  }
+
+  /* Show success message only when the specific form was submitted */
+  .inquiry-success.show,
+  .dealer-success.show {
+    display: block;
+  }
+</style>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Sync Inquiry Form email fields
@@ -386,25 +400,29 @@
       });
     }
 
-    // Add form identifier to URL when forms are submitted
+    // Handle form-specific success messages
     const inquiryForm = document.getElementById('InquiryForm');
     const dealerForm = document.getElementById('DealerForm');
 
     if (inquiryForm) {
       inquiryForm.addEventListener('submit', function () {
-        // Add form parameter to URL
-        const currentUrl = new URL(window.location);
-        currentUrl.searchParams.set('form', 'inquiry');
-        window.history.replaceState({}, '', currentUrl);
+        // Show inquiry success, hide dealer success
+        const inquirySuccess = document.querySelector('.inquiry-success');
+        const dealerSuccess = document.querySelector('.dealer-success');
+
+        if (inquirySuccess) inquirySuccess.classList.add('show');
+        if (dealerSuccess) dealerSuccess.classList.remove('show');
       });
     }
 
     if (dealerForm) {
       dealerForm.addEventListener('submit', function () {
-        // Add form parameter to URL
-        const currentUrl = new URL(window.location);
-        currentUrl.searchParams.set('form', 'dealer');
-        window.history.replaceState({}, '', currentUrl);
+        // Show dealer success, hide inquiry success
+        const inquirySuccess = document.querySelector('.inquiry-success');
+        const dealerSuccess = document.querySelector('.dealer-success');
+
+        if (dealerSuccess) dealerSuccess.classList.add('show');
+        if (inquirySuccess) inquirySuccess.classList.remove('show');
       });
     }
   });
