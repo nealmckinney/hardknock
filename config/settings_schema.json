@@ -1532,7 +1532,7 @@
         "info": "Optional title override for the Pre Footer section on the homepage"
       },
       {
-        "type": "text",
+        "type": "textarea",
         "id": "footer_brand_headline",
         "label": "Footer Brand Headline",
         "info": "Optional brand headline override for the Footer section"
