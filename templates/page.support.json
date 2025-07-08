@@ -21,8 +21,8 @@
       "type": "hk-page-header",
       "name": "HK Page Header",
       "settings": {
-        "title": "Support",
-        "content": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
+        "title": "Drop us a line",
+        "content": "<p>Questions about your Harkdnock helmets? Or interested in becoming a Dealer? Get in touch with our team here.</p><p> Whether you have a question about your Hardknock, need some product support or are interested in becoming a Hardknock dealer, you’re in the right place. Drop us a line and let’s figure it out.</p>",
         "background_image": "shopify://shop_images/tbi-header.jpg",
         "inner_content_style": true,
         "inner_content_background_image": "shopify://shop_images/Fry_Steel_Company.jpg",
@@ -33,8 +33,14 @@
       "type": "hk-support-forms",
       "name": "HK Support Forms",
       "settings": {
-        "form_title": "Get in Touch!",
-        "form_text": "Fill out the form, and our team will connect with you to provide the information or support you need."
+        "inquiry_intro_title": "Customer Service",
+        "inquiry_intro_text": "<p>Hardknock helmets are designed to be durable, simple and up for the job – year after year. Should you have any questions or need any help with your Hardknock, just let us know.</p>",
+        "inquiry_form_title": "Customer Inquiry Form",
+        "inquiry_form_text": "<p>Just fill out the information fields here and someone from our customer service team will get back to you soon – typically within 1-2 business days.</p>",
+        "dealer_intro_title": "Become a Dealer",
+        "dealer_intro_text": "<p>Hardknock helmets are trusted all over the world. If you’re interested in becoming a dealer, we’d love to hear from you. Just fill out the contact form and we’ll be in touch soon.</p>",
+        "dealer_form_title": "Dealer Inquiry Form",
+        "dealer_form_text": "<p>Please share a bit of information, and someone from our sales team will get back to you in 1-2 business days.</p>"
       }
     }
   },
