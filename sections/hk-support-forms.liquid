@@ -396,30 +396,24 @@
       });
     }
 
-    // Handle form-specific success messages
-    const inquiryForm = document.getElementById('InquiryForm');
-    const dealerForm = document.getElementById('DealerForm');
+    // Check if a form was successfully submitted
+    const urlParams = new URLSearchParams(window.location.search);
+    const contactPosted = urlParams.get('contact_posted');
+    const hash = window.location.hash;
 
-    if (inquiryForm) {
-      inquiryForm.addEventListener('submit', function () {
-        // Show inquiry success, hide dealer success
+    if (contactPosted === 'true') {
+      // Determine which form was submitted based on the hash
+      if (hash === '#InquiryForm') {
         const inquirySuccess = document.querySelector('.inquiry-success');
+        if (inquirySuccess) {
+          inquirySuccess.classList.add('show');
+        }
+      } else if (hash === '#DealerForm') {
         const dealerSuccess = document.querySelector('.dealer-success');
-
-        if (inquirySuccess) inquirySuccess.classList.add('show');
-        if (dealerSuccess) dealerSuccess.classList.remove('show');
-      });
-    }
-
-    if (dealerForm) {
-      dealerForm.addEventListener('submit', function () {
-        // Show dealer success, hide inquiry success
-        const inquirySuccess = document.querySelector('.inquiry-success');
-        const dealerSuccess = document.querySelector('.dealer-success');
-
-        if (dealerSuccess) dealerSuccess.classList.add('show');
-        if (inquirySuccess) inquirySuccess.classList.remove('show');
-      });
+        if (dealerSuccess) {
+          dealerSuccess.classList.add('show');
+        }
+      }
     }
   });
 </script>
