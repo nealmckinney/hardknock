@@ -22,13 +22,13 @@
       <div class="mb-5">{{ section.settings.inquiry_form_text }}</div>
     </div>
     <div class="flex-grow-1">
-      {%- form 'contact', id: 'InquiryForm', class: contact_form_class, handle: 'inquiry' -%}
-        {%- if form.posted_successfully? -%}
+      {%- form 'contact', id: 'InquiryForm', class: contact_form_class -%}
+        {%- if form.posted_successfully? and request.querystring contains 'form=inquiry' -%}
           <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
             {{- 'icon-success.svg' | inline_asset_content -}}
             {{ 'templates.contact.form.post_success' | t }}
           </h2>
-        {%- elsif form.errors -%}
+        {%- elsif form.errors and request.querystring contains 'form=inquiry' -%}
           <div class="form__message">
             <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
               {{- 'icon-error.svg' | inline_asset_content -}}
@@ -74,6 +74,8 @@
             name="contact[email]"
             value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
           >
+          <!-- Hidden form identifier -->
+          <input type="hidden" name="form_type" value="inquiry">
           <div class="field field--with-error">
             <input
               autocomplete="email"
@@ -159,13 +161,13 @@
       <div class="mb-5">{{ section.settings.dealer_form_text }}</div>
     </div>
     <div class="flex-grow-1">
-      {%- form 'contact', id: 'DealerForm', class: contact_form_class, handle: 'dealer' -%}
-        {%- if form.posted_successfully? -%}
+      {%- form 'contact', id: 'DealerForm', class: contact_form_class -%}
+        {%- if form.posted_successfully? and request.querystring contains 'form=dealer' -%}
           <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
             {{- 'icon-success.svg' | inline_asset_content -}}
             {{ 'templates.contact.form.post_success' | t }}
           </h2>
-        {%- elsif form.errors -%}
+        {%- elsif form.errors and request.querystring contains 'form=dealer' -%}
           <div class="form__message">
             <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
               {{- 'icon-error.svg' | inline_asset_content -}}
@@ -211,6 +213,8 @@
             name="contact[email]"
             value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
           >
+          <!-- Hidden form identifier -->
+          <input type="hidden" name="form_type" value="dealer">
           <div class="field field--with-error">
             <input
               autocomplete="email"
@@ -379,6 +383,28 @@
     if (dealerEmailField && dealerHiddenEmail) {
       dealerEmailField.addEventListener('input', function () {
         dealerHiddenEmail.value = this.value;
+      });
+    }
+
+    // Add form identifier to URL when forms are submitted
+    const inquiryForm = document.getElementById('InquiryForm');
+    const dealerForm = document.getElementById('DealerForm');
+
+    if (inquiryForm) {
+      inquiryForm.addEventListener('submit', function () {
+        // Add form parameter to URL
+        const currentUrl = new URL(window.location);
+        currentUrl.searchParams.set('form', 'inquiry');
+        window.history.replaceState({}, '', currentUrl);
+      });
+    }
+
+    if (dealerForm) {
+      dealerForm.addEventListener('submit', function () {
+        // Add form parameter to URL
+        const currentUrl = new URL(window.location);
+        currentUrl.searchParams.set('form', 'dealer');
+        window.history.replaceState({}, '', currentUrl);
       });
     }
   });
