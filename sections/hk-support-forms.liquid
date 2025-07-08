@@ -74,8 +74,6 @@
             name="contact[email]"
             value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
           >
-          <!-- Hidden form identifier -->
-          <input type="hidden" name="form_type" value="inquiry">
           <div class="field field--with-error">
             <input
               autocomplete="email"
@@ -213,8 +211,6 @@
             name="contact[email]"
             value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
           >
-          <!-- Hidden form identifier -->
-          <input type="hidden" name="form_type" value="dealer">
           <div class="field field--with-error">
             <input
               autocomplete="email"
