@@ -9,10 +9,17 @@
       endif
     -%}
 
+    <!-- Inquiry Form -->
     <div class="contact-form flex-container flex-clear-1024 column-gap-40">
       <div class="text flex-basis-33">
-        <h2 class="h2 color-grey mb-4 mt-0">{{ section.settings.form_title }}</h2>
-        <div class="mb-5">{{ section.settings.form_text }}</div>
+        {% if section.settings.inquiry_intro_title != blank %}
+          <h2 class="h2 color-grey mb-4 mt-0">{{ section.settings.inquiry_intro_title }}</h2>
+        {% endif %}
+        {% if section.settings.inquiry_intro_text != blank %}
+          <div class="mb-5">{{ section.settings.inquiry_intro_text }}</div>
+        {% endif %}
+        <h3 class="h3 color-grey mb-4 mt-0">{{ section.settings.inquiry_form_title }}</h3>
+        <div class="mb-5">{{ section.settings.inquiry_form_text }}</div>
       </div>
       <div class="flex-grow-1">
         {%- form 'contact', id: 'InquiryForm', class: contact_form_class -%}
@@ -44,7 +51,7 @@
                 autocomplete="name"
                 type="text"
                 id="InquiryForm-name"
-                name="contact[Full Name]"
+                name="contact[Inquiry Full Name]"
                 value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
                 placeholder="Full Name"
               >
@@ -55,7 +62,7 @@
                 class="field__input"
                 type="text"
                 id="InquiryForm-company"
-                name="contact[Company]"
+                name="contact[Inquiry Company]"
                 value="{% if form.company %}{{ form.company }}{% endif %}"
                 placeholder="Company"
               >
@@ -67,7 +74,7 @@
                 type="email"
                 id="InquiryForm-email"
                 class="field__input"
-                name="contact[email]"
+                name="contact[Inquiry Email]"
                 spellcheck="false"
                 autocapitalize="off"
                 value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
@@ -116,7 +123,7 @@
               rows="10"
               id="InquiryForm-body"
               class="text-area field__input"
-              name="contact[Message]"
+              name="contact[Inquiry Message]"
               placeholder="Message"
             >
           {{- form.body -}}
@@ -132,10 +139,17 @@
       </div>
     </div>
 
+    <!-- Dealer Form -->
     <div class="contact-form flex-container flex-clear-1024 column-gap-40">
       <div class="text flex-basis-33">
-        <h2 class="h2 color-grey mb-4 mt-0">{{ section.settings.form_title }}</h2>
-        <div class="mb-5">{{ section.settings.form_text }}</div>
+        {% if section.settings.dealer_intro_title != blank %}
+          <h2 class="h2 color-grey mb-4 mt-0">{{ section.settings.dealer_intro_title }}</h2>
+        {% endif %}
+        {% if section.settings.dealer_intro_text != blank %}
+          <div class="mb-5">{{ section.settings.dealer_intro_text }}</div>
+        {% endif %}
+        <h3 class="h3 color-grey mb-4 mt-0">{{ section.settings.dealer_form_title }}</h3>
+        <div class="mb-5">{{ section.settings.dealer_form_text }}</div>
       </div>
       <div class="flex-grow-1">
         {%- form 'contact', id: 'DealerForm', class: contact_form_class -%}
@@ -167,7 +181,7 @@
                 autocomplete="name"
                 type="text"
                 id="DealerForm-name"
-                name="contact[Full Name]"
+                name="contact[Dealer Full Name]"
                 value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
                 placeholder="Full Name"
               >
@@ -178,7 +192,7 @@
                 class="field__input"
                 type="text"
                 id="DealerForm-company"
-                name="contact[Company]"
+                name="contact[Dealer Company]"
                 value="{% if form.company %}{{ form.company }}{% endif %}"
                 placeholder="Company"
               >
@@ -190,7 +204,7 @@
                 type="email"
                 id="DealerForm-email"
                 class="field__input"
-                name="contact[email]"
+                name="contact[Dealer Email]"
                 spellcheck="false"
                 autocapitalize="off"
                 value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
@@ -222,7 +236,7 @@
               <select
                 id="DealerForm-inquiry-type"
                 class="field__input"
-                name="contact[Inquiry Type]"
+                name="contact[Dealer Inquiry Type]"
                 required
                 aria-label="Inquiry Type"
               >
@@ -239,7 +253,7 @@
               rows="10"
               id="DealerForm-body"
               class="text-area field__input"
-              name="contact[Message]"
+              name="contact[Dealer Message]"
               placeholder="Message"
             >
           {{- form.body -}}
@@ -267,16 +281,60 @@
   },
   "settings": [
     {
-      "type": "text",
-      "id": "form_title",
-      "label": "Form Title",
-      "default": "Get in Touch!"
+      "type": "header",
+      "content": "Inquiry Form Settings"
     },
     {
       "type": "text",
-      "id": "form_text",
-      "label": "Form Text",
-      "default": "Fill out the form, and our team will connect with you to provide the information or support you need."
+      "id": "inquiry_intro_title",
+      "label": "Inquiry Form Intro Title",
+      "default": "General Inquiries"
+    },
+    {
+      "type": "richtext",
+      "id": "inquiry_intro_text",
+      "label": "Inquiry Form Intro Text",
+      "default": "<p>Have a question? We're here to help!</p>"
+    },
+    {
+      "type": "text",
+      "id": "inquiry_form_title",
+      "label": "Inquiry Form Title",
+      "default": "Get in Touch!"
+    },
+    {
+      "type": "richtext",
+      "id": "inquiry_form_text",
+      "label": "Inquiry Form Text",
+      "default": "<p>Fill out the form, and our team will connect with you to provide the information or support you need.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Dealer Form Settings"
+    },
+    {
+      "type": "text",
+      "id": "dealer_intro_title",
+      "label": "Dealer Form Intro Title",
+      "default": "Dealer Inquiries"
+    },
+    {
+      "type": "richtext",
+      "id": "dealer_intro_text",
+      "label": "Dealer Form Intro Text",
+      "default": "<p>Interested in becoming a dealer? Let's talk!</p>"
+    },
+    {
+      "type": "text",
+      "id": "dealer_form_title",
+      "label": "Dealer Form Title",
+      "default": "Dealer Application"
+    },
+    {
+      "type": "richtext",
+      "id": "dealer_form_text",
+      "label": "Dealer Form Text",
+      "default": "<p>Tell us about your business and how we can work together.</p>"
     }
   ],
   "presets": [
@@ -289,10 +347,3 @@
 
 {{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
 {{ 'contact.css' | asset_url | stylesheet_tag }}
-
-{% if section.settings.google_maps_api_key != blank %}
-  <script>
-    window.mapKey = '{{ section.settings.google_maps_api_key }}';
-  </script>
-  {{ 'contact.js' | asset_url | script_tag }}
-{% endif %}
