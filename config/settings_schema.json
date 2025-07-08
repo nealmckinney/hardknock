@@ -1276,7 +1276,7 @@
         "content": "t:settings_schema.brand_information.settings.paragraph.content"
       },
       {
-        "type": "richtext",
+        "type": "textarea",
         "id": "brand_headline",
         "label": "t:settings_schema.brand_information.settings.brand_headline.label"
       },
