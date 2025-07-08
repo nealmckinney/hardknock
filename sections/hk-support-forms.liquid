@@ -68,19 +68,13 @@
             >
             <label class="field__label" for="InquiryForm-company">Company</label>
           </div>
-          <!-- Hidden email field for Shopify validation -->
-          <input
-            type="hidden"
-            name="contact[email]"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-          >
           <div class="field field--with-error">
             <input
               autocomplete="email"
               type="email"
               id="InquiryForm-email"
               class="field__input"
-              name="contact[Inquiry Email]"
+              name="contact[email]"
               spellcheck="false"
               autocapitalize="off"
               value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
@@ -205,19 +199,13 @@
             >
             <label class="field__label" for="DealerForm-company">Company</label>
           </div>
-          <!-- Hidden email field for Shopify validation -->
-          <input
-            type="hidden"
-            name="contact[email]"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-          >
           <div class="field field--with-error">
             <input
               autocomplete="email"
               type="email"
               id="DealerForm-email"
               class="field__input"
-              name="contact[Dealer Email]"
+              name="contact[email]"
               spellcheck="false"
               autocapitalize="off"
               value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
@@ -376,26 +364,6 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Sync Inquiry Form email fields
-    const inquiryEmailField = document.getElementById('InquiryForm-email');
-    const inquiryHiddenEmail = inquiryEmailField?.closest('form')?.querySelector('input[name="contact[email]"]');
-
-    if (inquiryEmailField && inquiryHiddenEmail) {
-      inquiryEmailField.addEventListener('input', function () {
-        inquiryHiddenEmail.value = this.value;
-      });
-    }
-
-    // Sync Dealer Form email fields
-    const dealerEmailField = document.getElementById('DealerForm-email');
-    const dealerHiddenEmail = dealerEmailField?.closest('form')?.querySelector('input[name="contact[email]"]');
-
-    if (dealerEmailField && dealerHiddenEmail) {
-      dealerEmailField.addEventListener('input', function () {
-        dealerHiddenEmail.value = this.value;
-      });
-    }
-
     // Check if a form was successfully submitted
     const urlParams = new URLSearchParams(window.location.search);
     const contactPosted = urlParams.get('contact_posted');
