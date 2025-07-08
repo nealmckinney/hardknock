@@ -1278,7 +1278,7 @@
       {
         "type": "textarea",
         "id": "brand_headline",
-        "label": "t:settings_schema.brand_information.settings.brand_headline.label"
+        "label": "Default Brand Headline"
       },
       {
         "type": "richtext",
