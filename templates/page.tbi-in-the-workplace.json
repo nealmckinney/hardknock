@@ -34,8 +34,8 @@
       ],
       "name": "HK Page Header",
       "settings": {
-        "title": "TBI in the Workplace",
-        "content": "<p>A Traumatic Brain Injury (TBI) in the workplace can have significant implications for the affected individual, their colleagues, and the organization as a whole. HardKnock's mission is to reduce and ulimately eliminate TBIs on the job, by offering innovative safety helmets built with lab-tested, science-proven technology.</p>",
+        "title": "Safer than safe.",
+        "content": "<p>Safety in the workplace is our primary motive. It’s why we make safety helmets that go beyond the standard to prevent Traumatic Brain Injury (TBI). The construction industry incurs more work-related brain injuries than any industry in the U.S. If the government set higher protection standards, all helmet makers would meet them. But instead of fighting bureaucracy, we set our own standards to go beyond the standards. To make Hardknock meet the needs of real workers on real jobsites. </p>",
         "background_image": "shopify://shop_images/tbi-header.jpg",
         "inner_content_style": false,
         "inner_content_text_position": "top-left"
@@ -47,8 +47,8 @@
         "content_3XFPTU": {
           "type": "content",
           "settings": {
-            "title": "Enhanced Impact Absorbtion",
-            "text": "<h4>Superior Energy Absorption: </h4><p>Hardknock helmets with Nuro technology absorb and dissipate impact energy more effectively than traditional helmets, reducing the risk of both linear and rotational brain injuries.</p><h4> Multi-Directional Protection: </h4><p>The built-in Nuro technology handles impact from different angles and enhances the HardKnock helmet's overall head protection. </p>",
+            "title": "IMPACT PROTECTION",
+            "text": "<p>Type I safety helmets are primarily rated to protect against impact to the top of the head only. Type II safety helmets have been tested to provide protection against side, front and back impacts as well.</p>",
             "desktop_image": "shopify://shop_images/tbi-enhanced.jpg",
             "bleed_image": false,
             "pad_image": false
@@ -93,10 +93,15 @@
       ],
       "name": "HK Alternating Image Text",
       "settings": {
-        "intro_title": "Hardknock Helmets",
-        "intro_text": "<p>Hardknock helmets, equipped with Nuro technology are designed to reduce the risk of traumatic brain injuries (TBIs) by providing advanced protection against impacts and rotational forces. Here's how HardKnock safety helmets help reduce or eliminate TBIs in the workplace:</p>",
+        "intro_title": "Type I or Type II? What’s the difference?",
+        "intro_text": "<p>It’s pretty much always been assumed that construction workers can get away with a Type I rated helmet – primarily rated to protect the skull against impacts from above. But the jobsite is unpredictable. Hazards come from all angles, and impacts are rarely straight on. That’s why every Hardknock helmet is Type II rated. And here’s more on what that means. </p>",
         "intro_image": "shopify://shop_images/tbi-intro-helmet.png"
       }
+    },
+    "hk_how_it_works_Fy9VHr": {
+      "type": "hk-how-it-works",
+      "name": "HK How It Works",
+      "settings": {}
     },
     "hk_type1_vs_type2_7aXf4y": {
       "type": "hk-type1-vs-type2",
@@ -105,28 +110,28 @@
           "type": "comparison_block",
           "settings": {
             "title": "Impact Protection",
-            "text": "<p>Type 1 helmets are primarily for top impact protection, while Type 2 helmets provide multi-directional impact protection.</p>"
+            "text": "<p>Type I safety helmets are primarily rated to protect against impact to the top of the head only. Type II safety helmets have been tested to provide protection against side, front and back impacts as well.</p>"
           }
         },
         "comparison_block_UVMLDc": {
           "type": "comparison_block",
           "settings": {
             "title": "Use Cases",
-            "text": "<p>Type 1 helmets are common in general construction, where the risk is primarily from falling objects. Type 2 helmets are more suitable for environments with potential hazards from multiple angles. </p>"
+            "text": "<p>Type I helmets are common in general construction, where the primary risk is assumed to be falling objects. Type II helmets are more suitable for environments with potential hazards from multiple angles.</p>"
           }
         },
         "comparison_block_fCenkq": {
           "type": "comparison_block",
           "settings": {
             "title": "Form Factor",
-            "text": "<p>Type 2 helmets often have a more complex design with enhanced suspension systems to provide additional protection and may include foam padding to absorb impacts from multiple directions. </p>"
+            "text": "<p>Type II helmets often feature more complex designs, with enhanced energy absorption systems that provide additional protection, and may include foam padding to further absorb direct force impact.</p>"
           }
         },
         "comparison_block_eC8U4i": {
           "type": "comparison_block",
           "settings": {
             "title": "Standard Compliance",
-            "text": "<p>In the United States, Type 2 helmets also comply with the ANSI Z89.1 standard but are subjected to more rigorous testing for side impact protection.</p>"
+            "text": "<p>In the U.S., Type II helmets also comply with the Type I (ANSI Z89.1) standard. But Type II means the helmet has also passed rigorous testing for impact protection from other angles.</p>"
           }
         }
       },
@@ -139,16 +144,11 @@
       "name": "HK Type 1 vs Type 2",
       "settings": {
         "background_image": "shopify://shop_images/type1-vs-type2-bg.jpg",
-        "intro_title": "Type 1 vs. Type 2 Helmets",
-        "intro_text": "<p>Lorem ipsum dolor sit amet consectetur. Lorem mollis in ut non ante. Adipiscing pharetra suspendisse scelerisque enim facilisis dictum. Scelerisque turpis amet condimentum tincidunt tortor. Diam vitae odio aenean neque tempor quisque.</p>",
+        "intro_title": "Type I or Type II? What’s the difference?",
+        "intro_text": "<p>It’s pretty much always been assumed that construction workers can get away with a Type I rated helmet – primarily rated to protect the skull against impacts from above. But the jobsite is unpredictable. Hazards come from all angles, and impacts are rarely straight on. That’s why every Hardknock helmet is Type II rated. And here’s more on what that means.</p>",
         "lower_title": "Testing Standards",
         "lower_text": "<p>HardKnock helmet's with Nuro technology significantly enhances head protection by effectively managing impact and rotational forces, which are critical in preventing TBIs. By integrating HardKnock helmets into workplace safety programs, employers can provide superior protection to their employees, thereby reducing the incidence of TBIs and promoting a safer work environment.</p>"
       }
-    },
-    "hk_how_it_works_Fy9VHr": {
-      "type": "hk-how-it-works",
-      "name": "HK How It Works",
-      "settings": {}
     }
   },
   "order": [
