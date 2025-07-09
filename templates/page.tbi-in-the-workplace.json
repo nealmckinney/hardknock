@@ -34,8 +34,8 @@
       ],
       "name": "HK Page Header",
       "settings": {
-        "title": "TBI in the Workplace",
-        "content": "<p>A Traumatic Brain Injury (TBI) in the workplace can have significant implications for the affected individual, their colleagues, and the organization as a whole. HardKnock's mission is to reduce and ulimately eliminate TBIs on the job, by offering innovative safety helmets built with lab-tested, science-proven technology.</p>",
+        "title": "Safer than safe.",
+        "content": "<p>Safety in the workplace is our primary motive. It’s why we make safety helmets that go beyond the standard to prevent Traumatic Brain Injury (TBI). The construction industry incurs more work-related brain injuries than any industry in the U.S. If the government set higher protection standards, all helmet makers would meet them. But instead of fighting bureaucracy, we set our own standards to go beyond the standards. To make Hardknock meet the needs of real workers on real jobsites. </p>",
         "background_image": "shopify://shop_images/tbi-header.jpg",
         "inner_content_style": false,
         "inner_content_text_position": "top-left"
@@ -47,8 +47,8 @@
         "content_3XFPTU": {
           "type": "content",
           "settings": {
-            "title": "Enhanced Impact Absorbtion",
-            "text": "<h4>Superior Energy Absorption: </h4><p>Hardknock helmets with Nuro technology absorb and dissipate impact energy more effectively than traditional helmets, reducing the risk of both linear and rotational brain injuries.</p><h4> Multi-Directional Protection: </h4><p>The built-in Nuro technology handles impact from different angles and enhances the HardKnock helmet's overall head protection. </p>",
+            "title": "The helmet that actually works.That workers actually like to wear.",
+            "text": "<p>Hard hats have long been viewed as a necessary evil that most workers hate wearing. Hardknock helmets are engineered to protect far more effectively than any other safety helmet out there. And perhaps even more importantly, designed so workers actually like wearing them. Let’s find out how. And why.</p>",
             "desktop_image": "shopify://shop_images/tbi-enhanced.jpg",
             "bleed_image": false,
             "pad_image": false
@@ -57,8 +57,8 @@
         "content_DJPVny": {
           "type": "content",
           "settings": {
-            "title": "Reduction of  Rotational Forces: ",
-            "text": "<h4>Mitigating Shear Forces: </h4><p>Rotational forces are a significant cause of TBIs. The Hardknock helmet design reduces these forces, which helps prevent injuries like concussions and diffuse axonal injuries.</p><h4>Brain Injury Prevention: </h4><p>By addressing both linear and rotational forces, HardKnock helmets provide comprehensive protection, significantly lowering the risk of TBIs. </p>",
+            "title": "Only Hardknock has Nuro Core",
+            "text": "<h4>Superior Energy Absorption </h4><p>Hardknock helmets are built with Nuro technology to absorb and dissipate impact energy more effectively than traditional helmets, and reduce the risk of brain injury from both linear force and rotational torque (learn more below). Nuro Core mitigates both, like no other.</p><h4>Multi-Directional Protection </h4><p>Most safety helmet liners are made to handle impact from one direction, perpendicular to the helmet. It’s an unrealistic consideration. The Nuro Core inside every Hardknock helmet is designed to handle impact from different angles. To radically enhance overall protection. </p>",
             "desktop_image": "shopify://shop_images/tbi-reduction.jpg",
             "bleed_image": false,
             "pad_image": true
@@ -67,8 +67,8 @@
         "content_rHDmMj": {
           "type": "content",
           "settings": {
-            "title": "Comfort and Usablity",
-            "text": "<h4>Lightweight Design: </h4><p>Despite the advanced technology, HardKnock helmets are lightweight and comfortable to wear, encouraging consistent use by employees.</p><h4>Ventilation: </h4><p>Improved ventilation makes these helmets more comfortable in various working conditions, increasing the likelihood that workers will wear them properly. </p>",
+            "title": "Nuro Core Protects Against Rotational Torque",
+            "text": "<h4>Mitigating Shear Forces: </h4><p>The science has been clear for decades. Most Traumatic Brain Injury occurs when the skull spins around the brain. Known as Rotational Torque, Nuro Core is a comprehensive and innovative technology that works to mitigate these “shear forces,” helping prevent concussions and diffusing axonal injuries.</p><h4>Both Kinds of Protection: </h4><p>Of course Hardknock helmets are also designed to protect against linear or “blunt forces.” By addressing both linear and rotational forces, Hardknock helmets provide truly dual protection, significantly lowering the risk of Traumatic Brain Injury. </p>",
             "desktop_image": "shopify://shop_images/tbi-comfort.jpg",
             "bleed_image": false,
             "pad_image": true
@@ -77,10 +77,20 @@
         "content_bVm78j": {
           "type": "content",
           "settings": {
-            "title": "Versatility",
-            "text": "<h4>Various Applications:</h4><p>Nuro technology can be integrated into helmets for different industries, including construction, manufacturing, and cycling, making it versatile for various workplace environments.</p><h4>Customizable Designs:</h4><p>Helmets can be designed to meet specific safety standards and requirements of different workplaces.</p>",
+            "title": "Unbelievably Breathable. All Day Comfortable.",
+            "text": "<h4>Ventilation and Breathability:</h4><p>The Nuro Core is 93% porous, contributing to just how well the Hardknock T2+ Pro ventilates and allows airflow to cool. So workers can feel a lot more comfortable across various working conditions and increase the likelihood that they’ll wear the helmet properly.</p><h4>Lightweight and Wobble-free:</h4><p>Despite all its advanced technology, Hardknock helmets are super lightweight. Painstakingly designed by biomedical engineers, they also use a fit system that eliminates wobble by doing away with all unnecessary hinges. Two big reasons why workers actually like wearing Hardknock. Imagine that.</p>",
             "desktop_image": "shopify://shop_images/tbi-versatility.jpg",
             "bleed_image": true,
+            "pad_image": false
+          }
+        },
+        "content_Kd6qaF": {
+          "type": "content",
+          "settings": {
+            "title": "Weight Balanced with a Lower Dome Height",
+            "text": "<h4>That Balanced Feel:</h4><p>Each Hardknock is weight optimized, and it’s yet another reason why workers actually like wearing this helmet. Our experience designing athletic gear helped us understand how important proper weight distribution can be when it comes to minimizing fatigue. It’s a tangible intangible.</p><h4>Less Bumping and Clipping:</h4><p>Why are Hardknock helmets designed with a lower dome height? Because constantly bumping your helmet getting in and out of equipment or clipping it on overhangs means you’ll probably hate wearing it. And if you’re not wearing it, it can’t protect.</p>",
+            "desktop_image": "shopify://shop_images/tbi-reduction.jpg",
+            "bleed_image": false,
             "pad_image": false
           }
         }
@@ -89,14 +99,20 @@
         "content_3XFPTU",
         "content_DJPVny",
         "content_rHDmMj",
-        "content_bVm78j"
+        "content_bVm78j",
+        "content_Kd6qaF"
       ],
       "name": "HK Alternating Image Text",
       "settings": {
-        "intro_title": "Hardknock Helmets",
-        "intro_text": "<p>Hardknock helmets, equipped with Nuro technology are designed to reduce the risk of traumatic brain injuries (TBIs) by providing advanced protection against impacts and rotational forces. Here's how HardKnock safety helmets help reduce or eliminate TBIs in the workplace:</p>",
+        "intro_title": "The Only Treatment is Prevention.",
+        "intro_text": "<p>Unlike most bodily injuries we humans can suffer, there’s really no treatment for a Traumatic Brain Injury (TBI). The focus has to be on prevention. That’s why each Hardknock helmet is designed with innovative Nuro technology to mitigate force from both direct impact and rotational torque. With unmatched fit and comfort, so workers actually want to wear it. By integrating Hardknock helmets into workplace safety programs, employers help their workers reduce the risk and incidence of TBI, and feel more secure.</p>",
         "intro_image": "shopify://shop_images/tbi-intro-helmet.png"
       }
+    },
+    "hk_how_it_works_Fy9VHr": {
+      "type": "hk-how-it-works",
+      "name": "HK How It Works",
+      "settings": {}
     },
     "hk_type1_vs_type2_7aXf4y": {
       "type": "hk-type1-vs-type2",
@@ -105,28 +121,28 @@
           "type": "comparison_block",
           "settings": {
             "title": "Impact Protection",
-            "text": "<p>Type 1 helmets are primarily for top impact protection, while Type 2 helmets provide multi-directional impact protection.</p>"
+            "text": "<p>Type I safety helmets are primarily rated to protect against impact to the top of the head only. Type II safety helmets have been tested to provide protection against side, front and back impacts as well.</p>"
           }
         },
         "comparison_block_UVMLDc": {
           "type": "comparison_block",
           "settings": {
             "title": "Use Cases",
-            "text": "<p>Type 1 helmets are common in general construction, where the risk is primarily from falling objects. Type 2 helmets are more suitable for environments with potential hazards from multiple angles. </p>"
+            "text": "<p>Type I helmets are common in general construction, where the primary risk is assumed to be falling objects. Type II helmets are more suitable for environments with potential hazards from multiple angles.</p>"
           }
         },
         "comparison_block_fCenkq": {
           "type": "comparison_block",
           "settings": {
             "title": "Form Factor",
-            "text": "<p>Type 2 helmets often have a more complex design with enhanced suspension systems to provide additional protection and may include foam padding to absorb impacts from multiple directions. </p>"
+            "text": "<p>Type II helmets often feature more complex designs, with enhanced energy absorption systems that provide additional protection, and may include foam padding to further absorb direct force impact.</p>"
           }
         },
         "comparison_block_eC8U4i": {
           "type": "comparison_block",
           "settings": {
             "title": "Standard Compliance",
-            "text": "<p>In the United States, Type 2 helmets also comply with the ANSI Z89.1 standard but are subjected to more rigorous testing for side impact protection.</p>"
+            "text": "<p>In the U.S., Type II helmets also comply with the Type I (ANSI Z89.1) standard. But Type II means the helmet has also passed rigorous testing for impact protection from other angles.</p>"
           }
         }
       },
@@ -139,16 +155,11 @@
       "name": "HK Type 1 vs Type 2",
       "settings": {
         "background_image": "shopify://shop_images/type1-vs-type2-bg.jpg",
-        "intro_title": "Type 1 vs. Type 2 Helmets",
-        "intro_text": "<p>Lorem ipsum dolor sit amet consectetur. Lorem mollis in ut non ante. Adipiscing pharetra suspendisse scelerisque enim facilisis dictum. Scelerisque turpis amet condimentum tincidunt tortor. Diam vitae odio aenean neque tempor quisque.</p>",
+        "intro_title": "Type I or Type II? What’s the difference?",
+        "intro_text": "<p>It’s pretty much always been assumed that construction workers can get away with a Type I rated helmet – primarily rated to protect the skull against impacts from above. But the jobsite is unpredictable. Hazards come from all angles, and impacts are rarely straight on. That’s why every Hardknock helmet is Type II rated. And here’s more on what that means.</p>",
         "lower_title": "Testing Standards",
         "lower_text": "<p>HardKnock helmet's with Nuro technology significantly enhances head protection by effectively managing impact and rotational forces, which are critical in preventing TBIs. By integrating HardKnock helmets into workplace safety programs, employers can provide superior protection to their employees, thereby reducing the incidence of TBIs and promoting a safer work environment.</p>"
       }
-    },
-    "hk_how_it_works_Fy9VHr": {
-      "type": "hk-how-it-works",
-      "name": "HK How It Works",
-      "settings": {}
     }
   },
   "order": [
