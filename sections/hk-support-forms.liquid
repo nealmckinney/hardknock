@@ -364,6 +364,18 @@
   .dealer-success.show {
     display: block;
   }
+
+  /* Scroll offset for fixed header */
+  html {
+    scroll-padding-top: 100px; /* Adjust this value to match your header height */
+  }
+
+  /* Alternative for older browsers */
+  @media screen and (min-width: 768px) {
+    html {
+      scroll-padding-top: 120px; /* Larger offset for desktop */
+    }
+  }
 </style>
 
 <script>
@@ -379,11 +391,35 @@
         const inquirySuccess = document.querySelector('.inquiry-success');
         if (inquirySuccess) {
           inquirySuccess.classList.add('show');
+          // Scroll to the success message with header offset
+          setTimeout(() => {
+            const headerHeight = 100; // Adjust this to match your header height
+            const element = document.getElementById('InquiryForm');
+            if (element) {
+              const elementPosition = element.offsetTop - headerHeight;
+              window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth',
+              });
+            }
+          }, 100);
         }
       } else if (hash === '#DealerForm') {
         const dealerSuccess = document.querySelector('.dealer-success');
         if (dealerSuccess) {
           dealerSuccess.classList.add('show');
+          // Scroll to the success message with header offset
+          setTimeout(() => {
+            const headerHeight = 100; // Adjust this to match your header height
+            const element = document.getElementById('DealerForm');
+            if (element) {
+              const elementPosition = element.offsetTop - headerHeight;
+              window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth',
+              });
+            }
+          }, 100);
         }
       }
     }
