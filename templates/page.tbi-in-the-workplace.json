@@ -78,9 +78,19 @@
           "type": "content",
           "settings": {
             "title": "Unbelievably Breathable. All Day Comfortable.",
-            "text": "<h4>Ventilation and Breathability:</h4><p>Nuro technology can be integrated into helmets for different industries, including construction, manufacturing, and cycling, making it versatile for various workplace environments.</p><h4>Customizable Designs:</h4><p>Helmets can be designed to meet specific safety standards and requirements of different workplaces.</p>",
+            "text": "<h4>Ventilation and Breathability:</h4><p>The Nuro Core is 93% porous, contributing to just how well the Hardknock T2+ Pro ventilates and allows airflow to cool. So workers can feel a lot more comfortable across various working conditions and increase the likelihood that they’ll wear the helmet properly.</p><h4>Lightweight and Wobble-free:</h4><p>Despite all its advanced technology, Hardknock helmets are super lightweight. Painstakingly designed by biomedical engineers, they also use a fit system that eliminates wobble by doing away with all unnecessary hinges. Two big reasons why workers actually like wearing Hardknock. Imagine that.</p>",
             "desktop_image": "shopify://shop_images/tbi-versatility.jpg",
             "bleed_image": true,
+            "pad_image": false
+          }
+        },
+        "content_Kd6qaF": {
+          "type": "content",
+          "settings": {
+            "title": "Weight Balanced with a Lower Dome Height",
+            "text": "<h4>That Balanced Feel:</h4><p>Each Hardknock is weight optimized, and it’s yet another reason why workers actually like wearing this helmet. Our experience designing athletic gear helped us understand how important proper weight distribution can be when it comes to minimizing fatigue. It’s a tangible intangible.</p><h4>Less Bumping and Clipping:</h4><p>Why are Hardknock helmets designed with a lower dome height? Because constantly bumping your helmet getting in and out of equipment or clipping it on overhangs means you’ll probably hate wearing it. And if you’re not wearing it, it can’t protect.</p>",
+            "desktop_image": "shopify://shop_images/tbi-reduction.jpg",
+            "bleed_image": false,
             "pad_image": false
           }
         }
@@ -89,7 +99,8 @@
         "content_3XFPTU",
         "content_DJPVny",
         "content_rHDmMj",
-        "content_bVm78j"
+        "content_bVm78j",
+        "content_Kd6qaF"
       ],
       "name": "HK Alternating Image Text",
       "settings": {
