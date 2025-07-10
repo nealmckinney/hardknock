@@ -69,8 +69,9 @@
       ],
       "name": "HK Contact Form",
       "settings": {
-        "background_image": "shopify://shop_images/fpo-header.jpg",
+        "background_image": "shopify://shop_images/header-standard.jpg",
         "google_maps_api_key": "AIzaSyDwfyL-2k8aBo4fqL1dcaBDLjXpSqZbvSk",
+        "map_address": "7930 SW Burns Way # C, Wilsonville, OR 97070",
         "heading": "Contact Us",
         "form_title": "Get in Touch!",
         "form_text": "Fill out the form, and our team will connect with you to provide the information or support you need."
