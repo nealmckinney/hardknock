@@ -60,7 +60,7 @@
         "button_label": "Learn More",
         "button_link": "shopify://pages/tbi-in-the-workplace",
         "text_alignment": "right",
-        "full_width": true,
+        "full_width": false,
         "gradient_opacity": 100,
         "mobile_gradient_opacity": 50
       }
