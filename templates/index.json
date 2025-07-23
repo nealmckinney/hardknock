@@ -53,7 +53,7 @@
       "type": "hk-banner",
       "name": "HK Banner",
       "settings": {
-        "background_image": "shopify://shop_images/home-our-promise.jpg",
+        "background_image": "shopify://shop_images/home-our-promise-crop.jpg",
         "pre_title": "OUR PROMISE:",
         "title": "Deliver Superior Technology Backed by Science",
         "body": "<p>Protecting the skull is the base job of every helmet out there. Protecting the brain itself takes a whole other level. Hardknock helmets are designed to help protect against rotational torque, the force that causes traumatic brain injury. So what if it’s harder to do it this way? The right way is the only way. </p>",
