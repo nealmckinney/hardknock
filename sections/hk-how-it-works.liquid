@@ -10,19 +10,11 @@
 {% endschema %}
 
 <section class="how-it-works-section image-text-section text-right relative v-pad-8">
-  {% if settings.how_it_works_bg != blank %}
-    <div class="image">
-      {{
-        settings.how_it_works_bg
-        | image_url: width: 3000
-        | image_tag: widths: '1500, 2000, 3000', class: 'object-fit-contain', loading: 'lazy', sizes: '100vw'
-      }}
-    </div>
-  {% endif %}
+  
 
   <div class="container page-width relative">
-    <div class="inner radius-15 flex-container flex-clear-1023">
-      <div class="text">
+    <div class="inner radius-15 flex-container flex-clear-1023 relative overflow-hidden">
+      <div class="text relative z-index-1">
         <h2 class="h6 uppercase mb-2 mt-0">How It Works</h2>
         <h2 class="h2 mt-0">Nuro Technology</h2>
         {% if settings.how_it_works_text != blank %}
@@ -36,6 +28,15 @@
           </a>
         {% endif %}
       </div>
+      {% if settings.how_it_works_bg != blank %}
+        <div class="image">
+          {{
+            settings.how_it_works_bg
+            | image_url: width: 3000
+            | image_tag: widths: '1500, 2000, 3000', class: 'object-fit-contain', loading: 'lazy', sizes: '100vw'
+          }}
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -67,7 +68,7 @@
     /* margin: var(--gutter-sm); */
   }
 
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     .image-text-section .image {
       position: relative;
       aspect-ratio: auto;
@@ -77,16 +78,36 @@
     .image-text-section .image img {
       position: relative;
     }
-  }
+  } */
 
-  @media (min-width: 1025px) {
-    .image-text-section .image {
+  .image-text-section .image {
       position: absolute;
       top: 0;
       left: 0;
-      right: 50%;
+      right: 0;
       bottom: 0;
+      
     }
+
+    
+
+  @media (max-width: 1024px) {
+    .image-text-section .image {
+      opacity: 0.5;
+    }
+
+    .image-text-section .image img {
+      object-fit: cover;
+    }
+  }
+
+  @media (min-width: 1025px) {
+
+  .image-text-section .image img {
+    height: 100%;
+    width: auto;
+  }
+    
 
     .image-text-section .inner {
       padding: var(--gutter-lg);
@@ -102,6 +123,7 @@
 
     .image-text-section .text {
       flex-basis: 50%;
+      margin-left: 50%;
     }
 
     .image-text-section .callouts .callout .icon {
