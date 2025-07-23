@@ -16,7 +16,7 @@
         "description": "{{ metaobject.description | metafield_tag }}",
         "image": "{{ metaobject.image.value }}",
         "start_date": "{{ metaobject.start_date | metafield_text }}",
-        "end_date": "{{ metaobject.end_date | metafield_text }}"
+        "end_date": "{{ metaobject.end_date | metafield_text }}{{ metaobject.end_date | metafield_text }}"
       }
     }
   },
