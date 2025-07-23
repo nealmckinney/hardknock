@@ -14,8 +14,7 @@
       "settings": {
         "name": "{{ metaobject.name.value }}",
         "location": "{{ metaobject.location.value }}",
-        "text": "{{ metaobject.text | metafield_tag }}",
-        "image": "{{ metaobject.image.value }}"
+        "text": "{{ metaobject.text | metafield_tag }}"
       }
     }
   },
