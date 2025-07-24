@@ -17,6 +17,18 @@
         "padding_bottom": 28
       }
     },
+    "hk_page_header_r7pXxc": {
+      "type": "hk-page-header",
+      "name": "HK Page Header",
+      "settings": {
+        "title": "<span style=\"color: #CFD821;\">Reactive Adaptation:</span>\n The Intelligence of Nuro Core.",
+        "content": "<p>The innovative Nuro Core is designed to react to each unique incident and intelligently adapt its shape depending on any angle of impact. No other protection technology can do this. No other method is as effective.</p>",
+        "background_image": "shopify://shop_images/header-how-it-works.jpg",
+        "mobile_background_image": "shopify://shop_images/header-how-it-works-mobile.jpg",
+        "inner_content_style": false,
+        "inner_content_text_position": "bottom-center"
+      }
+    },
     "hk_how_it_works_page_iQThUw": {
       "type": "hk-how-it-works-page",
       "blocks": {
@@ -104,6 +116,7 @@
   },
   "order": [
     "main",
+    "hk_page_header_r7pXxc",
     "hk_how_it_works_page_iQThUw"
   ]
 }
