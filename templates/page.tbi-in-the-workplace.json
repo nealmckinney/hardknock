@@ -22,6 +22,7 @@
       "blocks": {
         "button_TJgmWP": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_text": "More Info",
             "button_link": "",
