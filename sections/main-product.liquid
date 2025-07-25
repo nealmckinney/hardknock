@@ -709,7 +709,7 @@
                     {%- when 'inquiry_link' -%}
                       {% if block.settings.inquiry_url != blank %}
                         <div class="product__inquiry-link">
-                          <a href="{{ block.settings.inquiry_url }}" class="button button--green">{{ block.settings.label }}</a>
+                          <a href="{{ block.settings.inquiry_url.url }}" class="button button--green">{{ block.settings.label }}</a>
                         </div>
                       {% endif %}
                 {%- endcase -%}
