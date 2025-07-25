@@ -60,7 +60,7 @@
           "type": "image_section",
           "settings": {
             "background_image": "shopify://shop_images/how-it-works-lower-bg.jpg",
-            "custom_class": "",
+            "custom_class": "lower-section",
             "full_width": true
           }
         },
