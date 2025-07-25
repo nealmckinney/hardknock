@@ -1,61 +1,4 @@
 
-<div class="hardknock-page-header inner-content-style-true inner-content-text-position-top-left">
-  {% assign bg_image = section.settings.background_image %}
-  {% assign mobile_bg_image = section.settings.mobile_background_image %}
-
-  <picture class="hardknock-page-header__background">
-    {% if mobile_bg_image != blank %}
-      <source
-        media="(max-width: 768px)"
-        srcset="
-          {{ mobile_bg_image | image_url: width: 375 }} 375w,
-          {{ mobile_bg_image | image_url: width: 550 }} 550w,
-          {{ mobile_bg_image | image_url: width: 750 }} 750w
-        "
-        sizes="100vw"
-      >
-    {% endif %}
-    {% if bg_image != blank %}
-      <source
-        srcset="
-          {{ bg_image | image_url: width: 750 }} 750w,
-          {{ bg_image | image_url: width: 1100 }} 1100w,
-          {{ bg_image | image_url: width: 1500 }} 1500w,
-          {{ bg_image | image_url: width: 2000 }} 2000w
-        "
-        sizes="100vw"
-      >
-      <img
-        src="{{ bg_image | image_url: width: 1500 }}"
-        alt=""
-        loading="eager"
-        width="{{ bg_image.width }}"
-        height="{{ bg_image.height }}"
-      >
-    {% endif %}
-  </picture>
-  <div class="hardknock-page-header__container page-width ">
-    <div class="inner relative">
-      <div class="hardknock-page-header__content relative z-index-1">
-        <h1 class="hardknock-page-header__title">
-          {{ section.settings.heading }}
-        </h1>
-        <div class="hardknock-page-header__text">
-          {{ section.settings.subheading }}
-        </div>
-      </div>
-
-      <div class="hardknock-page-header__inner-content-background">
-        {% comment %} <div
-          id="location-map"
-          data-address="{{ section.settings.map_address }}"
-          data-marker-icon="{{ 'icon-find.svg' | asset_url }}"
-          class="map-placeholder"
-        ></div> {% endcomment %}
-      </div>
-    </div>
-  </div>
-</div>
 
 {% schema %}
 {
@@ -63,31 +6,7 @@
   "enabled_on": {
     "templates": ["page"]
   },
-  "settings": [
-    {
-      "type": "richtext",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "<p>Construction has the highest rate of work-related traumatic brain injuries—and many helmets aren’t up to the task. Learn why Type II certification, chin straps, and rotational force protection are ...</p>"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "FAQs"
-    },
-    {
-      "type": "image_picker",
-      "id": "background_image",
-      "label": "Header Background Image",
-      "info": "1920x1080 for standard resolution. 3840x2160 for 2x."
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_background_image",
-      "label": "Mobile Background Image (optional)"
-    }
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "faq",
@@ -163,9 +82,7 @@
 {% endif %}
 
 <style>
-  .hardknock-page-header__inner-content-background:before {
-    display: none;
-  }
+  
   .faqs .faq {
     background-color: #f5f5f5;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0);
@@ -234,5 +151,4 @@
   });
 </script>
 
-{{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
 
