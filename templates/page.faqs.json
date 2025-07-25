@@ -11,13 +11,51 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "hk_faqs_D9FYHy": {
+      "type": "hk-faqs",
+      "blocks": {
+        "faq_7nVVJQ": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your question?",
+            "answer": "<p>Provide your answer here.</p>"
+          }
+        },
+        "faq_xqz9xe": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your question?",
+            "answer": "<p>Provide your answer here.</p>"
+          }
+        },
+        "faq_LyedUz": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your question?",
+            "answer": "<p>Provide your answer here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_7nVVJQ",
+        "faq_xqz9xe",
+        "faq_LyedUz"
+      ],
+      "name": "HK FAQs",
+      "settings": {
+        "title": "FAQs",
+        "background_image": "shopify://shop_images/header-standard.jpg"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "hk_faqs_D9FYHy"
   ]
 }
