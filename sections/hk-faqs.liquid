@@ -40,6 +40,9 @@
         <h1 class="hardknock-page-header__title">
           {{ section.settings.heading }}
         </h1>
+        <div class="hardknock-page-header__text">
+          {{ section.settings.subheading }}
+        </div>
       </div>
 
       <div class="hardknock-page-header__inner-content-background">
@@ -62,10 +65,16 @@
   },
   "settings": [
     {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Construction has the highest rate of work-related traumatic brain injuries—and many helmets aren’t up to the task. Learn why Type II certification, chin straps, and rotational force protection are ...</p>"
+    },
+    {
       "type": "text",
-      "id": "title",
-      "label": "Section Title",
-      "default": "Frequently Asked Questions"
+      "id": "heading",
+      "label": "Heading",
+      "default": "FAQs"
     },
     {
       "type": "image_picker",
@@ -133,7 +142,7 @@
             <div class="faq radius-15 overflow-hidden{% if forloop.first %} active{% endif %}" {{ block.shopify_attributes }}>
               <div class="inner">
                 <div class="flex-container align-center space-between column-gap-20">
-                  <h3 class="h3 title">{{ block.settings.question }}</h3>
+                  <h3 class="h3 title v-margin-0">{{ block.settings.question }}</h3>
                   <div class="faq-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
                       <path d="M10.9788 5.40168C11.8497 5.87492 11.8497 7.12508 10.9788 7.59832L2.09682 12.4247C1.2639 12.8773 0.250002 12.2743 0.250002 11.3263L0.250002 1.67366C0.250002 0.725711 1.2639 0.122736 2.09682 0.575335L10.9788 5.40168Z" fill="#626262" style="fill:#626262;fill:color(display-p3 0.3850 0.3850 0.3850);fill-opacity:1;"/>
@@ -154,6 +163,9 @@
 {% endif %}
 
 <style>
+  .hardknock-page-header__inner-content-background:before {
+    display: none;
+  }
   .faqs .faq {
     background-color: #f5f5f5;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0);
@@ -177,6 +189,7 @@
 .faqs .faq.active {
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
     margin-bottom: 80px;
+    background-color: var(--color-green);
 }
 
 .faqs .faq.active .faq-icon svg {
@@ -208,9 +221,12 @@
     const faqs = document.querySelectorAll('.faq');
     
     faqs.forEach(faq => {
-      const title = faq.querySelector('.title');
-      
-      title.addEventListener('click', function() {
+      faq.addEventListener('click', function(event) {
+        // Don't toggle if clicking on a link or button
+        if (event.target.tagName === 'A' || event.target.tagName === 'BUTTON' || event.target.closest('a') || event.target.closest('button')) {
+          return;
+        }
+        
         // Toggle current FAQ
         faq.classList.toggle('active');
       });
