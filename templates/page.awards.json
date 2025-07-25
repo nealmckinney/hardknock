@@ -35,13 +35,14 @@
           "type": "award",
           "settings": {
             "title": "Time Magazine",
-            "text": "<p>Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. </p>",
-            "article_link": "https://www.google.com/",
-            "image": "shopify://shop_images/fpo-award.jpg"
+            "text": "<p>TIME recognized Hardknock's WaveCel product as one of the best inventions of 2020 for its groundbreaking technology. This innovation marked a significant advancement in helmet safety, offering enhanced protection for cyclists.</p>",
+            "article_link": "https://time.com/collection/best-inventions-2020/5911397/wavecel-helmet/",
+            "image": "shopify://shop_images/Time.jpg"
           }
         },
         "award_6VRB8M": {
           "type": "award",
+          "disabled": true,
           "settings": {
             "title": "Fast Company",
             "text": "<p>DiscoverFast CompanyLorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Lorem ipsum dolor sit amet consectetur. Sit enim nec non in ac id. Ac eleifend adipiscing nunc tristique pulvinar egestas at nullam gravida. Tortor nec condimentum venenatis maecenas pharetra mauris praesent in urna. Tellus id nibh tincidunt vestibulum adipiscing amamet consectetur. Read the Article</p>",
