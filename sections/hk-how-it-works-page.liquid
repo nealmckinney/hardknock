@@ -132,8 +132,8 @@
     }
     {% endschema %}
     
-    <section class="hk-how-it-works-page overflow-hidden relative">
-      {% assign bg_image = section.settings.header_bg_image %}
+    <section class="hk-how-it-works-page how-it-works overflow-hidden relative bg-black">
+      {% comment %} {% assign bg_image = section.settings.header_bg_image %}
       {% assign mobile_bg_image = section.settings.header_mobile_bg_image %}
     
       <picture class="hardknock-page-header__background">
@@ -182,13 +182,14 @@
             {% endif %}
           </div>
         </div>
-      </div>
+      </div> {% endcomment %}
 
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'image_section' %}
             <section class="image-section {% if block.settings.full_width %}full-width{% endif %} {{ block.settings.custom_class }}">
-              <picture>
+              <div class="container {% unless block.settings.full_width %}page-width page-width--narrow{% endunless %}">
+                <picture>
                 {% if block.settings.mobile_background_image != blank %}
                   <source
                     media="(max-width: 768px)"
@@ -196,20 +197,24 @@
                   >
                 {% endif %}
                 {% if block.settings.background_image != blank %}
-                  <img
-                    src="{{ block.settings.background_image | image_url: width: 1500 }}"
-                    alt=""
-                    loading="lazy"
-                    width="{{ block.settings.background_image.width }}"
-                    height="{{ block.settings.background_image.height }}"
-                  >
+                  {{
+                    block.settings.background_image
+                    | image_url: width: 1500
+                    | image_tag:
+                      widths: '750, 1000, 1500, 2000',
+                      class: 'block',
+                      loading: 'lazy',
+                      sizes: '(max-width: 749px) 750px, (max-width: 1024px) 1000px, 1500px',
+                      alt: block.settings.background_image.alt
+                  }}
                 {% endif %}
               </picture>
+              </div>
             </section>
 
           {% when 'text_section' %}
-            <section class="text-section">
-              <div class="container">
+            <section class="text-section copy-section">
+              <div class="container page-width page-width--narrow">
                 {{ block.settings.text_content }}
                 {% if block.settings.html_content != blank %}
                   {{ block.settings.html_content }}
@@ -219,7 +224,7 @@
 
           {% when 'button_section' %}
             <section class="button-section">
-              <div class="container">
+              <div class="container buttons flex-container justify-center">
                 <a href="{{ block.settings.button_link }}" class="button">
                   {{ block.settings.button_label }}
                 </a>
@@ -227,8 +232,9 @@
             </section>
 
           {% when 'text_over_image' %}
-            <section class="text-over-image">
-              <picture>
+            <section class="text-over-image background-image-text relative page-width page-width--narrow">
+              <div class="background-image">
+                <picture class="background-image">
                 {% if block.settings.mobile_background_image != blank %}
                   <source
                     media="(max-width: 768px)"
@@ -236,22 +242,30 @@
                   >
                 {% endif %}
                 {% if block.settings.background_image != blank %}
-                  <img
-                    src="{{ block.settings.background_image | image_url: width: 1500 }}"
-                    alt=""
-                    loading="lazy"
-                    width="{{ block.settings.background_image.width }}"
-                    height="{{ block.settings.background_image.height }}"
-                  >
+                  {{
+                    block.settings.background_image
+                    | image_url: width: 1500
+                    | image_tag:
+                      widths: '750, 1000, 1500, 2000',
+                      loading: 'lazy',
+                      sizes: '(max-width: 749px) 750px, (max-width: 1024px) 1000px, 1500px',
+                      alt: block.settings.title,
+                      class: 'object-fit-cover'
+                  }}
                 {% endif %}
               </picture>
-              <div class="container">
-                <h2>{{ block.settings.title }}</h2>
-                {{ block.settings.text }}
-                {% if block.settings.html_text != blank %}
-                  {{ block.settings.html_text }}
-                {% endif %}
               </div>
+              
+              <div class="container color-white center relative z-index-1  pb-4 lg-pb-6">
+                <div class="inner max-width-700 side-margin-auto center">
+                    <h2>{{ block.settings.title }}</h2>
+                  {{ block.settings.text }}
+                  {% if block.settings.html_text != blank %}
+                    {{ block.settings.html_text }}
+                  {% endif %}
+                </div>
+              </div>
+              
             </section>
         {% endcase %}
       {% endfor %}
@@ -262,6 +276,237 @@
     
     <style>
 
-      
+.how-it-works-header .inner {
+	height: 100vh;
+}
+
+.how-it-works-header .intro-container {
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 100%;
+}
+
+.how-it-works-header .inner {
+	min-height: 600px;
+}
+
+.how-it-works h2 {
+  color: #fff;
+}
+
+@media(min-width: 768px) {
+	
+
+	.how-it-works-header .inner {
+		min-height: 800px;
+	}
+
+	.how-it-works-header .callouts {
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	.how-it-works-header .callouts .callout {
+		position: absolute;
+		color: #fff;
+		width:100%
+	}
+	
+	.how-it-works-header .callouts .callout .icon {
+		width: 12.7%;
+	}
+	
+	.how-it-works-header .callouts .callout p {
+		max-width:210px;
+		margin-bottom: 0;
+	}
+	
+	.how-it-works-header .callouts .icon {
+		width: 100%;
+		position: relative;
+	}
+	
+	.how-it-works-header .callouts .callout:nth-child(1) {
+		top:37%;
+		left:6%;
+	}
+	
+	.how-it-works-header .callouts .callout .icon:after {
+		content: '';
+		position: absolute;
+		background: #fff;
+	}
+	
+	.how-it-works-header .callouts .callout:nth-child(1) .icon:after {
+		left: 100%;
+		top:50%;
+		height:1px;
+		width:200%;
+	}
+	
+	.how-it-works-header .callouts .callout:nth-child(2) .icon:after {
+		right: 100%;
+		top:50%;
+		height:1px;
+		width:120%;
+	}
+	
+	.how-it-works-header .callouts .callout:nth-child(3) .icon:after {
+		left: 50%;
+		top:-100%;
+		height:100%;
+		width:1px;
+	}
+	
+	.how-it-works-header .callouts .callout:nth-child(2) {
+		top:44%;
+		left:75%;
+	}
+	
+	.how-it-works-header .callouts .callout:nth-child(1) .text,
+	.how-it-works-header .callouts .callout:nth-child(2) .text {
+		margin-left:30px;
+		margin-top:25px;
+	}
+	
+	.how-it-works-header .callouts .callout:nth-child(3) {
+		top:78%;
+		left:41%;
+		display: flex;
+		column-gap: 40px;
+		align-items: center;
+	}
+}
+
+.how-it-works .copy-section, .how-it-works .text-over-image {
+	margin-top: 40px;
+	color: #fff;
+	text-align: center;
+}
+
+@media(min-width: 768px) { 
+	.how-it-works .copy-section, .how-it-works .text-over-image {
+		margin-top: 100px;
+	}
+}
+
+.how-it-works .copy-section ul {
+	display: inline-block;
+	text-align: left;
+	line-height: 1.9;
+}
+
+/* .how-it-works-header .background-image:before {
+	content: '';
+	position: absolute;
+	top: 70%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	background: linear-gradient(to bottom, rgba(9,10,11,0) 0%, rgba(9,10,11,1) 100%);
+} */
+
+@media(max-width: 767px) {
+	.how-it-works-header .callouts {
+		display: none;
+	}
+
+	.how-it-works-header .background-image:after {
+		content: '';
+		position: absolute;
+		top: 0%;
+		left: 0;
+		right: 0;
+		bottom: 75%;
+		z-index: 0;
+		background: linear-gradient(to top, rgba(9,10,11,0) 0%, rgba(9,10,11,1) 100%);
+	}
+}
+
+.how-it-works .video-items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+	justify-content: center;
+}
+
+.how-it-works .video-items .video-item {
+	position: relative;
+	aspect-ratio: 1/0.7;
+	border-radius: 15px;
+	overflow: hidden;
+	border: 1px solid #fff;
+	flex: 0 1 380px;
+}
+
+.how-it-works .video-items .video-item .video-play-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: transform 0.15s ease-out;
+	z-index: 1;
+}
+
+.how-it-works .video-items .video-item:hover .video-play-icon {
+	transform: translate(-50%, -50%) scale(1.1);
+}
+
+.how-it-works .video-items-section.nuro-tech .video-item {
+	flex: 1 1 100%;
+}
+
+.how-it-works .video-items-section.nuro-tech .video-item .video-play-icon {
+	width: 112px !important;
+	height: 112px !important;
+}
+
+.how-it-works .main-column {
+	background-color: #000;
+}
+
+.background-image-text {
+	aspect-ratio: 1/0.74;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.background-image-text .background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+}
+
+@media(min-width: 768px) {
+	.lower-section .background-image {
+		margin-bottom: -200px;
+	}
+	
+	.lower-section .image-section {
+		margin-top: 150px;
+		margin-bottom: -100px;
+	}
+}
+
+@media(max-width: 767px) {
+	.background-image-text {
+		aspect-ratio: 1/1.7;
+	}
+
+	.lower-section .background-image {
+		margin-bottom: -80px;
+	}
+
+}
     </style>
     
