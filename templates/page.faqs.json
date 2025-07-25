@@ -22,7 +22,7 @@
       "name": "HK Page Header",
       "settings": {
         "title": "FAQs",
-        "content": "<p>Lorem ipsum dolor sit amet consectetur. Gravida pretium sem amet habitant purus morbi pellentesque dui. Ante lectus adipiscing enim cursus massa dui. Fames purus duis mauris facilisis euismod adipiscing sollicitudin pharetra. Praesent pellentesque tempus donec vel vel tempor sit pretium.</p>",
+        "content": "<p><strong>Got Questions? We’ve Got You Covered.</strong></p><p>At Hardknock, we’re committed to helping you feel confident in your helmet choice, from how it’s built to how it protects. Whether you’re curious about safety certifications, sizing, shipping, or product care, our FAQs are here to give you clear, straightforward answers. Don’t see what you’re looking for? Reach out—we’re happy to help.</p>",
         "background_image": "shopify://shop_images/header-standard.jpg",
         "inner_content_style": true,
         "inner_content_background_image": "shopify://shop_images/footer-like-you-mean-it.jpg",
@@ -60,11 +60,7 @@
         "faq_LyedUz"
       ],
       "name": "HK FAQs",
-      "settings": {
-        "subheading": "<p>Construction has the highest rate of work-related traumatic brain injuries—and many helmets aren’t up to the task. Learn why Type II certification, chin straps, and rotational force protection are ...</p>",
-        "heading": "FAQs",
-        "background_image": "shopify://shop_images/header-standard.jpg"
-      }
+      "settings": {}
     }
   },
   "order": [
