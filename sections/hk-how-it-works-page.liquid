@@ -4,34 +4,7 @@
       "enabled_on": {
         "templates": ["page"]
       },
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "header_image",
-          "label": "Header Background Image",
-          "info": "1920x1080 for standard resolution. 3840x2160 for 2x."
-        },
-        {
-          "type": "image_picker",
-          "id": "mobile_header_image",
-          "label": "Mobile Header Image (optional)"
-        },
-        {
-          "type": "text",
-          "id": "header_display_title",
-          "label": "Header Display Title"
-        },
-        {
-          "type": "richtext",
-          "id": "header_text",
-          "label": "Header Text"
-        },
-        {
-          "type": "html",
-          "id": "header_html",
-          "label": "Header HTML (optional)"
-        }
-      ],
+      "settings": [],
       "blocks": [
         {
           "type": "image_section",
@@ -462,6 +435,12 @@
 		z-index: 0;
 		background: linear-gradient(to top, rgba(9,10,11,0) 0%, rgba(9,10,11,1) 100%);
 	}
+
+  .hardknock-page-header__background img {
+    object-fit: none;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .how-it-works .video-items {
