@@ -703,13 +703,13 @@
                   {%- when 'datasheet_link' -%}
                     {% if block.settings.asset_url != blank %}
                       <div class="product__datasheet-link">
-                        <a href="{{ block.settings.asset_url }}" class="button" target="_blank">{{ block.settings.label }}</a>
+                        <a href="{{ block.settings.asset_url }}" class="button width-100" target="_blank">{{ block.settings.label }}</a>
                       </div>
                     {% endif %}
                     {%- when 'inquiry_link' -%}
                       {% if block.settings.inquiry_url != blank %}
                         <div class="product__inquiry-link">
-                          <a href="{{ block.settings.inquiry_url.url }}" class="button button--green">{{ block.settings.label }}</a>
+                          <a href="{{ block.settings.inquiry_url.url }}" class="button button--green width-100">{{ block.settings.label }}</a>
                         </div>
                       {% endif %}
                 {%- endcase -%}
