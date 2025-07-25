@@ -706,6 +706,12 @@
                         <a href="{{ block.settings.asset_url }}" class="button" target="_blank">{{ block.settings.label }}</a>
                       </div>
                     {% endif %}
+                    {%- when 'inquiry_link' -%}
+                      {% if block.settings.inquiry_url != blank %}
+                        <div class="product__inquiry-link">
+                          <a href="{{ block.settings.inquiry_url }}" class="button button--green">{{ block.settings.label }}</a>
+                        </div>
+                      {% endif %}
                 {%- endcase -%}
               {%- endfor -%}
               <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -2138,6 +2144,23 @@
           "id": "asset_url",
           "label": "Asset URL or Dynamic Reference",
           "info": "Paste a file URL or use a dynamic reference (e.g. a metafield or file reference)."
+        }
+      ]
+    },
+    {
+      "type": "inquiry_link",
+      "name": "Inquiry Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Button Label",
+          "default": "ProductInquiry"
+        },
+        {
+          "type": "page",
+          "id": "inquiry_url",
+          "label": "Inquiry Page reference"
         }
       ]
     }
