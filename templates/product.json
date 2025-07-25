@@ -38,8 +38,16 @@
           "type": "description",
           "settings": {}
         },
+        "datasheet_link_JFqMiB": {
+          "type": "datasheet_link",
+          "settings": {
+            "label": "Download Datasheet",
+            "asset_url": ""
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle"
@@ -112,6 +120,7 @@
         "caption",
         "price",
         "description",
+        "datasheet_link_JFqMiB",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
