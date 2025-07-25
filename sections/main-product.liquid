@@ -703,7 +703,7 @@
                   {%- when 'datasheet_link' -%}
                     {% if block.settings.asset_url != blank %}
                       <div class="product__datasheet-link">
-                        <a href="{{ block.settings.asset_url }}" class="button">{{ block.settings.label }}</a>
+                        <a href="{{ block.settings.asset_url }}" class="button" target="_blank">{{ block.settings.label }}</a>
                       </div>
                     {% endif %}
                 {%- endcase -%}
