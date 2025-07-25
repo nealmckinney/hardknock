@@ -82,7 +82,7 @@
           "type": "image_section",
           "settings": {
             "background_image": "shopify://shop_images/how-it-works-97-percent.jpg",
-            "custom_class": "",
+            "custom_class": "lower-section2",
             "full_width": false
           }
         },
