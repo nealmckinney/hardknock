@@ -42,7 +42,7 @@
           "type": "datasheet_link",
           "settings": {
             "label": "Download Datasheet",
-            "asset_url": ""
+            "asset_url": "{{ product.metafields.custom.datasheet_url2.value }}"
           }
         },
         "variant_picker": {
