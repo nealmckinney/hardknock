@@ -187,7 +187,7 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'image_section' %}
-            <section class="image-section {% if block.settings.full_width %}full-width{% endif %} {{ block.settings.custom_class }}">
+            <section class="image-section scroll-trigger animate--slide-in {% if block.settings.full_width %}full-width{% endif %} {{ block.settings.custom_class }}">
               <div class="container {% unless block.settings.full_width %}page-width page-width--narrow{% endunless %}">
                 <div class="background-image">
                   <picture>
@@ -229,15 +229,17 @@
           {% when 'text_section' %}
             <section class="text-section copy-section">
               <div class="container page-width page-width--narrow">
-                {{ block.settings.text_content }}
-                {% if block.settings.html_content != blank %}
-                  {{ block.settings.html_content }}
-                {% endif %}
+                <div class="copy-block cms-content max-width-800 side-margin-auto scroll-trigger animate--slide-in">
+                  {{ block.settings.text_content }}
+                  {% if block.settings.html_content != blank %}
+                    {{ block.settings.html_content }}
+                  {% endif %}
+                </div>
               </div>
             </section>
 
           {% when 'button_section' %}
-            <section class="button-section">
+            <section class="button-section mt-3 lg-mt-6 mb-6 lg-mb-8 scroll-trigger animate--slide-in">
               <div class="container buttons flex-container justify-center">
                 <a href="{{ block.settings.button_link }}" class="button">
                   {{ block.settings.button_label }}
@@ -300,7 +302,14 @@
 
     
     
-    <style>
+<style>
+
+.hardknock-page-header.inner-content-text-position-bottom-center .hardknock-page-header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 48px;
+  }
 
 .how-it-works-header .inner {
 	height: 100vh;
@@ -518,7 +527,7 @@
 		margin-bottom: -200px;
 	}
 	
-	.lower-section2 .image-section {
+	.lower-section2.image-section {
 		margin-top: 150px;
 		margin-bottom: -100px;
 	}
