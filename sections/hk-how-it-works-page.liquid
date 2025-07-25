@@ -189,26 +189,40 @@
           {% when 'image_section' %}
             <section class="image-section {% if block.settings.full_width %}full-width{% endif %} {{ block.settings.custom_class }}">
               <div class="container {% unless block.settings.full_width %}page-width page-width--narrow{% endunless %}">
-                <picture>
+                <div class="background-image">
+                  <picture>
                 {% if block.settings.mobile_background_image != blank %}
                   <source
                     media="(max-width: 768px)"
-                    srcset="{{ block.settings.mobile_background_image | image_url: width: 750 }}"
+                    srcset="
+                      {{ block.settings.mobile_background_image | image_url: width: 375 }} 375w,
+                      {{ block.settings.mobile_background_image | image_url: width: 550 }} 550w,
+                      {{ block.settings.mobile_background_image | image_url: width: 750 }} 750w
+                    "
+                    sizes="100vw"
                   >
                 {% endif %}
                 {% if block.settings.background_image != blank %}
-                  {{
-                    block.settings.background_image
-                    | image_url: width: 1500
-                    | image_tag:
-                      widths: '750, 1000, 1500, 2000',
-                      class: 'block',
-                      loading: 'lazy',
-                      sizes: '(max-width: 749px) 750px, (max-width: 1024px) 1000px, 1500px',
-                      alt: block.settings.background_image.alt
-                  }}
+                  <source
+                    srcset="
+                      {{ block.settings.background_image | image_url: width: 750 }} 750w,
+                      {{ block.settings.background_image | image_url: width: 1000 }} 1000w,
+                      {{ block.settings.background_image | image_url: width: 1500 }} 1500w,
+                      {{ block.settings.background_image | image_url: width: 2000 }} 2000w
+                    "
+                    sizes="(max-width: 749px) 750px, (max-width: 1024px) 1000px, 1500px"
+                  >
+                  <img
+                    src="{{ block.settings.background_image | image_url: width: 1500 }}"
+                    alt="{{ block.settings.background_image.alt }}"
+                    class="block"
+                    loading="lazy"
+                    width="{{ block.settings.background_image.width }}"
+                    height="{{ block.settings.background_image.height }}"
+                  >
                 {% endif %}
               </picture>
+                </div>
               </div>
             </section>
 
@@ -238,20 +252,32 @@
                 {% if block.settings.mobile_background_image != blank %}
                   <source
                     media="(max-width: 768px)"
-                    srcset="{{ block.settings.mobile_background_image | image_url: width: 750 }}"
+                    srcset="
+                      {{ block.settings.mobile_background_image | image_url: width: 375 }} 375w,
+                      {{ block.settings.mobile_background_image | image_url: width: 550 }} 550w,
+                      {{ block.settings.mobile_background_image | image_url: width: 750 }} 750w
+                    "
+                    sizes="100vw"
                   >
                 {% endif %}
                 {% if block.settings.background_image != blank %}
-                  {{
-                    block.settings.background_image
-                    | image_url: width: 1500
-                    | image_tag:
-                      widths: '750, 1000, 1500, 2000',
-                      loading: 'lazy',
-                      sizes: '(max-width: 749px) 750px, (max-width: 1024px) 1000px, 1500px',
-                      alt: block.settings.title,
-                      class: 'object-fit-cover'
-                  }}
+                  <source
+                    srcset="
+                      {{ block.settings.background_image | image_url: width: 750 }} 750w,
+                      {{ block.settings.background_image | image_url: width: 1000 }} 1000w,
+                      {{ block.settings.background_image | image_url: width: 1500 }} 1500w,
+                      {{ block.settings.background_image | image_url: width: 2000 }} 2000w
+                    "
+                    sizes="(max-width: 749px) 750px, (max-width: 1024px) 1000px, 1500px"
+                  >
+                  <img
+                    src="{{ block.settings.background_image | image_url: width: 1500 }}"
+                    alt="{{ block.settings.title }}"
+                    loading="lazy"
+                    class="object-fit-cover"
+                    width="{{ block.settings.background_image.width }}"
+                    height="{{ block.settings.background_image.height }}"
+                  >
                 {% endif %}
               </picture>
               </div>
@@ -492,7 +518,7 @@
 		margin-bottom: -200px;
 	}
 	
-	.lower-section .image-section {
+	.lower-section2 .image-section {
 		margin-top: 150px;
 		margin-bottom: -100px;
 	}
