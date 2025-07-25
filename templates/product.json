@@ -45,6 +45,13 @@
             "asset_url": "{{ product.metafields.custom.datasheet_url.value }}"
           }
         },
+        "inquiry_link_JGez9c": {
+          "type": "inquiry_link",
+          "settings": {
+            "label": "Product Inquiry",
+            "inquiry_url": "faqs"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -120,6 +127,7 @@
         "price",
         "description",
         "datasheet_link_JFqMiB",
+        "inquiry_link_JGez9c",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
