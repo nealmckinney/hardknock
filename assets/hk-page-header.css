@@ -138,7 +138,7 @@
     }
   }
 
-  .hardknock-page-header.inner-content-text-position-bottom-center .hardknock-page-header__container .hardknock-page-header__container {
+  .hardknock-page-header.inner-content-text-position-bottom-center .hardknock-page-header__container .inner {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
