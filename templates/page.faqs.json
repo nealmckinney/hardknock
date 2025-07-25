@@ -17,6 +17,18 @@
         "padding_bottom": 28
       }
     },
+    "hk_page_header_TGnLHV": {
+      "type": "hk-page-header",
+      "name": "HK Page Header",
+      "settings": {
+        "title": "FAQs",
+        "content": "<p>Lorem ipsum dolor sit amet consectetur. Gravida pretium sem amet habitant purus morbi pellentesque dui. Ante lectus adipiscing enim cursus massa dui. Fames purus duis mauris facilisis euismod adipiscing sollicitudin pharetra. Praesent pellentesque tempus donec vel vel tempor sit pretium.</p>",
+        "background_image": "shopify://shop_images/header-standard.jpg",
+        "inner_content_style": true,
+        "inner_content_background_image": "shopify://shop_images/footer-like-you-mean-it.jpg",
+        "inner_content_text_position": "top-left"
+      }
+    },
     "hk_faqs_D9FYHy": {
       "type": "hk-faqs",
       "blocks": {
@@ -49,13 +61,15 @@
       ],
       "name": "HK FAQs",
       "settings": {
-        "title": "FAQs",
+        "subheading": "<p>Construction has the highest rate of work-related traumatic brain injuries—and many helmets aren’t up to the task. Learn why Type II certification, chin straps, and rotational force protection are ...</p>",
+        "heading": "FAQs",
         "background_image": "shopify://shop_images/header-standard.jpg"
       }
     }
   },
   "order": [
     "main",
+    "hk_page_header_TGnLHV",
     "hk_faqs_D9FYHy"
   ]
 }
