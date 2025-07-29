@@ -13,30 +13,41 @@
   
 
   <div class="container page-width relative">
-    <div class="inner radius-15 flex-container flex-clear-1023 relative overflow-hidden">
-      <div class="text relative z-index-1">
-        <h2 class="h6 uppercase mb-2 mt-0">How It Works</h2>
-        <h2 class="h2 mt-0">Nuro Technology</h2>
-        {% if settings.how_it_works_text != blank %}
-          <div class="copy mt-4">
-            {{ settings.how_it_works_text }}
+    <div class="inner radius-15 relative overflow-hidden-x">
+      <div class="inner-content radius-15 relative flex-container flex-clear-1024 v-pad-6 lg-v-pad-8 ">
+        <div class="text relative z-index-1 scroll-trigger animate--slide-in" style="--animation-order: 0;">
+          <h2 class="h6 uppercase mb-2 mt-0">How It Works</h2>
+          <h2 class="h2 mt-0">Nuro Technology</h2>
+          {% if settings.how_it_works_text != blank %}
+            <div class="copy mt-4">
+              {{ settings.how_it_works_text }}
+            </div>
+          {% endif %}
+          {% if settings.how_it_works_button_link != blank %}
+            <a href="{{ settings.how_it_works_button_link }}" class="button mt-4">
+              {{ settings.how_it_works_button_text }}
+            </a>
+          {% endif %}
+        </div>
+        {% if settings.how_it_works_bg != blank %}
+          <div class="image radius-15 overflow-hidden">
+            {{
+              settings.how_it_works_bg
+              | image_url: width: 3000
+              | image_tag: widths: '1500, 2000, 3000', class: 'object-fit-contain', loading: 'lazy', sizes: '100vw'
+            }}
           </div>
         {% endif %}
-        {% if settings.how_it_works_button_link != blank %}
-          <a href="{{ settings.how_it_works_button_link }}" class="button mt-4">
-            {{ settings.how_it_works_button_text }}
-          </a>
+        {% if settings.how_it_works_nuro_badge != blank %}
+          <div class="nuro-badge mt-4 lg-mt-0 scroll-trigger animate--slide-in" style="--animation-order: 1;">
+            {{
+              settings.how_it_works_nuro_badge
+              | image_url: width: 740
+              | image_tag: widths: '370, 740', class: 'block', loading: 'lazy', sizes: '100vw'
+            }}
+          </div>
         {% endif %}
       </div>
-      {% if settings.how_it_works_bg != blank %}
-        <div class="image">
-          {{
-            settings.how_it_works_bg
-            | image_url: width: 3000
-            | image_tag: widths: '1500, 2000, 3000', class: 'object-fit-contain', loading: 'lazy', sizes: '100vw'
-          }}
-        </div>
-      {% endif %}
     </div>
   </div>
 </section>
@@ -62,10 +73,19 @@
     object-position: left center;
   }
 
-  .image-text-section .inner {
-    border: 1px solid var(--color-blue);
-    padding: var(--gutter-sm);
+  .how-it-works-section.image-text-section .inner {
+    background: linear-gradient(to bottom, #ff0000, #0000ff);
+    padding: 1px;
     /* margin: var(--gutter-sm); */
+  }
+
+  .how-it-works-section.image-text-section .inner .inner-content {
+    background: white;
+    padding: var(--gutter-sm);
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   /* @media (max-width: 1024px) {
@@ -86,10 +106,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      
-    }
+  }
 
-    
 
   @media (max-width: 1024px) {
     .image-text-section .image {
@@ -99,17 +117,32 @@
     .image-text-section .image img {
       object-fit: cover;
     }
+
+    .how-it-works-section .nuro-badge {
+      position: relative;
+      z-index: 1;
+      width: 50%;
+      max-width: 370px;
+    }
   }
 
   @media (min-width: 1025px) {
 
-  .image-text-section .image img {
-    height: 100%;
-    width: auto;
-  }
+    .image-text-section .image img {
+      height: 100%;
+      width: auto;
+    }
+
+    .how-it-works-section .nuro-badge {
+      position: absolute;
+      z-index: 1;
+      bottom: 90px;
+      left: -40px;
+      width: 370px;
+    }
     
 
-    .image-text-section .inner {
+    .image-text-section .inner-content {
       padding: var(--gutter-lg);
     }
 

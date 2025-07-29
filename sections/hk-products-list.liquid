@@ -33,7 +33,7 @@
               }}
             {% endif %}
             <div class="hk-product-card__content flex-container page-width relative z-index-1">
-              <div class="hk-product-card__text mt-6 lg-mt-8">
+              <div class="hk-product-card__text mt-6 lg-mt-8 scroll-trigger animate--slide-in" style="--animation-order: 0;">
                 <h2 class="h5 uppercase hk-product-card__pretitle color-white mb-2">Hardknock</h2>
                 <h2 class="h2 hk-product-card__title color-white mt-0 mb-2">{{ product.title }}</h2>
                 <div class="hk-product-card__description color-white">
@@ -42,7 +42,7 @@
               </div>
             </div>
           </div>
-          <div class="hk-product-card__content lower page-width flex-container flex-clear-1024 column-gap-60">
+          <div class="hk-product-card__content lower page-width flex-container flex-clear-1024 column-gap-60 scroll-trigger animate--slide-in" style="--animation-order: 1;">
             <div class="hk-product-card__image relative z-index-2">
               {% if product.featured_image %}
                 {{
@@ -58,7 +58,7 @@
               {% endif %}
             </div>
 
-            <div class="hk-product-card__content-lower pt-4 lg-pt-6">
+            <div class="hk-product-card__content-lower pt-4 lg-pt-6 scroll-trigger animate--slide-in" style="--animation-order: 2;">
               {% if product.metafields.custom.collection_description.value != blank %}
                 <div class="hk-product-card__bullets">
                   <h2 class="h5">Pro Features</h2>
