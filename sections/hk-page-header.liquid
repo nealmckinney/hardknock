@@ -114,6 +114,9 @@
   {% assign bg_image = section.settings.background_image %}
   {% assign mobile_bg_image = section.settings.mobile_background_image %}
 
+  {% capture alt_text %}{% render 'image-alt-fallback', image: bg_image %}{% endcapture %}
+  {% assign alt_text = alt_text | strip %}
+
   <picture class="hardknock-page-header__background">
     {% if mobile_bg_image != blank %}
       <source
@@ -136,9 +139,11 @@
         "
         sizes="100vw"
       >
+      {% capture alt_text %}{% render 'image-alt-fallback', image: bg_image %}{% endcapture %}
+      {% assign alt_text = alt_text | strip %}
       <img
         src="{{ bg_image | image_url: width: 1500 }}"
-        alt=""
+        alt="{{ alt_text }}"
         loading="eager"
         width="{{ bg_image.width }}"
         height="{{ bg_image.height }}"
@@ -175,20 +180,22 @@
           </div>
         {% endif %}
       </div>
-      {% if section.settings.inner_content_style and section.settings.inner_content_background_image != blank %}
-        <div class="hardknock-page-header__inner-content-background">
-          {{
-            section.settings.inner_content_background_image
-            | image_url: width: 1400
-            | image_tag:
-              widths: '700, 1100, 1400',
-              class: 'object-fit-cover',
-              loading: 'lazy',
-              sizes: '100vw',
-              alt: section.settings.inner_content_background_image.alt
-          }}
-        </div>
-      {% endif %}
+              {% if section.settings.inner_content_style and section.settings.inner_content_background_image != blank %}
+          <div class="hardknock-page-header__inner-content-background">
+            {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.inner_content_background_image %}{% endcapture %}
+            {% assign alt_text = alt_text | strip %}
+            {{
+              section.settings.inner_content_background_image
+              | image_url: width: 1400
+              | image_tag:
+                widths: '700, 1100, 1400',
+                class: 'object-fit-cover',
+                loading: 'lazy',
+                sizes: '100vw',
+                alt: alt_text
+            }}
+          </div>
+        {% endif %}
     </div>
   </div>
 </div>

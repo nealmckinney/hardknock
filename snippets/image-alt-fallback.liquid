@@ -1,0 +1,17 @@
+{% comment %}
+  Generates fallback alt text for images when alt is not provided
+  Usage: {% capture alt_text %}{% render 'image-alt-fallback', image: image %}{% endcapture %}
+  Returns: The generated alt text directly
+{% endcomment %}
+
+{% if image.alt != blank %}
+  {{ image.alt }}
+{% elsif image.title != blank %}
+  {% assign clean_title = image.title | replace: '_', ' ' | replace: '-', ' ' | replace: '.jpg', '' | replace: '.jpeg', '' | replace: '.png', '' | replace: '.webp', '' | capitalize %}
+  {{ clean_title }}
+{% elsif image.src != blank %}
+  {% assign filename = image.src | split: '/' | last | replace: '_', ' ' | replace: '-', ' ' | replace: '.jpg', '' | replace: '.jpeg', '' | replace: '.png', '' | replace: '.webp', '' | capitalize %}
+  {{ filename }}
+{% else %}
+  Image
+{% endif %} 
