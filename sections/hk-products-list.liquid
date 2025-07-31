@@ -21,6 +21,8 @@
 
           <div class="hk-product-card__background relative radius-15 overflow-hidden">
             {% if bg_image %}
+              {% capture alt_text %}{% render 'image-alt-fallback', image: bg_image %}{% endcapture %}
+              {% assign alt_text = alt_text | strip %}
               {{
                 bg_image
                 | image_url: width: 1400
@@ -29,11 +31,11 @@
                   class: 'hk-product-card__background-image object-fit-cover',
                   loading: 'lazy',
                   sizes: '100vw',
-                  alt: product.title
+                  alt: alt_text
               }}
             {% endif %}
             <div class="hk-product-card__content flex-container page-width relative z-index-1">
-              <div class="hk-product-card__text mt-6 lg-mt-8 scroll-trigger animate--slide-in" style="--animation-order: 0;">
+              <div class="hk-product-card__text mt-6 lg-mt-8 mb-7 lg-mb-0 scroll-trigger animate--slide-in" style="--animation-order: 0;">
                 <h2 class="h5 uppercase hk-product-card__pretitle color-white mb-2">Hardknock</h2>
                 <h2 class="h2 hk-product-card__title color-white mt-0 mb-2">{{ product.title }}</h2>
                 <div class="hk-product-card__description color-white">
@@ -45,6 +47,8 @@
           <div class="hk-product-card__content lower page-width flex-container flex-clear-1024 column-gap-60 scroll-trigger animate--slide-in" style="--animation-order: 1;">
             <div class="hk-product-card__image relative z-index-2">
               {% if product.featured_image %}
+                {% capture alt_text %}{% render 'image-alt-fallback', image: product.featured_image %}{% endcapture %}
+                {% assign alt_text = alt_text | strip %}
                 {{
                   product.featured_image
                   | image_url: width: 760
@@ -53,7 +57,7 @@
                     class: 'product__image block',
                     loading: 'lazy',
                     sizes: '380px',
-                    alt: product.title
+                    alt: alt_text
                 }}
               {% endif %}
             </div>
@@ -102,7 +106,7 @@
 
   .hk-product-card__background {
     border: 3px solid var(--color-green);
-    aspect-ratio: 1/0.9;
+    /* aspect-ratio: 1/0.9; */
   }
 
   .hk-product-card:nth-child(even) .hk-product-card__content {
@@ -112,7 +116,17 @@
   .hk-product-card__image {
     max-width: 515px;
     width: 70%;
-    margin-top: -100px;
+    margin-top: -50px;
+  }
+
+  @media (min-width: 768px) {
+    .hk-product-card__image {
+      margin-top: -100px;
+    }
+
+    .hk-product-card__background {
+      aspect-ratio: 1/0.9;
+    }
   }
 
   @media (min-width: 1025px) {

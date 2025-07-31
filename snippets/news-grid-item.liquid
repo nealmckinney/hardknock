@@ -1,9 +1,11 @@
 <div class="news-grid-item">
   <div class="image block relative radius-15 overflow-hidden">
+    {% capture alt_text %}{% render 'image-alt-fallback', image: article.image %}{% endcapture %}
+    {% assign alt_text = alt_text | strip %}
     {{
       article.image
       | image_url: width: 720
-      | image_tag: widths: '380, 720', loading: 'lazy', class: 'object-fit-cover'
+      | image_tag: widths: '380, 720', loading: 'lazy', class: 'object-fit-cover', alt: alt_text
     }}
   </div>
 

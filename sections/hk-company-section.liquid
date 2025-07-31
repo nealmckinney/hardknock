@@ -87,6 +87,8 @@
           {% if section.settings.our_mission_image != blank %}
             <div class="our-mission-image relative flex-basis-40 flex-shrink-0">
               <div class="white-border-image overflow-hidden">
+                {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.our_mission_image %}{% endcapture %}
+                {% assign alt_text = alt_text | strip %}
                 {{
                   section.settings.our_mission_image
                   | image_url: width: 1200
@@ -95,7 +97,7 @@
                     class: 'block radius-15',
                     loading: 'lazy',
                     sizes: '100vw',
-                    alt: section.settings.our_mission_image.alt
+                    alt: alt_text
                 }}
               </div>
             </div>
@@ -123,6 +125,8 @@
       {% endif %}
     </div>
     {% if section.settings.banner_image != blank %}
+      {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.banner_image %}{% endcapture %}
+      {% assign alt_text = alt_text | strip %}
       {{
         section.settings.banner_image
         | image_url: width: 2880
@@ -131,13 +135,15 @@
           class: 'object-fit-cover absolute-bg',
           loading: 'lazy',
           sizes: '100vw',
-          alt: section.settings.banner_image.alt
+          alt: alt_text
       }}
     {% endif %}
   </div>
 
   <div class="we-do-section relative pt-6 pb-8 lg-pt-6 lg-pb-10">
     {% if section.settings.we_do_bg_image != blank %}
+      {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.we_do_bg_image %}{% endcapture %}
+      {% assign alt_text = alt_text | strip %}
       {{
         section.settings.we_do_bg_image
         | image_url: width: 2880
@@ -146,12 +152,14 @@
           class: 'object-fit-cover absolute-bg',
           loading: 'lazy',
           sizes: '100vw',
-          alt: section.settings.we_do_bg_image.alt
+          alt: alt_text
       }}
     {% endif %}
     <div class="container page-width relative z-index-1">
       <div class="we-do-content flex-container flex-clear-1024 row-reverse column-gap-80 space-between">
         <div class="we-do-image relative flex-basis-40 flex-shrink-0 white-border-image">
+          {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.we_do_image %}{% endcapture %}
+          {% assign alt_text = alt_text | strip %}
           {{
             section.settings.we_do_image
             | image_url: width: 1200
@@ -160,7 +168,7 @@
               class: 'block',
               loading: 'lazy',
               sizes: '100vw',
-              alt: section.settings.we_do_image.alt
+              alt: alt_text
           }}
         </div>
         <div class="we-do-text max-width-640">
@@ -170,10 +178,12 @@
       </div>
       <div class="we-do-lower mt-4 lg-mt-6">
         <div class="we-do-helmet-container max-width-750 side-margin-auto">
+          {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.we_do_helmet_image %}{% endcapture %}
+          {% assign alt_text = alt_text | strip %}
           {{
             section.settings.we_do_helmet_image
             | image_url: width: 1200
-            | image_tag: widths: '600, 1200', class: 'block'
+            | image_tag: widths: '600, 1200', class: 'block', alt: alt_text
           }}
         </div>
         <div class="we-do-text-lower max-width-750 side-margin-auto center">

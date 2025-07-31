@@ -180,6 +180,8 @@
     <div class="hardknock-page-header__container page-width ">
       <div class="inner relative">
         <div class="hardknock-page-header__inner-content-background">
+          {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.image %}{% endcapture %}
+          {% assign alt_text = alt_text | strip %}
           {{
             section.settings.image
             | image_url: width: 1400
@@ -188,7 +190,7 @@
               class: 'object-fit-cover',
               loading: 'lazy',
               sizes: '100vw',
-              alt: section.settings.image.alt
+              alt: alt_text
           }}
         </div>
       </div>

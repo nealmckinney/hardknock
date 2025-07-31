@@ -25,7 +25,7 @@
 {% if section.settings.products != blank %}
   <section class="product-slider-section side-margin-auto relative z-index-0 pb-1">
     <div class="container page-width">
-      <h2 class="h1 product-features__title mb-6 lg-mb-8">{{ section.settings.title }}</h2>
+      <h2 class="h1 product-features__title mb-6 lg-mb-8 mt-0">{{ section.settings.title }}</h2>
       <product-slider>
         <div class="product-slider swiper">
           <div class="swiper-wrapper">
@@ -33,6 +33,8 @@
               <div class="product-slider__item swiper-slide radius-20 overflow-hidden">
                 {% if product.featured_image != blank %}
                   <div class="product-slider__item-image relative">
+                    {% capture alt_text %}{% render 'image-alt-fallback', image: product.featured_image %}{% endcapture %}
+                    {% assign alt_text = alt_text | strip %}
                     {{
                       product.featured_image
                       | image_url: width: 760
@@ -41,7 +43,7 @@
                         class: 'product-slider__item-image__image object-fit-contain',
                         loading: 'lazy',
                         sizes: '380px',
-                        alt: product.title
+                        alt: alt_text
                     }}
                   </div>
                 {% endif %}
@@ -82,7 +84,7 @@
 
   .product-slider {
     position: relative;
-    padding-bottom: 60px;
+    /* padding-bottom: 60px; */
   }
 
   .product-slider__item {

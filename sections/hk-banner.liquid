@@ -130,6 +130,8 @@
               >
             {% endif %}
             {% if bg_image != blank %}
+              {% capture alt_text %}{% render 'image-alt-fallback', image: bg_image %}{% endcapture %}
+              {% assign alt_text = alt_text | strip %}
               <source
                 srcset="
                   {{ bg_image | image_url: width: 750 }} 750w,
@@ -141,7 +143,7 @@
               >
               <img
                 src="{{ bg_image | image_url: width: 1500 }}"
-                alt=""
+                alt="{{ alt_text }}"
                 loading="eager"
                 width="{{ bg_image.width }}"
                 height="{{ bg_image.height }}"

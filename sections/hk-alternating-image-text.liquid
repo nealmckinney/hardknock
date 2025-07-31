@@ -100,7 +100,7 @@
             </picture>
           </div>
         {% endif %}
-        <div class="flex-basis-50 flex-shrink-0 v-pad-lg scroll-trigger animate--slide-in" style="--animation-order: 0;">
+        <div class="flex-basis-50 flex-shrink-0 v-pad-lg pb-4 lg-pb-6 scroll-trigger animate--slide-in" style="--animation-order: 0;">
           {% if section.settings.intro_title != blank %}
             <h2 class="h2 mb-md">{{ section.settings.intro_title }}</h2>
           {% endif %}
@@ -115,7 +115,7 @@
       {% for block in section.blocks %}
         {% if block.type == 'content' %}
           <div
-            class="flex-container flex-clear-1024 align-center column-gap-80 v-margin-6 lg-v-margin-4 relative full-bleed-{{ block.settings.bleed_image }} pad-image-{{ block.settings.pad_image }}"
+            class="flex-container flex-clear-1024 align-center column-gap-80 v-margin-2 lg-v-margin-4 relative full-bleed-{{ block.settings.bleed_image }} pad-image-{{ block.settings.pad_image }}"
             {{ block.shopify_attributes }}
           >
             <div class="flex-basis-50 flex-shrink-0 image-container scroll-trigger animate--slide-in" style="--animation-order: 2;">
@@ -145,7 +145,7 @@
               </div>
             </div>
 
-            <div class="v-pad-6 lg-v-pad-8 scroll-trigger animate--slide-in" style="--animation-order: 3;">
+            <div class="v-pad-2 lg-v-pad-8 scroll-trigger animate--slide-in" style="--animation-order: 3;">
               <h2 class="h2 mb-md">{{ block.settings.title }}</h2>
               <div class="cms-content">{{ block.settings.text }}</div>
             </div>

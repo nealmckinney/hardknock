@@ -37,6 +37,8 @@
                 <div class="flex-container flex-clear-1024 align-center column-gap-80">
                   {% if testimonial.image != blank %}
                     <div class="image relative circle overflow-hidden ratio-1-1 mb-4 lg-mb-0 flex-basis-60 flex-shrink-0">
+                      {% capture alt_text %}{% render 'image-alt-fallback', image: testimonial.image %}{% endcapture %}
+                      {% assign alt_text = alt_text | strip %}
                       {{
                         testimonial.image
                         | image_url: width: 1200
@@ -45,7 +47,7 @@
                           class: 'object-fit-cover',
                           loading: 'lazy',
                           sizes: '(max-width: 749px) 380px, (max-width: 1024px) 760px, 1200px',
-                          alt: testimonial.name
+                          alt: alt_text
                       }}
                     </div>
                   {% endif %}
@@ -74,10 +76,12 @@
                     </div>
                     {% if section.settings.quote_background_image != blank %}
                       <div class="quote-background-image absolute-bg">
+                        {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.quote_background_image %}{% endcapture %}
+                        {% assign alt_text = alt_text | strip %}
                         {{
                           section.settings.quote_background_image
                           | image_url: width: 1200
-                          | image_tag: widths: '1200', class: 'object-fit-cover', loading: 'lazy', sizes: '1200px'
+                          | image_tag: widths: '1200', class: 'object-fit-cover', loading: 'lazy', sizes: '1200px', alt: alt_text
                         }}
                       </div>
                     {% endif %}
@@ -162,9 +166,10 @@
     position: absolute;
     left: 50%;
     right: 0;
-    bottom: -30px;
+    bottom: 0px;
     background: #000;
-    width: 500px;
+    width: 80%;
+    max-width: 500px;
     height: 1px;
     transform: translateX(-50%);
     z-index: 1;
@@ -193,11 +198,21 @@
 
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 24px;
   }
 
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (min-width: 1025px) {
+    .sub-featured-container.bg-white::before {
+      bottom: -30px;
+    }
+
     .sub-featured-testimonial:nth-child(odd) > .flex-container {
       flex-direction: row-reverse;
     }

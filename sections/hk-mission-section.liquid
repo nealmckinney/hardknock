@@ -93,7 +93,9 @@
     <div class="mission-upper page-width">
       <div class="mission-image">
         {% if section.settings.upper_image != blank %}
-          {{ section.settings.upper_image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'block' }}
+          {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.upper_image %}{% endcapture %}
+          {% assign alt_text = alt_text | strip %}
+          {{ section.settings.upper_image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'block', alt: alt_text }}
         {% endif %}
       </div>
 
@@ -143,7 +145,9 @@
 
       <div class="mission-image">
         {% if section.settings.lower_image != blank %}
-          {{ section.settings.lower_image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'block' }}
+          {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.lower_image %}{% endcapture %}
+          {% assign alt_text = alt_text | strip %}
+          {{ section.settings.lower_image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'block', alt: alt_text }}
         {% endif %}
       </div>
     </div>
@@ -152,7 +156,6 @@
 
 <style>
   .mission-section {
-    padding: 4rem 0;
     margin-top: -10vh;
     position: relative;
     z-index: 2;
@@ -172,6 +175,12 @@
   }
 
   @media screen and (min-width: 961px) {
+    .mission-section {
+      padding: 4rem 0;
+      margin-top: -10vh;
+      position: relative;
+      z-index: 2;
+    }
     .mission-upper {
       display: flex;
       gap: 32px;

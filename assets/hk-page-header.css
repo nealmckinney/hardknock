@@ -124,6 +124,10 @@
     .hardknock-page-header.inner-content-style-true .hardknock-page-header__container .inner {
       padding-bottom: 60px;
     }
+    .article-template .hardknock-page-header, .hk-testimonial-detail .hardknock-page-header {
+      min-height: 400px;
+      height: 50vh;
+    }
   }
 
   @media (min-width: 1025px) {

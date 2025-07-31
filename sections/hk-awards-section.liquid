@@ -53,6 +53,8 @@
           <div class="flex-container space-between flex-clear-960">
             <div class="image relative radius-15 overflow-hidden">
               {% if block.settings.image %}
+                {% capture alt_text %}{% render 'image-alt-fallback', image: block.settings.image %}{% endcapture %}
+                {% assign alt_text = alt_text | strip %}
                 {{
                   block.settings.image
                   | image_url: width: 760
@@ -61,7 +63,7 @@
                     class: 'object-fit-cover',
                     loading: 'lazy',
                     sizes: '380px',
-                    alt: block.settings.image.alt
+                    alt: alt_text
                 }}
               {% endif %}
             </div>

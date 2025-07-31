@@ -93,10 +93,12 @@
     {% endif %}
     <div class="blog-content-wrapper flex-container flex-clear-1024 page-width article-width {% if section.settings.image_alignment == 'right' %}image-right{% else %}image-left{% endif %}">
       <div class="image-container">
+        {% capture alt_text %}{% render 'image-alt-fallback', image: section.settings.image %}{% endcapture %}
+        {% assign alt_text = alt_text | strip %}
         {{
           section.settings.image
           | image_url: width: 800
-          | image_tag: widths: '700, 1100, 1400', class: 'block radius-15', loading: 'lazy', sizes: '100vw'
+          | image_tag: widths: '700, 1100, 1400', class: 'block radius-15', loading: 'lazy', sizes: '100vw', alt: alt_text
         }}
         {% if section.settings.image_caption != blank %}
           <div class="image-caption">{{ section.settings.image_caption }}</div>

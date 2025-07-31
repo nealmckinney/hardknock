@@ -74,6 +74,8 @@
       </div>
 
       <div class="hardknock-page-header__inner-content-background">
+        {% capture alt_text %}{% render 'image-alt-fallback', image: featured_post.image %}{% endcapture %}
+        {% assign alt_text = alt_text | strip %}
         {{
           featured_post.image
           | image_url: width: 1400
@@ -82,7 +84,7 @@
             class: 'object-fit-cover',
             loading: 'lazy',
             sizes: '100vw',
-            alt: featured_post.image.alt
+            alt: alt_text
         }}
       </div>
     </div>
