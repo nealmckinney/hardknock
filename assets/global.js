@@ -1267,3 +1267,8 @@ class BulkAdd extends HTMLElement {
 if (!customElements.get('bulk-add')) {
   customElements.define('bulk-add', BulkAdd);
 }
+
+// Initialize MediaBox when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  MediaBox('.mediabox');
+});
