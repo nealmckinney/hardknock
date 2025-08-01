@@ -21,10 +21,9 @@
       "type": "hk-page-header",
       "name": "HK Page Header",
       "settings": {
-        "title": "<span style=\"color: #CFD821;\">Reactive Adaptation:</span>\n The Intelligence of Nuro Core.",
-        "content": "<p>The innovative Nuro Core is designed to react to each unique incident and intelligently adapt its shape depending on any angle of impact. No other protection technology can do this. No other method is as effective.</p>",
-        "background_image": "shopify://shop_images/header-how-it-works.jpg",
-        "mobile_background_image": "shopify://shop_images/header-how-it-works-mobile.jpg",
+        "title": "<span style=\"color: #CFD821;\">Built around Nuro.</span><br>\n The right way.<br> Not the easy way.",
+        "content": "<p>Every Hardknock helmet is built around the innovative brain-protection technology called Nuro. A true brain protection solution isn’t something you can just “add on” after the fact. You start with Nuro Core, then design the rest of the helmet around it. So what if it’s not easy and nobody else does it like this? It’s the right way. So for us, it’s the only way.</p>",
+        "background_image": "shopify://shop_images/home-our-promise-crop.jpg",
         "inner_content_style": false,
         "inner_content_text_position": "bottom-center"
       }
@@ -34,6 +33,7 @@
       "blocks": {
         "image_section_QXYHCf": {
           "type": "image_section",
+          "disabled": true,
           "settings": {
             "background_image": "shopify://shop_images/rotational-force.jpg",
             "custom_class": "",
@@ -44,15 +44,15 @@
           "type": "text_section",
           "settings": {
             "text_content": "",
-            "html_content": "<h2>It’s not about direct force. It’s about <span style=\"color: #CFD821;\">rotational torque.</span>\n</h2>\n<p>Contrary to popular belief, most brain injury is caused by rotational torque, not direct force. The hidden damage occurs when the skull spins around the brain. Nuro is the first solution designed from the ground up to address rotational torque comprehensively and intelligently.</p>"
+            "html_content": "<h2>We’re not interested in putting <span style=\"color: #CFD821;\">lipstick on a pig.</span>\n</h2>\n<p>Pretty much every other safety helmet follows the same approach: Design a basic shell and liner using off-the-shelf materials. Then tell the world how well it works using vague claims that sound kind of impressive, but aren’t backed by any substantial proof.  They’re not going to be too happy with us for calling this out. But we’re here to protect workers, not make friends.</p>"
           }
         },
         "text_over_image_NKEjry": {
           "type": "text_over_image",
           "settings": {
-            "background_image": "shopify://shop_images/how-it-works-cyclist.jpg",
-            "title": "A flat piece of plastic is not a real solution.",
-            "text": "<p>We’ve been researching rotational torque for 30 years. While we respect any technology trying to counteract rotational torque, we knew a truly intelligent solution would have to go further than off-the-shelf foam and a flat piece of plastic. “Slip liners” using materials like these may perform fine in the lab, but they don’t stand up in real-world scenarios. </p><p><em>“The variability of real-world scenarios is the problem. There’s a saying: If you want to know what helmet you should wear, tell me what kind of accident you’re going to have.” - Dr. Steven Madey</em></p>",
+            "background_image": "shopify://shop_images/header-awards.jpg",
+            "title": "EPS foam had its time. Thankfully, that time is done.",
+            "text": "<p>Nuro Core is designed to do a lot more than just compress upon impact. Far beyond glorified styrofoam, it responds dynamically against rotational forces - the kind of forces that do the most damage. It doesn’t just sit there, it reacts. All to far more effectively combat brain torque. Foam can’t do that. Not even close.</p>",
             "html_text": ""
           }
         },
@@ -67,12 +67,13 @@
         "text_section_eMrdD4": {
           "type": "text_section",
           "settings": {
-            "text_content": "<h2><strong>The intelligent design inspired by nature.</strong></h2><p>The idea of Reactive Adaptation is commonly found in nature. We thought to ourselves, “could we bring that kind of intelligence to brain protection?” The Nuro Core™  is the only solution that adapts its shape depending on any angle of impact – so it can absorb direct force, and divert rotational force. It’s a solution born from problem-solving against real world scenarios, not just laboratory simulations.</p>",
+            "text_content": "<h2>Nuro is also super porous. So it’s super light. And keeps workers super cool.</h2>",
             "html_content": ""
           }
         },
         "button_section_3zfx7X": {
           "type": "button_section",
+          "disabled": true,
           "settings": {
             "button_label": "Download Analysis and Prevention whitepaper",
             "button_link": "#"
@@ -80,17 +81,59 @@
         },
         "image_section_NDCBUk": {
           "type": "image_section",
+          "disabled": true,
           "settings": {
             "background_image": "shopify://shop_images/how-it-works-97-percent.jpg",
             "custom_class": "lower-section2",
             "full_width": false
           }
         },
-        "text_section_4Uww3N": {
+        "text_over_image_6aNmJJ": {
+          "type": "text_over_image",
+          "settings": {
+            "background_image": "shopify://shop_images/header-home.jpg",
+            "title": "",
+            "text": "<h2>Built to handle what happens on actual job sites. Which actually makes sense.</h2><p>We get it. Nobody loves talking about accidents. But to understand why we built Hardknock around Nuro, it’s important to know that brain injuries almost never happen as a result of being hit straight on. They usually involve a glancing blow, bump, or collision at an awkward angle. And even when they seem like no big deal, these impacts can result in torque to the brain. And let’s just say that ain’t good.</p>",
+            "html_text": ""
+          }
+        },
+        "text_section_zVmgx8": {
           "type": "text_section",
           "settings": {
             "text_content": "",
-            "html_content": "<h2>A breakthrough beyond safety standards.</h2>\n<p>Despite having the data for decades, ANSI standards still only measure direct, blunt impact. It’s hard to believe, but true. So while we continue to encourage governing bodies to develop tests to measure effectiveness at mitigating rotational torque, we designed our own test. And we applaud independent research facilities that are doing the same.</p>\n<p><i><span style=\"color: #CFD821;\">Helmets with Nuro technology are predicted to be 97% more effective at reducing the risk of brain injury compared to basic impact absorption.</span></i></p>"
+            "html_content": "<h2>Nuro is about minimizing brain torque.<br> Because brain torque is what does the damage.</h2>"
+          }
+        },
+        "text_over_image_aB8dCh": {
+          "type": "text_over_image",
+          "settings": {
+            "background_image": "shopify://shop_images/home-our-achievements.jpg",
+            "title": "",
+            "text": "<h2>Minimum standards are exactly that. Minimum.</h2><p>Most helmet brands don’t want you to know that the standards only require testing for direct impact. But look at this video from the lab at Nuro. Turns out the “egg analogy” is the best way to show why testing for brain torque is so important.</p>",
+            "html_text": ""
+          }
+        },
+        "text_section_rdMynF": {
+          "type": "text_section",
+          "settings": {
+            "text_content": "<h2>If we made the standards, they’d be anything but minimum.</h2>",
+            "html_content": ""
+          }
+        },
+        "text_over_image_yNizkE": {
+          "type": "text_over_image",
+          "settings": {
+            "background_image": "shopify://shop_images/header-events.jpg",
+            "title": "Tested. <br>Tested. <br>And tested again.",
+            "text": "<p>We can go on and on about how important and fundamentally different Nuro works to protect the brains of our workers. But you don’t have to take our word for it. Download the peer-reviewed whitepaper here.</p>",
+            "html_text": ""
+          }
+        },
+        "text_section_chxMrB": {
+          "type": "text_section",
+          "settings": {
+            "text_content": "<h2>To build something right, you start with the right foundation. For us, that’s Nuro.</h2>",
+            "html_content": ""
           }
         }
       },
@@ -102,7 +145,12 @@
         "text_section_eMrdD4",
         "button_section_3zfx7X",
         "image_section_NDCBUk",
-        "text_section_4Uww3N"
+        "text_over_image_6aNmJJ",
+        "text_section_zVmgx8",
+        "text_over_image_aB8dCh",
+        "text_section_rdMynF",
+        "text_over_image_yNizkE",
+        "text_section_chxMrB"
       ],
       "name": "HK How It Works Page",
       "settings": {}
