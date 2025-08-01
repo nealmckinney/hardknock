@@ -111,7 +111,7 @@
             "background_image": "shopify://shop_images/home-our-achievements-crop.jpg",
             "title": "",
             "text": "<h2>Minimum standards are exactly that. Minimum.</h2><p>Most helmet brands don’t want you to know that the standards only require testing for direct impact. But look at this video from the lab at Nuro. Turns out the “egg analogy” is the best way to show why testing for brain torque is so important.</p>",
-            "html_text": "<a href=\"https://www.youtube.com/watch?v=iilGcMeKkuc\" class=\"button\" mediabox>Watch the Video</a>"
+            "html_text": "<a href=\"https://www.youtube.com/watch?v=iilGcMeKkuc\" class=\"button mediabox\">Watch the Video</a>"
           }
         },
         "text_section_rdMynF": {
