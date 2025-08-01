@@ -107,7 +107,7 @@
         "text_over_image_aB8dCh": {
           "type": "text_over_image",
           "settings": {
-            "background_image": "shopify://shop_images/home-our-achievements.jpg",
+            "background_image": "shopify://shop_images/home-our-achievements-crop.jpg",
             "title": "",
             "text": "<h2>Minimum standards are exactly that. Minimum.</h2><p>Most helmet brands don’t want you to know that the standards only require testing for direct impact. But look at this video from the lab at Nuro. Turns out the “egg analogy” is the best way to show why testing for brain torque is so important.</p>",
             "html_text": ""
@@ -124,7 +124,7 @@
           "type": "text_over_image",
           "settings": {
             "background_image": "shopify://shop_images/header-events.jpg",
-            "title": "Tested. <br>Tested. <br>And tested again.",
+            "title": "Tested. Tested. And tested again.",
             "text": "<p>We can go on and on about how important and fundamentally different Nuro works to protect the brains of our workers. But you don’t have to take our word for it. Download the peer-reviewed whitepaper here.</p>",
             "html_text": ""
           }
