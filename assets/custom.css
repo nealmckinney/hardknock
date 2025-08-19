@@ -897,3 +897,9 @@ a.h-margin-sm {
 	.lg-v-pad-10 { padding-top:160px !important; padding-bottom:160px !important; }
 	
 }
+
+
+/* Variant media filtering */
+.variant-media-hidden {
+    display: none;
+}

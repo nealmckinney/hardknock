@@ -27,6 +27,14 @@ if (!customElements.get('product-info')) {
 
         this.initQuantityHandlers();
         this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
+
+        // Trigger media filtering after product info is loaded
+        setTimeout(() => {
+          const mediaGallery = this.querySelector('media-gallery');
+          if (mediaGallery && mediaGallery.filterByVariant) {
+            mediaGallery.filterByVariant();
+          }
+        }, 50);
       }
 
       addPreProcessCallback(callback) {
@@ -304,10 +312,21 @@ if (!customElements.get('product-info')) {
           true
         );
 
+        // Filter media based on variant names in alt text AFTER all DOM manipulation
+        setTimeout(() => {
+          filterMediaByVariant(mediaGallerySource, this);
+        }, 50);
+
         // update media modal
         const modalContent = this.productModal?.querySelector(`.product-media-modal__content`);
         const newModalContent = html.querySelector(`product-modal .product-media-modal__content`);
-        if (modalContent && newModalContent) modalContent.innerHTML = newModalContent.innerHTML;
+        if (modalContent && newModalContent) {
+          modalContent.innerHTML = newModalContent.innerHTML;
+          // Filter modal content as well AFTER DOM update
+          setTimeout(() => {
+            filterMediaByVariant(modalContent, this);
+          }, 50);
+        }
       }
 
       setQuantityBoundries() {
