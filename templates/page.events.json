@@ -21,7 +21,7 @@
       "type": "hk-page-header",
       "settings": {
         "title": "Mark Your Calendars",
-        "content": "<p>Upcoming tradeshows and industry events that we’re planning to attend. If you know of a happening you think we shouldn’t miss, let us know here. </p>",
+        "content": "<p>Upcoming tradeshows and industry events that we’re planning to attend. If you know of a happening you think we shouldn’t miss, let us know.</p>",
         "background_image": "shopify://shop_images/header-standard.jpg",
         "inner_content_style": true,
         "inner_content_background_image": "shopify://shop_images/header-events.jpg",
