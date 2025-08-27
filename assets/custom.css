@@ -900,6 +900,6 @@ a.h-margin-sm {
 
 
 /* Variant media filtering */
-.variant-media-hidden {
+.product__media-item.variant-media-hidden {
     display: none;
 }
