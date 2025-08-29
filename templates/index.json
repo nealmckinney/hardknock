@@ -85,10 +85,10 @@
       "settings": {
         "title": "Product Lineup",
         "products": [
-          "t2-max-safety-helmet",
-          "t2-pro-safety-helmet",
-          "reflective-sticker",
-          "rear-suspension-pad"
+          "resolve-fullbrim-type-ii-safety-helmet-non-vented",
+          "resolve-fullbrim-type-ii-safety-helmet-vented",
+          "resolve-nobrim-type-ii-safety-helmet-non-vented",
+          "resolve-nobrim-type-ii-safety-helmet-vented"
         ]
       }
     },
