@@ -52,7 +52,9 @@
                   {% if product.title != blank %}
                     <h2 class="h3 product-slider__item-title mt-0 mb-2">{{ product.title }}</h2>
                   {% endif %}
-                  <h2 class="h5 product-price">{{ product.price | money }}</h2>
+                  {%- unless product.price == 0 -%}
+                    <h2 class="h5 product-price">{{ product.price | money }}</h2>
+                  {%- endunless -%}
 
                   {% if product.description != blank %}
                     <div class="product-slider__item-text mb-4">

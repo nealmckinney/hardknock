@@ -39,7 +39,7 @@
                 <h2 class="h5 uppercase hk-product-card__pretitle color-white mb-2">Hardknock</h2>
                 <h2 class="h2 hk-product-card__title color-white mt-0 mb-2">{{ product.title }}</h2>
                 <div class="hk-product-card__description color-white">
-                  {{ product.description | strip_html | truncate: 150 }}
+                  {{ product.description | strip_html | truncate: 300 }}
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@
               {% endif %}
             </div>
 
-            <div class="hk-product-card__content-lower pt-4 lg-pt-6 scroll-trigger animate--slide-in" style="--animation-order: 2;">
+            <div class="hk-product-card__content-lower pt-2 lg-pt-6 scroll-trigger animate--slide-in" style="--animation-order: 2;">
               {% if product.metafields.custom.collection_description.value != blank %}
                 <div class="hk-product-card__bullets">
                   <h2 class="h5">Pro Features</h2>
@@ -116,7 +116,7 @@
   .hk-product-card__image {
     max-width: 515px;
     width: 70%;
-    margin-top: -50px;
+    margin-top: -80px;
   }
 
   @media (min-width: 768px) {
@@ -142,7 +142,25 @@
       margin-top: -150px;
     }
     .hk-product-card__background {
+      aspect-ratio: 1/0.6;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .hk-product-card__background {
+      aspect-ratio: 1/0.5;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .hk-product-card__background {
       aspect-ratio: 1/0.4;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hk-product-card__background > img {
+      filter: brightness(0.75);
     }
   }
 </style>
