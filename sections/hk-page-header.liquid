@@ -213,7 +213,7 @@
 {{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
 
 <style>
-  @media (max-width: 959px) {
+  @media (max-width: 1024px) {
     #shopify-section-{{ section.id }} .hardknock-page-header__background {
       filter: brightness({{ section.settings.mobile_background_brightness | default: 50 }}%);
     }
