@@ -30,6 +30,16 @@
       "label": "Mobile Background Image (optional)"
     },
     {
+      "type": "range",
+      "id": "mobile_background_brightness",
+      "label": "Mobile Background Brightness",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 50,
+      "info": "Adjust the brightness of the mobile background image (0 = completely dark, 100 = original brightness)"
+    },
+    {
       "type": "checkbox",
       "id": "inner_content_style",
       "label": "Inner Content Style",
@@ -201,3 +211,11 @@
 </div>
 
 {{ 'hk-page-header.css' | asset_url | stylesheet_tag }}
+
+<style>
+  @media (max-width: 959px) {
+    #shopify-section-{{ section.id }} .hardknock-page-header__background {
+      filter: brightness({{ section.settings.mobile_background_brightness | default: 50 }}%);
+    }
+  }
+</style>
