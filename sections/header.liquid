@@ -262,6 +262,7 @@
         {%- endcase -%}
       {%- endfor -%}
 
+      {% if section.settings.enable_cart_icon %}
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {% if cart == empty %}
             <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
@@ -278,6 +279,7 @@
           </div>
         {%- endif -%}
       </a>
+      {% endif %}
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
@@ -575,6 +577,13 @@
       "default": true,
       "label": "t:sections.header.settings.enable_customer_avatar.label",
       "info": "t:sections.header.settings.enable_customer_avatar.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_cart_icon",
+      "default": true,
+      "label": "Show Cart Icon",
+      "info": "Show Cart Icon in Header."
     },
     {
       "type": "header",
