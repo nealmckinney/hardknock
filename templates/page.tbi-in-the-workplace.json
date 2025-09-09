@@ -37,8 +37,10 @@
       "settings": {
         "title": "Safer than safe.",
         "content": "<p>Safety in the workplace is our primary motive. It’s why we make safety helmets that go beyond the standard to prevent Traumatic Brain Injury (TBI). The construction industry incurs more work-related brain injuries than any industry in the U.S. If the government set higher protection standards, all helmet makers would meet them. But instead of fighting bureaucracy, we set our own standards to go beyond the standards. To make Hardknock meet the needs of real workers on real jobsites. </p>",
-        "background_image": "shopify://shop_images/tbi-header.jpg",
+        "background_image": "shopify://shop_images/tbi-header_9c9714a2-5148-424f-a1fb-3398e926b2a3.jpg",
+        "mobile_background_brightness": 50,
         "inner_content_style": false,
+        "background_image_position": "center center",
         "inner_content_text_position": "top-left"
       }
     },
