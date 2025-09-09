@@ -22,8 +22,9 @@
       "name": "HK Page Header",
       "settings": {
         "title": "FAQs",
-        "content": "<p><strong>Got Questions? We’ve Got You Covered.</strong></p><p>At Hardknock, we’re committed to helping you feel confident in your helmet choice, from how it’s built to how it protects. Whether you’re curious about safety certifications, sizing, shipping, or product care, our FAQs are here to give you clear, straightforward answers. Don’t see what you’re looking for? Reach out—we’re happy to help.</p>",
+        "content": "<p><strong>You have questions. We have answers.</strong></p><p>While by no means a comprehensive list, please take a look at these FAQs to see if what you’re after is already covered here. If not, please don’t hesitate to ask your questions by dropping us a line here. </p>",
         "background_image": "shopify://shop_images/header-standard.jpg",
+        "mobile_background_brightness": 50,
         "inner_content_style": true,
         "inner_content_background_image": "shopify://shop_images/footer-like-you-mean-it.jpg",
         "inner_content_text_position": "top-left"
@@ -35,29 +36,45 @@
         "faq_7nVVJQ": {
           "type": "faq",
           "settings": {
-            "question": "What is your question?",
-            "answer": "<p>Provide your answer here.</p>"
+            "question": "Do Hardknock helmets protect me from concussion?",
+            "answer": "<p>Protecting the skull is the base job of every helmet out there. Protecting the brain itself takes a whole other level. Hardknock helmets are designed around the innovative Nuro Core to help protect against brain torque, the force that causes concussion and traumatic brain injury (TBI). <br/><br/></p>"
           }
         },
         "faq_xqz9xe": {
           "type": "faq",
           "settings": {
-            "question": "What is your question?",
-            "answer": "<p>Provide your answer here.</p>"
+            "question": "How do I clean my helmet?",
+            "answer": "<p>Cleaning a Hardknock helmet is no different than cleaning a standard foam helmet. Hardknock helmets can be washed with a solution of mild soap and water. Avoid chemicals and solvents that can damage the helmet. Lightly wash using a soft cloth and allow your helmet to air dry in an open area. For long-term care, store your helmet in a cool, dry place when it’s not in use. Avoid excessive high-heat environments that can damage the liner or shell. Do not attempt to remove the Nuro Core, doing so may result in damage to the helmet and void of product warranties.<br/><br/></p>"
           }
         },
         "faq_LyedUz": {
           "type": "faq",
           "settings": {
-            "question": "What is your question?",
-            "answer": "<p>Provide your answer here.</p>"
+            "question": "Does the Nuro Core affect helmet ventilation?",
+            "answer": "<p>The Nuro Core is 93% porous, meaning that air can freely flow through 93% of its surface. Hardknock Helmets are designed around Nuro Core, and some of the coolest, most ventilated helmets out there.<br/><br/></p>"
+          }
+        },
+        "faq_DYwi3C": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the lifespan of a Hardknock helmet?",
+            "answer": "<p>Hardknock helmets are built to be durable. That said,every helmet has a limited lifespan in use and should be replaced when it shows obvious signs of wear and tear. Most helmet manufacturers recommend replacing a helmet after three years, however a helmet should always be replaced if it has been damaged or has been involved in a crash.<br/><br/><br/><br/></p>"
+          }
+        },
+        "faq_NGpUmt": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I find the right size helmet?",
+            "answer": "<p>Hardknock helmets are one-size-fits-all. Just turn the dial in the back of our fit system to find the rit fit for you.<br/><br/><br/><br/><br/><br/></p>"
           }
         }
       },
       "block_order": [
         "faq_7nVVJQ",
         "faq_xqz9xe",
-        "faq_LyedUz"
+        "faq_LyedUz",
+        "faq_DYwi3C",
+        "faq_NGpUmt"
       ],
       "name": "HK FAQs",
       "settings": {}
