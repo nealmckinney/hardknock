@@ -585,6 +585,10 @@ img.object-fit-contain {
     }
 }
 
+.button:before, .button:after {
+	display: none;
+}
+
 .button, .button--black {
     background-color: var(--color-black);
     color: var(--color-green);
@@ -594,7 +598,7 @@ img.object-fit-contain {
 .button--green {
     background-color: var(--color-green);
     color: var(--color-black);
-	border: 1px solid var(--color-black);
+	border: 1px solid var(--color-green);
 }
 
 /* Collection Page */

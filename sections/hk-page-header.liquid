@@ -54,6 +54,26 @@
     },
     {
       "type": "select",
+      "id": "background_image_position",
+      "label": "Background Image Position",
+      "options": [
+        {
+          "value": "center center",
+          "label": "Center"
+        },
+        {
+          "value": "top center",
+          "label": "Top Center"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bottom Center"
+        }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "select",
       "id": "inner_content_text_position",
       "label": "Inner Content Text Position",
       "options": [
@@ -157,6 +177,7 @@
         loading="eager"
         width="{{ bg_image.width }}"
         height="{{ bg_image.height }}"
+        style="object-position: {{ section.settings.background_image_position }}"
       >
     {% endif %}
   </picture>
