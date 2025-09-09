@@ -25,9 +25,10 @@
         "button_UGaBew"
       ],
       "settings": {
-        "title": "The first safety <span style=\"color: #CFD821;\">helmet</span> up for the job.",
+        "title": "The First Safety Helmet up for the Job.",
         "content": "<p>You’ve been doing the hard things for years without stopping to check if anyone noticed. Making it happen and putting it on the line, every day. We make Hardknock for you. The first safety helmet built to meet the real demands of the job. Far beyond standards. </p>",
         "background_image": "shopify://shop_images/header-home.jpg",
+        "mobile_background_brightness": 50,
         "inner_content_style": false,
         "inner_content_text_position": "top-left"
       }
