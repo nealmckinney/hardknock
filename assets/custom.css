@@ -245,6 +245,12 @@ header-drawer {
 	font-weight: var(--font-heading-alt-weight);
 }
 
+.footer h2 {
+	font-family: var(--font-heading-alt-family-footer);
+	font-style: var(--font-heading-alt-style-footer);
+	font-weight: var(--font-heading-alt-weight-footer);
+}
+
 @media(min-width:1025px) {
 
 	.pre-footer {
