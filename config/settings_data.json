@@ -13,6 +13,7 @@
     "logo_width": 210,
     "type_header_font": "inter_n9",
     "heading_scale": 100,
+    "type_header_alt_font": "oswald_n7",
     "type_body_font": "assistant_n4",
     "body_scale": 100,
     "page_width": 1200,
