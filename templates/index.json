@@ -30,6 +30,7 @@
         "background_image": "shopify://shop_images/header-home.jpg",
         "mobile_background_brightness": 50,
         "inner_content_style": false,
+        "background_image_position": "top center",
         "inner_content_text_position": "top-left"
       }
     },
