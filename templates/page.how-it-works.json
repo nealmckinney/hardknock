@@ -21,10 +21,12 @@
       "type": "hk-page-header",
       "name": "HK Page Header",
       "settings": {
-        "title": "<span style=\"color: #CFD821;\">Built around Nuro.</span><br>\n The right way.<br> Not the easy way.",
+        "title": "Built around Nuro.<br>\n The right way.<br> Not the easy way.",
         "content": "<p>Every Hardknock helmet is built around the innovative brain-protection technology called Nuro. A true brain protection solution isn’t something you can just “add on” after the fact. You start with Nuro Core, then design the rest of the helmet around it. So what if it’s not easy and nobody else does it like this? It’s the right way. So for us, it’s the only way.</p>",
         "background_image": "shopify://shop_images/home-our-promise-crop.jpg",
+        "mobile_background_brightness": 50,
         "inner_content_style": false,
+        "background_image_position": "center center",
         "inner_content_text_position": "bottom-center"
       }
     },
